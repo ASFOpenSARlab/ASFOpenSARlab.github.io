@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/dev/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/dev/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/release_notes/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/release_notes/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/dev-guide/deploy_OpenSARlab/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/dev-guide/deploy_OpenSARlab/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/dev-guide/system_diagram/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/dev-guide/system_diagram/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/release-notes/release_06-2021/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_06-2021/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/OpenSARlab_environment/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/OpenSARlab_environment/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/OpenSARlab_terminal/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/OpenSARlab_terminal/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/conda_environments/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/conda_environments/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/git_in_OpenSARlab/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/git_in_OpenSARlab/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/how_to_run_a_notebook/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/how_to_run_a_notebook/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/installing_software_in_OpenSARlab/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/installing_software_in_OpenSARlab/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/jupyter_magic/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/jupyter_magic/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/jupyter_notebook_extensions/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/jupyter_notebook_extensions/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/jupyter_notebook_intro/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/jupyter_notebook_intro/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/logging_out_and_server_shutdown/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/logging_out_and_server_shutdown/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/restarting_server_and_kernel/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/restarting_server_and_kernel/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://osl-docs.asf.alaska.edu/user-guides/troubleshooting_guide/</loc>
+         <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/troubleshooting_guide/</loc>
          <lastmod>2021-07-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
