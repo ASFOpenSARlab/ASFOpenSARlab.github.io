@@ -20,7 +20,7 @@
     
     
       
-        <title>Troubleshooting guide - OpenSARlab-Docs</title>
+        <title>Troubleshooting Guide - OpenSARlab-Docs</title>
       
     
     
@@ -237,7 +237,7 @@ feedback.init({showIcon: false});
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Troubleshooting guide
+              Troubleshooting Guide
             
           </span>
         </div>
@@ -354,11 +354,293 @@ feedback.init({showIcon: false});
 
   
   
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        User Guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
   
     <li class="md-nav__item">
       <a href="../../user/" class="md-nav__link">
-        User Guide
+        User
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter_notebook_intro/" class="md-nav__link">
+        Jupyter Notebook Intro
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_to_run_a_notebook/" class="md-nav__link">
+        Running Jupyter Notebook
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter_magic/" class="md-nav__link">
+        Jupyter Magic Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_enviornment.md" class="md-nav__link">
+        OpenSARlab Account Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_in_OpenSARlab/" class="md-nav__link">
+        Git in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyer_notebook_extensions.md" class="md-nav__link">
+        Jupyter Notebook Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+        Installing Software in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logging_out_and_server_shutdown/" class="md-nav__link">
+        Logging Out and Server Shutdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Troubleshooting Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Troubleshooting Guide
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-did-the-kernel-die-while-running-a-notebook" class="md-nav__link">
+    Why did the kernel die while running a notebook?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-successfully-ran-a-notebook-earlier-on-the-same-data-but-now-it-is-killing-the-kernel" class="md-nav__link">
+    I successfully ran a notebook earlier on the same data but now it is killing the kernel.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-i-open-a-notebook-i-receive-kernel-not-found-message" class="md-nav__link">
+    When I open a notebook, I receive "Kernel not found" message.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-am-receiving-a-no-space-left-on-device-error" class="md-nav__link">
+    I am receiving a "No space left on device" error.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-server-wont-start-and-i-cannot-access-opensarlab" class="md-nav__link">
+    My server won't start and I cannot access OpenSARlab.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-edits-i-made-to-an-asf-notebook-have-disappeared-since-the-last-time-i-used-opensarlab" class="md-nav__link">
+    The edits I made to an ASF notebook have disappeared since the last time I used OpenSARlab.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-of-my-notebooks-looks-like-it-has-a-mix-of-code-from-various-versions-of-the-notebook" class="md-nav__link">
+    One of my notebooks looks like it has a mix of code from various versions of the notebook.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-know-there-was-an-update-made-to-an-asf-notebook-but-i-still-have-the-old-version" class="md-nav__link">
+    I know there was an update made to an ASF notebook but I still have the old version.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-am-having-trouble-setting-up-a-web-server-and-developing-my-web-app-in-opensarlab" class="md-nav__link">
+    I am having trouble setting up a web server and developing my web app in OpenSARlab.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-notebook-wont-load-a-new-browser-tab-opens-and-shows-the-jupyterhub-header-but-no-notebook-appears" class="md-nav__link">
+    A notebook won't load. A new browser tab opens and shows the JupyterHub header, but no notebook appears.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-issue-is-not-on-this-list" class="md-nav__link">
+    My issue is not on this list
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -367,13 +649,65 @@ feedback.init({showIcon: false});
       
       
 
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Developer Guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
   
   
   
     <li class="md-nav__item">
       <a href="../../dev/" class="md-nav__link">
-        Developer Guide
+        Dev
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assets/system_diagrams/OpenSARlab_system_diagram_June_2021.png" class="md-nav__link">
+        System Diagram
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-guides/deploy_OpenSARlab/" class="md-nav__link">
+        Deploy OpenSARlab to AWS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -385,10 +719,50 @@ feedback.init({showIcon: false});
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        Release Notes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../release_notes/" class="md-nav__link">
-        Release Notes
+        Release notes
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/release_06-2021/" class="md-nav__link">
+        June 2021
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -510,34 +884,16 @@ feedback.init({showIcon: false});
                 <p><a href="../../user/">Return to Table of Contents</a></p>
 <h1 id="troubleshooting-guide">Troubleshooting Guide</h1>
 <h2 id="why-did-the-kernel-die-while-running-a-notebook">Why did the kernel die while running a notebook?</h2>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="A dead notebok kernel notification." src="../../assets/kernel_death.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>The message that appears when a notebook kernel dies</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="A dead notebok kernel notification." src="../../assets/kernel_death.png" /></p>
+<p><em>The message that appears when a notebook kernel dies</em></p>
+<hr />
 <p>The kernel will die if you run out of available memory to complete a running process. This most frequently occurs when running a time-series or change detection algorithm on a data stack that is either too deep or covers too large an area-of-interest for OpenSARlab to handle. Try running the notebook on some combination of a shallower data stack and/or a smaller area-of-interest. This may take some experimentation because memory is shared among users and the amount available fluctuates. To work with a deep stack covering an extensive AOI, you may need to tile up your data for the analysis and mosaic them later. </p>
 <h2 id="i-successfully-ran-a-notebook-earlier-on-the-same-data-but-now-it-is-killing-the-kernel">I successfully ran a notebook earlier on the same data but now it is killing the kernel.</h2>
 <p>OpenSARlab EC2 instances are shared among 1-3 users. The memory available to each user on an instance varies with overall activity on the EC2. It is likely that there was enough memory available for your process the first time you attempted it, but there wasn't on the subsequent attempt. More details on the OpenSARlab user environment can be found <a href="../OpenSARlab_environment/">here</a>.</p>
 <h2 id="when-i-open-a-notebook-i-receive-kernel-not-found-message">When I open a notebook, I receive "Kernel not found" message.</h2>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="A kernel not found notification." src="../../assets/kernel_not_found.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>The message that appears when a notebook kernel cannot be found</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="A kernel not found notification." src="../../assets/kernel_not_found.png" /></p>
+<p><em>The message that appears when a notebook kernel cannot be found</em></p>
+<hr />
 <p>You have either not yet created the required conda environment or there is a mix-up between the environment name and prefix. If you think you did already install the environment, select it from the pull-down menu and click the "Set Kernel" button. If you have not yet created it, use the notebook located here to do so: <code>/home/jovyan/conda_environments/Create_OSL_Conda_Environments.ipynb</code></p>
 <h2 id="i-am-receiving-a-no-space-left-on-device-error">I am receiving a "No space left on device" error.</h2>
 <p>OpenSARlab users have access to a finite amount of storage space (<a href="../OpenSARlab_environment/">details here</a>). It is up to users to manage their storage. If you receive a storage space warning while logged into OpenSARlab, it is highly recommended that you immediately free up space by deleting un-needed files. If your server shuts down while there is no available space, it will not have the space needed to restart again and you will be locked out of your account. </p>
@@ -546,45 +902,18 @@ feedback.init({showIcon: false});
 <h2 id="my-server-wont-start-and-i-cannot-access-opensarlab">My server won't start and I cannot access OpenSARlab.</h2>
 <p>This issue typically stems from unexpected behavior on the part of the <a href="https://jupyterhub.github.io/nbgitpuller/">smart git puller</a>.</p>
 <p>Click the event log arrow beneath the server startup progress bar to view the details of any git puller conflicts.</p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="The event log can be viewed on the server startup screen." src="../../assets/event_log.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Click the event log arrow beneath the server startup progress bar.</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="The event log can be viewed on the server startup screen." src="../../assets/event_log.png" /></p>
+<p><em>Click the event log arrow beneath the server startup progress bar.</em></p>
+<hr />
 <p>If the problem is related to the git puller, you will find details regarding which file or files are causing the conflict in the event log. If the problem is not related to the git puller, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab Administrator</a>.</p>
 <p>If the problem is git puller related, note the names and locations of the offending files and logout of OpenSARlab.</p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="The logout button is located at the top right of the screen." src="../../assets/logout_server_screen.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Click the logout button at the top of the screen</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="The logout button is located at the top right of the screen." src="../../assets/logout_server_screen.png" /></p>
+<p><em>Click the logout button at the top of the screen</em></p>
+<hr />
 <p>After logging out, the startup screen will reload. Select the "General SAR processing (without git puller)" server option and click the start button. </p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="The &quot;General SAR processing (without git puller)&quot; server option is below the &quot;General SAR processing&quot; option." src="../../assets/server_options_no_git_puller.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Select the "General SAR processing (without git puller)" server option and click the start button</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="The &quot;General SAR processing (without git puller)&quot; server option is below the &quot;General SAR processing&quot; option." src="../../assets/server_options_no_git_puller.png" /></p>
+<p><em>Select the "General SAR processing (without git puller)" server option and click the start button</em></p>
+<hr />
 <p>The server should now load and you will have access to your account. Navigate to the locations of the conflicting files. There are three options for dealing with each of the offending files:</p>
 <ol>
 <li>Delete the file if there are no changes from the original that you wish to save. </li>
@@ -592,31 +921,13 @@ feedback.init({showIcon: false});
 <li>From the <a href="../OpenSARlab_terminal/">terminal</a>, run "touch /path/to/your.file" if you wish to try updating the file's timestamp and give the git puller another opportunity to handle the git pull correctly.</li>
 </ol>
 <p>Logout of OpenSARlab.</p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="The logout button is located at the top right of the screen." src="../../assets/logout.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Click the logout button at the top right of the screen</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="The logout button is located at the top right of the screen." src="../../assets/logout.png" /></p>
+<p><em>Click the logout button at the top right of the screen</em></p>
+<hr />
 <p>Log back in, using the "General SAR processing" server option.</p>
-<table>
-<thead>
-<tr>
-<th align="center"><img alt="The &quot;General SAR processing&quot; server option is the first option on the server option screen." src="../../assets/server_options.png" /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center"><em>Select the "General SAR processing" option and click start</em></td>
-</tr>
-</tbody>
-</table>
+<p><img alt="The &quot;General SAR processing&quot; server option is the first option on the server option screen." src="../../assets/server_options.png" /></p>
+<p><em>Select the "General SAR processing" option and click start</em></p>
+<hr />
 <p>The git puller should now run successfully, the server should startup, and you should have restored access to OpenSARlab, receiving any updates to the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</p>
 <h2 id="the-edits-i-made-to-an-asf-notebook-have-disappeared-since-the-last-time-i-used-opensarlab">The edits I made to an ASF notebook have disappeared since the last time I used OpenSARlab.</h2>
 <p>When your OpenSARlab server starts up, a git puller runs, bringing in any updates made to the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>. If a change has been made to a notebook by both the user and by ASF, both will be saved. The ASF version will retain its original name. The user edited version will have a timestamp appended to its name. The edited notebook you are missing is likely in the location where you expect it but has a recent timestamp appended to its name.  </p>
@@ -670,6 +981,85 @@ feedback.init({showIcon: false});
 <footer class="md-footer">
 
   <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="Footer"
+      >
+
+        <!-- Link to previous page -->
+        
+          <a href="../logging_out_and_server_shutdown/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Logging Out and Server Shutdown
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="../../dev/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Dev
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="../../assets/images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   
 
   <!-- Further information -->
