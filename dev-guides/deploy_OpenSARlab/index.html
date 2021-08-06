@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/deploy_OpenSARlab/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.8">
     
     
       
@@ -379,7 +379,7 @@ feedback.init({showIcon: false});
   
     <li class="md-nav__item">
       <a href="../../user/" class="md-nav__link">
-        User
+        Welcome to the OpenSARlab User Guide
       </a>
     </li>
   
@@ -426,7 +426,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/OpenSARlab_enviornment.md" class="md-nav__link">
+      <a href="../../user-guides/OpenSARlab_environment/" class="md-nav__link">
         OpenSARlab Account Details
       </a>
     </li>
@@ -474,7 +474,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/jupyer_notebook_extensions.md" class="md-nav__link">
+      <a href="../../user-guides/jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
     </li>
@@ -561,18 +561,6 @@ feedback.init({showIcon: false});
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dev/" class="md-nav__link">
-        Dev
-      </a>
-    </li>
-  
-
           
             
   
@@ -727,6 +715,18 @@ feedback.init({showIcon: false});
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubelshooting Guide
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -757,18 +757,6 @@ feedback.init({showIcon: false});
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../release_notes/" class="md-nav__link">
-        Release notes
-      </a>
-    </li>
-  
-
           
             
   
@@ -929,7 +917,7 @@ feedback.init({showIcon: false});
 If you are setting up OpenSARlab for several classes and/or collaborative groups with disparate needs or funding sources,
 it may be useful to give them each their own standalone deployment. This separates user group authentication, 
 simplifies billing for each group, and allows for easy cleanup at the end of a project or class (just delete the deployment).
-In the following instructions, replace any occurrence of "<deployment_name>" with the deployment name you have chosen.</p>
+In the following instructions, replace any occurrence of "<code>deployment_name</code>" with the deployment name you have chosen.</p>
 <p><strong>Make your deployment name lowercase and use no special characters other than dashes (-). It will be used to
 generate part of the Cognito callback URL and CloudFormation stack names also follow the same naming convention.</strong>    </p>
 <h2 id="take-aws-ses-out-of-sandbox">Take AWS SES out of sandbox</h2>
@@ -1015,42 +1003,42 @@ formatted calendar should work as well</strong></p>
 <p>TODO Do this differently </p>
 <p><strong>All the public OpenSARlab repos are in the <a href="https://github.com/ASFOpenSARlab">ASFOpenSARlab</a> Github Org</strong></p>
 <ol>
-<li>Create a <deployment_name>-container CodeCommit repo in your AWS account</li>
-<li>Create a <deployment_name>-cluster CodeCommit repo</li>
-<li>Clone the <deployment_name>-container and <deployment_name>-cluster repos to your local computer using ssh</li>
-<li>cd into your local <deployment_name>-container repo<ol>
-<li>add ASFOpenSARlab/opensarlab-container as a remote on your local <deployment_name>-container repo<ol>
+<li>Create a <code>deployment_name</code>-container CodeCommit repo in your AWS account</li>
+<li>Create a <code>deployment_name</code>-cluster CodeCommit repo</li>
+<li>Clone the <code>deployment_name</code>-container and <code>deployment_name</code>-cluster repos to your local computer using ssh</li>
+<li>cd into your local <code>deployment_name</code>-container repo<ol>
+<li>add ASFOpenSARlab/opensarlab-container as a remote on your local <code>deployment_name</code>-container repo<ol>
 <li><code>git remote add github https://github.com/ASFOpenSARlab/opensarlab-container.git</code></li>
 </ol>
 </li>
-<li>Pull the remote  opensarlab-container repo into your local <deployment_name>-container repo<ol>
+<li>Pull the remote  opensarlab-container repo into your local <code>deployment_name</code>-container repo<ol>
 <li><code>git pull github main</code></li>
 </ol>
 </li>
-<li>Create a main branch in the <deployment_name>-container repo<ol>
+<li>Create a main branch in the <code>deployment_name</code>-container repo<ol>
 <li><code>git checkout -b main</code></li>
 </ol>
 </li>
-<li>Push to the remote <deployment_name>-container repo<ol>
+<li>Push to the remote <code>deployment_name</code>-container repo<ol>
 <li><code>git push origin main</code></li>
 </ol>
 </li>
 </ol>
 </li>
-<li>cd into your local <deployment_name>-cluster repo<ol>
-<li>add ASFOpenSARlab/opensarlab-cluster as a remote on your local <deployment_name>-cluster repo<ol>
+<li>cd into your local <code>deployment_name</code>-cluster repo<ol>
+<li>add ASFOpenSARlab/opensarlab-cluster as a remote on your local <code>deployment_name</code>-cluster repo<ol>
 <li><code>git remote add github https://github.com/ASFOpenSARlab/opensarlab-cluster.git</code></li>
 </ol>
 </li>
-<li>Pull the remote  opensarlab-cluster repo into your local <deployment_name>-cluster repo<ol>
+<li>Pull the remote  opensarlab-cluster repo into your local <code>deployment_name</code>-cluster repo<ol>
 <li><code>git pull github main</code></li>
 </ol>
 </li>
-<li>Create a main branch in the <deployment_name>-cluster repo<ol>
+<li>Create a main branch in the <code>deployment_name</code>-cluster repo<ol>
 <li><code>git checkout -b main</code></li>
 </ol>
 </li>
-<li>Push to the remote <deployment_name>-cluster repo<ol>
+<li>Push to the remote <code>deployment_name</code>-cluster repo<ol>
 <li><code>git push origin main</code></li>
 </ol>
 </li>
@@ -1060,7 +1048,7 @@ formatted calendar should work as well</strong></p>
 <p><strong>You should now have container and cluster repos in CodeCommit that are duplicates of those found in ASFOpenSARlab</strong> </p>
 <h2 id="create-an-s3-bucket-to-hold-the-lambda-handler-script">Create an S3 bucket to hold the lambda handler script</h2>
 <ol>
-<li>Create an S3 bucket in your AWS account called <deployment_name>-lambda<ol>
+<li>Create an S3 bucket in your AWS account called <code>deployment_name</code>-lambda<ol>
 <li>Alternatively, you could use the same bucket to hold lambdas for multiple deployments</li>
 </ol>
 </li>
@@ -1209,7 +1197,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>Adjust the cpu_guarantee (or mem_guarantee)<ol>
-<li>The minimum EC2 cpu units guaranteed to each user</li>
+<li>The minimum EC2 cpu units guaranteed to each user (as a float, not a string)</li>
 <li>If there aren't enough cpu units left on a node for the next user, the autoscaler will spin up a new node</li>
 <li>Use the cpu_guarantee to determine how nodes should be shared among users</li>
 <li>Even if not sharing nodes, do not guarantee all available cpus<ol>
@@ -1237,7 +1225,7 @@ Images can be used by multiple profiles</strong></p>
 <li>be sure to keep the ".py" as part of the filename</li>
 </ol>
 </li>
-<li>Upload the zip to the <deployment_name>-lambda S3 bucket<ol>
+<li>Upload the zip to the <code>deployment_name</code>-lambda S3 bucket<ol>
 <li>After setting up Cognito for the first time, anytime you make changes to this file you will need to:<ol>
 <li>Change the name of the zip file<ol>
 <li><strong>Do not change the name of the lambda_handler.py file it contains</strong></li>
@@ -1260,13 +1248,13 @@ Images can be used by multiple profiles</strong></p>
 <li>Click the "Create stack" button and select "With new resources (standard)"<ol>
 <li>Page 1 : <strong>Create stack</strong><ol>
 <li>Under "Specify template", check "Upload a template file"</li>
-<li>Use the file chooser to select <strong>cf-cognito.py</strong> from your local branch of the <deployment_name>-cluster repo </li>
+<li>Use the file chooser to select <strong>cf-cognito.py</strong> from your local branch of the <code>deployment_name</code>-cluster repo </li>
 <li>Click the "Next" button</li>
 </ol>
 </li>
 <li>Page 2: <strong>Specify stack details</strong><ol>
 <li>Stack name:<ol>
-<li><deployment_name>-auth<ol>
+<li><code>deployment_name</code>-auth<ol>
 <li>dashes (-) are the only allowed special characters</li>
 <li>lowercase only</li>
 </ol>
@@ -1295,11 +1283,11 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>CostTagValue<ol>
-<li><deployment_name></li>
+<li><code>deployment_name</code></li>
 </ol>
 </li>
 <li>EmailLambdaBucketName<ol>
-<li><deployment_name>-lambda</li>
+<li><code>deployment_name</code>-lambda</li>
 </ol>
 </li>
 <li>EmailLambdaKeyName<ol>
@@ -1316,7 +1304,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>Value:<ol>
-<li><deployment_name></li>
+<li><code>deployment_name</code></li>
 </ol>
 </li>
 </ol>
@@ -1324,7 +1312,7 @@ Images can be used by multiple profiles</strong></p>
 <li>Click the "Next" button</li>
 </ol>
 </li>
-<li>Page 4: <strong>Review <deployment_name>-auth</strong><ol>
+<li>Page 4: <strong>Review <code>deployment_name</code>-auth</strong><ol>
 <li>Review and confirm correctness</li>
 <li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
 <li>Click the "Create Stack Button"</li>
@@ -1356,25 +1344,25 @@ Images can be used by multiple profiles</strong></p>
 <li>Click the "Create stack" button and select "With new resources (standard)"<ol>
 <li>Page 1 : <strong>Create stack</strong><ol>
 <li>Under "Specify template", check "Upload a template file"</li>
-<li>Use the file chooser to select <strong>cf-container.py</strong> from your local branch of the <deployment_name>-container repo </li>
+<li>Use the file chooser to select <strong>cf-container.py</strong> from your local branch of the <code>deployment_name</code>-container repo </li>
 <li>Click the "Next" button</li>
 </ol>
 </li>
 <li>Page 2: <strong>Specify stack details</strong><ol>
 <li>Stack name:<ol>
-<li><deployment_name>-container</li>
+<li><code>deployment_name</code>-container</li>
 </ol>
 </li>
 <li>CodeCommitSourceBranch:<ol>
-<li>The name of the production branch of the <deployment_name>-container CodeCommit repo</li>
+<li>The name of the production branch of the <code>deployment_name</code>-container CodeCommit repo</li>
 </ol>
 </li>
 <li>CodeCommitSourceRepo:<ol>
-<li><deployment_name>-container</li>
+<li><code>deployment_name</code>-container</li>
 </ol>
 </li>
 <li>CostTagValue<ol>
-<li><deployment_name></li>
+<li><code>deployment_name</code></li>
 </ol>
 </li>
 </ol>
@@ -1382,13 +1370,13 @@ Images can be used by multiple profiles</strong></p>
 <li>Page 3: <strong>Configure stack options</strong><ol>
 <li>Tags:<ol>
 <li>Key: Cost allocation tag</li>
-<li>Value: <deployment_name></li>
+<li>Value: <code>deployment_name</code></li>
 </ol>
 </li>
 <li>Click the "Next" button</li>
 </ol>
 </li>
-<li>Page 4: <strong>Review <deployment_name>-auth</strong><ol>
+<li>Page 4: <strong>Review <code>deployment_name</code>-auth</strong><ol>
 <li>Review and confirm correctness</li>
 <li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
 <li>Click the "Create Stack Button"</li>
@@ -1411,12 +1399,12 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>When stack creation is complete, open CodePipeline in the AWS console<ol>
-<li>Open the <deployment_name>-container-Container-Pipeline pipeline and monitor it as it runs<ol>
+<li>Open the <code>deployment_name</code>-container-Container-Pipeline pipeline and monitor it as it runs<ol>
 <li>Click the "details" link under each stage action for a closer inspection</li>
 <li>If part of the pipeline fails<ol>
 <li>Identify the issue from the "details" output</li>
 <li>Correct the code</li>
-<li>Update the <deployment_name>-container repo</li>
+<li>Update the <code>deployment_name</code>-container repo</li>
 <li>Go to the pipeline<ol>
 <li>Click the "Release change" button</li>
 </ol>
@@ -1431,20 +1419,20 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 <h2 id="build-the-cluster-cloudformation-stack">Build the cluster CloudFormation stack</h2>
-<p><strong>This CloudFormation stack dynamically creates a second CloudFormation stack. You will end up with a <deployment_name> stack and
- a <deployment_name>-cluster stack.</strong></p>
+<p><strong>This CloudFormation stack dynamically creates a second CloudFormation stack. You will end up with a <code>deployment_name</code> stack and
+ a <code>deployment_name</code>-cluster stack.</strong></p>
 <ol>
 <li>Open CloudFormation in the AWS console<ol>
 <li>Page 1 : <strong>Create stack</strong><ol>
 <li>Click the "Create stack" button and select "With new resources (standard)"</li>
 <li>Under "Specify template", check "Upload a template file"</li>
-<li>Use the file chooser to select <strong>cf-pipeline.py</strong> from your local branch of the <deployment_name> repo </li>
+<li>Use the file chooser to select <strong>cf-pipeline.py</strong> from your local branch of the <code>deployment_name</code> repo </li>
 <li>Click the "Next" button</li>
 </ol>
 </li>
 <li>Page 2: <strong>Specify stack details</strong><ol>
 <li>Stack name:<ol>
-<li><deployment_name>-cluster</li>
+<li><code>deployment_name</code>-cluster</li>
 </ol>
 </li>
 <li>AdminUserName:<ol>
@@ -1462,7 +1450,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>CodeCommitRepoName:<ol>
-<li>Name of the CodeCommit repo holding your <deployment_name>-cluster code</li>
+<li>Name of the CodeCommit repo holding your <code>deployment_name</code>-cluster code</li>
 </ol>
 </li>
 <li>CodeCommitBranchName:<ol>
@@ -1470,7 +1458,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>ContainerNamespace:<ol>
-<li><deployment_name>-container</li>
+<li><code>deployment_name</code>-container</li>
 </ol>
 </li>
 <li>CostTagKey:<ol>
@@ -1478,7 +1466,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>CostTagValue:<ol>
-<li><deployment_name></li>
+<li><code>deployment_name</code></li>
 </ol>
 </li>
 <li>ICALUrl:<ol>
@@ -1486,7 +1474,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>DeploymentURL:<ol>
-<li>Your custom URL (should match DeploymentURL parameter in <deployment_name>-auth stack)<ol>
+<li>Your custom URL (should match DeploymentURL parameter in <code>deployment_name</code>-auth stack)<ol>
 <li>If left blank, the default load balancer will be used</li>
 <li>Can be updated later           </li>
 </ol>
@@ -1494,7 +1482,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>OAuthPoolName:<ol>
-<li><deployment_name>-auth </li>
+<li><code>deployment_name</code>-auth </li>
 </ol>
 </li>
 </ol>
@@ -1502,13 +1490,13 @@ Images can be used by multiple profiles</strong></p>
 <li>Page 3: <strong>Configure stack options</strong><ol>
 <li>Tags:<ol>
 <li>Key: Cost allocation tag</li>
-<li>Value: <deployment_name></li>
+<li>Value: <code>deployment_name</code></li>
 </ol>
 </li>
 <li>Click the "Next" button</li>
 </ol>
 </li>
-<li>Page 4: <strong>Review <deployment_name>-auth</strong><ol>
+<li>Page 4: <strong>Review <code>deployment_name</code>-auth</strong><ol>
 <li>Review and confirm correctness</li>
 <li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
 <li>Click the "Create Stack" button</li>
@@ -1517,7 +1505,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>Open CodePipeline in the AWS console<ol>
-<li>Open the <deployment_name>-Pipeline pipeline and monitor it as it runs<ol>
+<li>Open the <code>deployment_name</code>-Pipeline pipeline and monitor it as it runs<ol>
 <li>Click the "details" link under each stage action for a closer inspection</li>
 </ol>
 </li>
@@ -1529,12 +1517,12 @@ Images can be used by multiple profiles</strong></p>
 <li>Update the DeploymentURL parameters in 2 CloudFormation stacks with load balancer URL or your custom URL<ol>
 <li>If you already entered a custom URL when building the stacks, skip this step</li>
 <li>If using the load balancer URL<ol>
-<li>Find it in the 'Outputs' tab of the CloudFormation console for the <deployment_name>-cluster CloudFormation stack</li>
+<li>Find it in the 'Outputs' tab of the CloudFormation console for the <code>deployment_name</code>-cluster CloudFormation stack</li>
 <li>Note: you will have to prepend "https://" to it</li>
 </ol>
 </li>
-<li>Update the <deployment_name> stack<ol>
-<li>Navigate to the <deployment_name> stack CloudFormation console</li>
+<li>Update the <code>deployment_name</code> stack<ol>
+<li>Navigate to the <code>deployment_name</code> stack CloudFormation console</li>
 <li>Click the 'Update' button<ol>
 <li>Page 1:<ol>
 <li>Leave 'Use current template' selected</li>
@@ -1558,7 +1546,7 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 </li>
-<li>Repeat the above process for the <deployment_name>-auth stack</li>
+<li>Repeat the above process for the <code>deployment_name</code>-auth stack</li>
 </ol>
 </li>
 </ol>
@@ -1566,12 +1554,12 @@ Images can be used by multiple profiles</strong></p>
 <li>Add the cost allocation tag to the EKS cluster<ol>
 <li>Navigate to the AWS EKS console</li>
 <li>click the "Clusters" link in the sidebar menu<ol>
-<li>Click on <deployment_name>-cluster<ol>
+<li>Click on <code>deployment_name</code>-cluster<ol>
 <li>Click the "Tags" tab<ol>
 <li>Click the "Manage tags" button<ol>
 <li>Click the "Add tag" button<ol>
 <li>Key: Cost allocation tag</li>
-<li>Value: <deployment_name></li>
+<li>Value: <code>deployment_name</code></li>
 </ol>
 </li>
 </ol>
@@ -1587,7 +1575,7 @@ Images can be used by multiple profiles</strong></p>
 <li>Wrap things up in Cognito<ol>
 <li>Navigate to the AWS Cognito console</li>
 <li>Click the "Manage User Pools" button<ol>
-<li>Click the "<deployment_name>-auth" user pool button</li>
+<li>Click the "<code>deployment_name</code>-auth" user pool button</li>
 <li>Add the cost allocation tag to the Cognito user pool<ol>
 <li>Click the "Tags" sidebar menu link<ol>
 <li>Click the "Add tag" link</li>
@@ -1596,7 +1584,7 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>Tag Value:<ol>
-<li><deployment_name></li>
+<li><code>deployment_name</code></li>
 </ol>
 </li>
 <li>Click the "Save changes" button</li>
@@ -1611,23 +1599,23 @@ Images can be used by multiple profiles</strong></p>
 <li>Click the "Save changes" button</li>
 <li>Click the "Triggers" sidebar menu link<ol>
 <li>Pre sign-up:<ol>
-<li>select the <deployment_name>-auth-LogFunction-<random hash> lambda</li>
+<li>select the <code>deployment_name</code>-auth-LogFunction-<random hash> lambda</li>
 </ol>
 </li>
 <li>Pre authentication:<ol>
-<li>select the <deployment_name>-auth-PreAuthFunction-<random hash> lambda</li>
+<li>select the <code>deployment_name</code>-auth-PreAuthFunction-<random hash> lambda</li>
 </ol>
 </li>
 <li>Post authentication:<ol>
-<li>select the <deployment_name>-auth-LogFunction-<random hash> lambda</li>
+<li>select the <code>deployment_name</code>-auth-LogFunction-<random hash> lambda</li>
 </ol>
 </li>
 <li>Post confirmation:<ol>
-<li>select the <deployment_name>-auth-PostEmailVerificationFun-<random hash> lambda</li>
+<li>select the <code>deployment_name</code>-auth-PostEmailVerificationFun-<random hash> lambda</li>
 </ol>
 </li>
 <li>Pre Token Generator:<ol>
-<li>select the <deployment_name>-auth-LogFunction-<random hash> lambda</li>
+<li>select the <code>deployment_name</code>-auth-LogFunction-<random hash> lambda</li>
 </ol>
 </li>
 <li>Leave the remaining triggers set to "none"</li>
@@ -1642,7 +1630,7 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 </li>
-<li>Update image tags for every profile in helm_config.yml (<deployment_name>-cluster repository)<ol>
+<li>Update image tags for every profile in helm_config.yml (<code>deployment_name</code>-cluster repository)<ol>
 <li>hub:image:tag<ol>
 <li>'latest' will only work for the hub:image:tag on the first build<ol>
 <li>It is safest to never use the "latest" tag</li>
@@ -1665,7 +1653,7 @@ Images can be used by multiple profiles</strong></p>
 <li>Repeat previous step for each profile</li>
 <li>Add, commit, and push changes to CodeCommit</li>
 <li>Navigate to the AWS CodePipeline console<ol>
-<li>Click the <deployment_name>-Pipeline pipeline<ol>
+<li>Click the <code>deployment_name</code>-Pipeline pipeline<ol>
 <li>Click the "Release change" button<ol>
 <li>Click the "Release" button</li>
 <li>Monitor the pipeline as it builds</li>
@@ -1680,7 +1668,7 @@ Images can be used by multiple profiles</strong></p>
 <li>Prime the Auto Scaling Group for each profile<ol>
 <li>Navigate to the AWS EC2 console<ol>
 <li>Select the "Auto Scaling Groups" sidebar link<ol>
-<li>Select <deployment_name>-cluster-AutoScalingGroup<profile_name>-<random_hash><ol>
+<li>Select <code>deployment_name</code>-cluster-AutoScalingGroup<profile_name>-<random_hash><ol>
 <li>Group details:<ol>
 <li>Click the "Edit" button<ol>
 <li>Desired capacity:<ol>
@@ -1733,11 +1721,11 @@ Images can be used by multiple profiles</strong></p>
         1. Click the "Sign in" button
             1. Click the "Sign up" link
             1. Username:
-                1. The name used for the AdminUserName parameter of the <deployment_name> CloudFormation stack
+                1. The name used for the AdminUserName parameter of the <code>deployment_name</code> CloudFormation stack
             1. Name:
                 1. Your name
             1. Email:
-                1. Enter the email address used for the AdminEmailAddress parameter in the <deployment_name>-auth CloudFormation stack
+                1. Enter the email address used for the AdminEmailAddress parameter in the <code>deployment_name</code>-auth CloudFormation stack
             1. Password:
                 1. A password
             1. Click the "Sign up" button
@@ -1775,10 +1763,10 @@ Images can be used by multiple profiles</strong></p>
             1. Confirm that notifications appear
         1. Repeat for each profile
 1. Configure your local K8s config so you can manage your EKS cluster with kubectl
-    1. Add your AWS user to the trust relationship of the <deployment_name>-cluster-access IAM role
+    1. Add your AWS user to the trust relationship of the <code>deployment_name</code>-cluster-access IAM role
         1. Navigate to the AWS IAM console
             1. Click the "Roles" link from the sidebar menu
-                1. Select the <deployment_name>-cluster-access IAM role
+                1. Select the <code>deployment_name</code>-cluster-access IAM role
 1. Click the "Trust relationships" tab
 1. Click the "Edit trust relationship" button
     1. Add your AWS user ARN
@@ -1799,13 +1787,13 @@ Images can be used by multiple profiles</strong></p>
              ]
             }</code>    <br />
     1. Click the "Update Trust Policy" button        <br />
-    1. Add an AWS <deployment_name>-cluster-access profile on your local machine
+    1. Add an AWS <code>deployment_name</code>-cluster-access profile on your local machine
         1. Example profile:
             1. <code>yaml
-                [profile &lt;deployment_name&gt;-cluster-access]
+                [profile `deployment_name`-cluster-access]
                 source_profile = your_source_profile
                 region = your_region
-                role_arn = arn:aws:iam::&lt;AWS_account_id&gt;:role/&lt;deployment_name&gt;-cluster-access</code>
+                role_arn = arn:aws:iam::&lt;AWS_account_id&gt;:role/`deployment_name`-cluster-access</code>
     1. Run the helps/get_eks_kubeconfig.sh script in the opensarlab-cluster repo
         1. Note: you will use this a lot and it may be helpful to create an alias in ~/.bash_aliases
     1. Use kubectl</p>
@@ -1822,17 +1810,17 @@ Images can be used by multiple profiles</strong></p>
 <h2 id="destroy-deployments">Destroy Deployments</h2>
 <p>At the end of a deployment's lifecycle, it is important to destroy it properly so no resources are left in place, 
 costing you money.</p>
-<p>Deleting the <deployment_name>-container, <deployment_name>-auth, <deployment_name>-cluster, and <deployment_name> 
+<p>Deleting the <code>deployment_name</code>-container, <code>deployment_name</code>-auth, <code>deployment_name</code>-cluster, and <code>deployment_name</code> 
 CloudFormation stacks will kill the deployment and remove its resources but there are a couple of prerequisite steps 
 to prepare for proper deletion.</p>
 <p>Note: In the steps below, <strong>do not manually delete any S3 buckets after emptying them.</strong> If you delete the buckets, the
 CloudFormation stack deletions associated with those buckets will fail and you will have to recreate the empty buckets 
 to proceed. Empty them and let CloudFormation delete them for you.</p>
 <ol>
-<li>Delete the <deployment_name>-container CloudFormation stack<ol>
-<li>Empty the codepipeline-<region>-<deployment_name>-container-container S3 bucket<ol>
+<li>Delete the <code>deployment_name</code>-container CloudFormation stack<ol>
+<li>Empty the codepipeline-<region>-<code>deployment_name</code>-container-container S3 bucket<ol>
 <li>Navigate to the AWS S3 console<ol>
-<li>Check the box next to the codepipeline-<region>-<deployment_name>-container-container S3 bucket</li>
+<li>Check the box next to the codepipeline-<region>-<code>deployment_name</code>-container-container S3 bucket</li>
 <li>Click the "Empty" button<ol>
 <li>Confirm the deletion of bucket contents by typing "permanently delete" in the provided field</li>
 <li>Click the "Empty" button</li>
@@ -1844,7 +1832,7 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </li>
 <li>Delete ECR repos for each profile<ol>
 <li>Navigate to the AWS Elastic Container Registry</li>
-<li>Click the box next to the <deployment_name>/<profile_namespace> repository</li>
+<li>Click the box next to the <code>deployment_name</code>/<profile_namespace> repository</li>
 <li>Click the "Delete" button<ol>
 <li>Confirm the deletion by typing "delete" in the provided field</li>
 <li>Click the "Delete" button</li>
@@ -1853,14 +1841,14 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 <li>Repeat for each profile</li>
 </ol>
 </li>
-<li>Delete the <deployment_name>-container CloudFormation stack<ol>
+<li>Delete the <code>deployment_name</code>-container CloudFormation stack<ol>
 <li>Navigate to the AWS CloudFormation console<ol>
-<li>Click the box next to the <deployment_name>-container stack</li>
+<li>Click the box next to the <code>deployment_name</code>-container stack</li>
 <li>Click the "Delete" button<ol>
 <li>Click the "Delete stack" button</li>
 </ol>
 </li>
-<li>Click the <deployment_name>-container stack name<ol>
+<li>Click the <code>deployment_name</code>-container stack name<ol>
 <li>Click the "Events" tab</li>
 <li>Monitor the stack deletion progress<ol>
 <li>Click the refresh button periodically since the console doesn't update events automatically</li>
@@ -1874,12 +1862,12 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </li>
 </ol>
 </li>
-<li>Delete the <deployment_name>-auth CloudFormation stack<ol>
+<li>Delete the <code>deployment_name</code>-auth CloudFormation stack<ol>
 <li>Navigate to the AWS CloudFormation console<ol>
-<li>Click the box next to the <deployment_name>-auth stack</li>
+<li>Click the box next to the <code>deployment_name</code>-auth stack</li>
 <li>Click the "Delete" button
         1. Click the "Delete stack" button</li>
-<li>Click the <deployment_name>-auth stack name<ol>
+<li>Click the <code>deployment_name</code>-auth stack name<ol>
 <li>Click the "Events" tab</li>
 <li>Monitor the stack deletion progress<ol>
 <li>Click the refresh button periodically since the console doesn't update events automatically</li>
@@ -1891,12 +1879,12 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </li>
 </ol>
 </li>
-<li>Delete the <deployment_name>-cluster CloudFormation stack<ol>
+<li>Delete the <code>deployment_name</code>-cluster CloudFormation stack<ol>
 <li>Navigate to the AWS CloudFormation console<ol>
-<li>Click the box next to the <deployment_name>-cluster stack</li>
+<li>Click the box next to the <code>deployment_name</code>-cluster stack</li>
 <li>Click the "Delete" button
         1. Click the "Delete stack" button</li>
-<li>Click the <deployment_name>-cluster stack name<ol>
+<li>Click the <code>deployment_name</code>-cluster stack name<ol>
 <li>Click the "Events" tab</li>
 <li>Monitor the stack deletion progress<ol>
 <li>Click the refresh button periodically since the console doesn't update events automatically</li>
@@ -1908,21 +1896,21 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </li>
 </ol>
 </li>
-<li>Delete the <deployment_name> CloudFormation stack<ol>
+<li>Delete the <code>deployment_name</code> CloudFormation stack<ol>
 <li>Delete hub and notifications ECR repos<ol>
 <li>Navigate to the AWS Elastic Container Registry</li>
-<li>Click the box next to the <deployment_name>/hub repository</li>
+<li>Click the box next to the <code>deployment_name</code>/hub repository</li>
 <li>Click the "Delete" button<ol>
 <li>Confirm the deletion by typing "delete" in the provided field</li>
 <li>Click the "Delete" button </li>
 </ol>
 </li>
-<li>Repeat the above steps for the <deployment_name>/notifications repository</li>
+<li>Repeat the above steps for the <code>deployment_name</code>/notifications repository</li>
 </ol>
 </li>
-<li>Empty the codepipeline-<region>-<deployment_name> S3 bucket<ol>
+<li>Empty the codepipeline-<region>-<code>deployment_name</code> S3 bucket<ol>
 <li>Navigate to the AWS S3 console<ol>
-<li>Check the box next to the codepipeline-<region>-<deployment_name> S3 bucket</li>
+<li>Check the box next to the codepipeline-<region>-<code>deployment_name</code> S3 bucket</li>
 <li>Click the "Empty" button<ol>
 <li>Confirm the deletion of bucket contents by typing "permanently delete" in the provided field</li>
 <li>Click the "Empty" button</li>
@@ -1932,12 +1920,12 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </li>
 </ol>
 </li>
-<li>Delete the <deployment_name> CloudFormation stack<ol>
+<li>Delete the <code>deployment_name</code> CloudFormation stack<ol>
 <li>Navigate to the AWS CloudFormation console<ol>
-<li>Click the box next to the <deployment_name> stack</li>
+<li>Click the box next to the <code>deployment_name</code> stack</li>
 <li>Click the "Delete" button
         1. Click the "Delete stack" button</li>
-<li>Click the <deployment_name> stack name<ol>
+<li>Click the <code>deployment_name</code> stack name<ol>
 <li>Click the "Events" tab</li>
 <li>Monitor the stack deletion progress<ol>
 <li>Click the refresh button periodically since the console doesn't update events automatically</li>
@@ -1954,7 +1942,7 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 <li>Delete EBS snapshots<ol>
 <li>Navigate to the AWS EC2 console<ol>
 <li>Click the "Snapshots" link in the sidebar menu<ol>
-<li>Filter by osl-stackname: <deployment_name><ol>
+<li>Filter by osl-stackname: <code>deployment_name</code><ol>
 <li><strong>Double check that you filtered for the correct deployment!</strong></li>
 </ol>
 </li>
@@ -1970,7 +1958,7 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 <li>Delete EBS volumes<ol>
 <li>Navigate to the AWS EC2 console<ol>
 <li>Click the "Volumes" link in the sidebar menu<ol>
-<li>Filter by osl-stackname: <deployment_name><ol>
+<li>Filter by osl-stackname: <code>deployment_name</code><ol>
 <li><strong>Double check that you filtered for the correct deployment!</strong></li>
 </ol>
 </li>
@@ -1983,20 +1971,20 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </li>
 </ol>
 </li>
-<li>(Optional) Delete the <deployment_name>-cluster and <deployment_name>-container CodeCommit repositories<ol>
+<li>(Optional) Delete the <code>deployment_name</code>-cluster and <code>deployment_name</code>-container CodeCommit repositories<ol>
 <li>CodeCommit repos are cheap<ol>
 <li>If you think you may re-deploy the same deployment, you may want to ease future work by leaving these repos in place</li>
 <li>You could also download a zip of your repos, store them in S3, and then delete them</li>
 </ol>
 </li>
 <li>Navigate to the AWS CodeCommit console<ol>
-<li>Check the box next to the <deployment_name>-container repo</li>
+<li>Check the box next to the <code>deployment_name</code>-container repo</li>
 <li>Click the "Delete repository" button<ol>
 <li>Confirm the deletion by typing "delete" in the provided field     </li>
 <li>Click the "Delete" button</li>
 </ol>
 </li>
-<li>Repeat the above steps for the <deployment_name>-cluster repo</li>
+<li>Repeat the above steps for the <code>deployment_name</code>-cluster repo</li>
 </ol>
 </li>
 </ol>
@@ -2011,7 +1999,7 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 </ol>
 </li>
 <li>Value:<ol>
-<li><deployment_name></li>
+<li><code>deployment_name</code></li>
 </ol>
 </li>
 </ol>
@@ -2091,13 +2079,13 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 
         <!-- Link to next page -->
         
-          <a href="../../release_notes/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../troubleshooting/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Release notes
+                Troubelshooting Guide
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

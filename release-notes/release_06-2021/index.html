@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/release-notes/release_06-2021/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.8">
     
     
       
@@ -379,7 +379,7 @@ feedback.init({showIcon: false});
   
     <li class="md-nav__item">
       <a href="../../user/" class="md-nav__link">
-        User
+        Welcome to the OpenSARlab User Guide
       </a>
     </li>
   
@@ -426,7 +426,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/OpenSARlab_enviornment.md" class="md-nav__link">
+      <a href="../../user-guides/OpenSARlab_environment/" class="md-nav__link">
         OpenSARlab Account Details
       </a>
     </li>
@@ -474,7 +474,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/jupyer_notebook_extensions.md" class="md-nav__link">
+      <a href="../../user-guides/jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
     </li>
@@ -565,18 +565,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../dev/" class="md-nav__link">
-        Dev
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../assets/system_diagrams/OpenSARlab_system_diagram_June_2021.png" class="md-nav__link">
         System Diagram
       </a>
@@ -591,6 +579,18 @@ feedback.init({showIcon: false});
     <li class="md-nav__item">
       <a href="../../dev-guides/deploy_OpenSARlab/" class="md-nav__link">
         Deploy OpenSARlab to AWS
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-guides/troubleshooting/" class="md-nav__link">
+        Troubelshooting Guide
       </a>
     </li>
   
@@ -628,18 +628,6 @@ feedback.init({showIcon: false});
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../release_notes/" class="md-nav__link">
-        Release notes
-      </a>
-    </li>
-  
-
           
             
   
@@ -1012,18 +1000,18 @@ feedback.init({showIcon: false});
 <li>unselected environments may always be added later</li>
 </ul>
 </li>
-<li>Current users must build their own environments using the provided <a href="../../conda_environments/Create_OSL_Conda_Environments.ipynb">notebook</a> and accompanying environment.yml files</li>
+<li>Current users must build their own environments using the provided <a href="https://github.com/ASFOpenSARlab/opensarlab-envs/blob/main/Create_OSL_Conda_Environments.ipynb">notebook</a> and accompanying environment.yml files</li>
 <li>Python kernels from the appropriate environments have been pre-selected for all notebooks and saved in their metadata<ul>
 <li>if the needed environment doesn't yet exist, users will be prompted to change the kernel to one that does</li>
 <li>Note that an incorrect environment will likely be missing needed software and be incapable of running a notebook for which it was not intended<ul>
-<li>Instead, create the needed environment using this <a href="../../conda_environments/Create_OSL_Conda_Environments.ipynb">notebook</a></li>
+<li>Instead, create the needed environment using this <a href="https://github.com/ASFOpenSARlab/opensarlab-envs/blob/main/Create_OSL_Conda_Environments.ipynb">notebook</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Code has been added to each notebook to check that it is running in the correct environment<ul>
 <li>Warnings explain how to change to the correct environment if it has been created but the notebook isn't using it</li>
-<li>Warnings direct users to a <a href="../../conda_environments/Create_OSL_Conda_Environments.ipynb">notebook</a> to create the environment if it does not yet exist</li>
+<li>Warnings direct users to a <a href="https://github.com/ASFOpenSARlab/opensarlab-envs/blob/main/Create_OSL_Conda_Environments.ipynb">notebook</a> to create the environment if it does not yet exist</li>
 </ul>
 </li>
 <li>There is also a minimal environment called "scratch" that is intended for user adaptation and experimentation<ul>
@@ -1034,7 +1022,7 @@ feedback.init({showIcon: false});
 <h3 id="what-will-happen-if-i-dont-create-any-new-environments">What will happen if I don't create any new environments?</h3>
 <p>You will encounter environment warnings in the notebooks. You will not have access to the software needed to run the notebooks, which will trigger errors (ModuleNotFoundError).</p>
 <h3 id="i-dont-want-to-wait-for-the-notebooks-to-yell-at-me-and-give-me-environment-warnings-how-can-i-create-the-environments-id-like-right-now">I don't want to wait for the notebooks to yell at me and give me environment warnings. How can I create the environments I'd like right now?</h3>
-<p>Good choice! Head over to <a href="../../conda_environments/Create_OSL_Conda_Environments.ipynb">Create_OSL_Conda_Environments.ipynb</a> and run the notebook. You will be prompted to select an environment from a list of options. Rerun the notebook for every environment you wish to add.</p>
+<p>Good choice! Head over to <a href="https://github.com/ASFOpenSARlab/opensarlab-envs/blob/main/Create_OSL_Conda_Environments.ipynb">Create_OSL_Conda_Environments.ipynb</a> and run the notebook. You will be prompted to select an environment from a list of options. Rerun the notebook for every environment you wish to add.</p>
 <h2 id="nbgitpuller-patch">nbgitpuller Patch</h2>
 <h3 id="what-is-nbgitpuller">What is nbgitpuller?</h3>
 <p><a href="https://github.com/jupyterhub/nbgitpuller">nbgitpuller</a> performs automatic merging of git repositories in a class-like setting. It handles merging in situations where instructor provided files may be edited both by students and/or the instructor. Its goal is to pull in an instructor's changes while preserving any edits a student has made. Where a conflict exists, it saves the student altered file with a timestamp appended to the filename and pulls in the instructor update.</p>
@@ -1099,7 +1087,7 @@ feedback.init({showIcon: false});
 
         <!-- Link to previous page -->
         
-          <a href="../../release_notes/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../dev-guides/troubleshooting/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1108,7 +1096,7 @@ feedback.init({showIcon: false});
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Release notes
+                Troubelshooting Guide
               </div>
             </div>
           </a>
