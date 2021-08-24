@@ -407,18 +407,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_intro/" class="md-nav__link">
-        Jupyter Notebook Intro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
@@ -431,80 +419,8 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
-        Best Practices for Writing Notebooks
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jupyter_magic/" class="md-nav__link">
-        Jupyter Magic Commands
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenSARlab_environment/" class="md-nav__link">
-        OpenSARlab Account Details
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git_in_OpenSARlab/" class="md-nav__link">
-        Git in OpenSARlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
-        OpenSARlab Terminal
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
-        OpenSARlab Servers and Kernels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jupyter_notebook_extensions/" class="md-nav__link">
-        Jupyter Notebook Extensions
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environments
       </a>
     </li>
   
@@ -619,8 +535,80 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
-        Conda Environments
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter_magic/" class="md-nav__link">
+        Jupyter Magic Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_environment/" class="md-nav__link">
+        OpenSARlab Account Details
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git_in_OpenSARlab/" class="md-nav__link">
+        Git in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter_notebook_extensions/" class="md-nav__link">
+        Jupyter Notebook Extensions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+        Best Practices for Writing Notebooks
       </a>
     </li>
   
@@ -857,40 +845,39 @@ feedback.init({showIcon: false});
 <h2 id="pip">pip</h2>
 <h3 id="you-can-install-pip-packages-to-your-homejovyanlocallibpython37site-packages-directory">You can install pip packages to your <code>/home/jovyan/.local/lib/python3.7/site-packages</code> directory</h3>
 <ol>
-<li>Open a terminal<ol>
-<li><code>python -m pip install --user &lt;package_name&gt;</code></li>
+<li>Open a terminal and use the following command:</li>
 </ol>
-</li>
-</ol>
+<pre><code class="language-bash">python -m pip install --user &lt;package_name&gt;
+</code></pre>
 <h3 id="to-install-a-pip-package-inside-of-a-conda-environment">To install a pip package inside of a conda environment</h3>
 <ol>
-<li>Open a terminal<ol>
-<li><code>conda activate &lt;environment_name&gt;
-    python -m pip install --user &lt;package_name&gt;</code>   </li>
+<li>Open a terminal and use the following command:</li>
 </ol>
-</li>
-</ol>
+<pre><code class="language-bash">conda activate &lt;environment_name&gt;
+python -m pip install --user &lt;package_name&gt;
+</code></pre>
+<hr />
 <h2 id="apt-and-apt-get">apt and apt-get</h2>
-<p>At this time, users cannot install software in OpenSARlab using apt or apt-get.</p>
+<p>At this time, users cannot install software in OpenSARlab using <code>apt</code> or <code>apt-get</code>.</p>
+<hr />
 <h2 id="conda">conda</h2>
-<p>Users can install additional software with conda in OpenSARlab, but it will not persist after the sever shuts down. It will need to be reinstalled during subsequent OpenSARlab sessions. </p>
+<p>Users can install additional software with conda in OpenSARlab. 
+Packages installed in the <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-envs">base conda environment</a> will not persist after the server shuts down. They will need to be reinstalled during subsequent OpenSARlab sessions. However, changes to non-base environments will persist. Therefore, it is recommended to install new packages in your non-base environments instead of in base. </p>
 <h3 id="install-conda-packages-from-within-a-notebook-running-in-an-environment">Install conda packages from within a notebook running in an environment</h3>
 <ol>
-<li>Edit a notebook code cell<ol>
-<li><code>%conda install &lt;package_name&gt;</code></li>
-</ol>
+<li>Edit a notebook code cell<ul>
+<li>Then use the following command: <code>%conda install &lt;package_name&gt;</code></li>
+</ul>
 </li>
 <li>Run the code cell</li>
 </ol>
 <h3 id="install-conda-packages-from-the-terminal">Install conda packages from the terminal</h3>
 <ol>
-<li>Open a terminal<ol>
-<li><code>conda activate &lt;environment_name&gt;
-   conda install &lt;package_name&gt;</code></li>
+<li>Open a terminal and use following command:</li>
 </ol>
-</li>
-<li>conda install package_name</li>
-</ol>
+<pre><code class="language-bash">conda activate &lt;environment_name&gt;
+conda install &lt;package_name&gt;
+</code></pre>
                 
               
               
@@ -940,7 +927,7 @@ feedback.init({showIcon: false});
 
         <!-- Link to previous page -->
         
-          <a href="../jupyter_notebook_extensions/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../conda_environments/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -949,7 +936,7 @@ feedback.init({showIcon: false});
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Jupyter Notebook Extensions
+                Conda Environments
               </div>
             </div>
           </a>
@@ -957,13 +944,13 @@ feedback.init({showIcon: false});
 
         <!-- Link to next page -->
         
-          <a href="../conda_environments/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../restarting_server_and_kernel/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Conda Environments
+                OpenSARlab Servers and Kernels
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

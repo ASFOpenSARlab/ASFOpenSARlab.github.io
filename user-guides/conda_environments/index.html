@@ -407,18 +407,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_intro/" class="md-nav__link">
-        Jupyter Notebook Intro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
@@ -429,10 +417,43 @@ feedback.init({showIcon: false});
             
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Conda Environments
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
-        Best Practices for Writing Notebooks
+      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+        Installing Software in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
       </a>
     </li>
   
@@ -445,6 +466,18 @@ feedback.init({showIcon: false});
     <li class="md-nav__item">
       <a href="../jupyter_magic/" class="md-nav__link">
         Jupyter Magic Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
       </a>
     </li>
   
@@ -479,30 +512,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
-        OpenSARlab Terminal
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
-        OpenSARlab Servers and Kernels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
@@ -515,30 +524,9 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
-        Installing Software in OpenSARlab
+      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+        Best Practices for Writing Notebooks
       </a>
-    </li>
-  
-
-          
-            
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Conda Environments
-      </a>
-      
     </li>
   
 
@@ -702,8 +690,8 @@ feedback.init({showIcon: false});
                 
                 <p><a href="../../user/">Return to Table of Contents</a></p>
 <h1 id="creating-and-using-conda-environments-in-opensarlab">Creating and Using Conda Environments in OpenSARlab</h1>
-<p>OpenSARlab comes with a default base conda environment in which very little software is installed. Users must create conda environments in which to run Jupyter Notebooks or Python scripts.</p>
-<p>There are currently 5 conda environments provided by ASF to run the notebooks in our library:</p>
+<p>OpenSARlab comes with a default base conda environment with a minimum amount of software installed. Users must create their own conda environments to run Jupyter Notebooks or Python scripts.</p>
+<p>The following 5 conda environments are provided by ASF to run the notebooks in our library:</p>
 <ol>
 <li>rtc_analysis</li>
 <li>insar_analysis</li>
@@ -711,8 +699,11 @@ feedback.init({showIcon: false});
 <li>hydrosar</li>
 <li>machine learning</li>
 </ol>
-<p>These environments are not pre-built and must be created by each user. This is easily accomplished by running a notebook written for the purpose. The notebook can be found in your OpenSARlab account at the path: <code>/home/jovyan/conda_environments/Create_OSL_Conda_Environments.ipynb</code></p>
-<p>Users can also create their own custom conda environments in OpenSARlab, and use them to run Jupyter Notebooks. Use the notebook found at this path in your OpenSARlab account to walk through the process: <code>/home/jovyan/notebooks/OpenSARlab_supplements/Custom_Conda_Environments.ipynb</code> </p>
+<p>However, these environments are not pre-built and must be created by each user. We have provided a notebook to help install conda environments located at the following path: <code>/home/jovyan/conda_environments/Create_OSL_Conda_Environments.ipynb</code></p>
+<p>Users can also create their own custom conda environments in OpenSARlab and use them to run Jupyter Notebooks. Use the notebook located here to complete the process: <code>/home/jovyan/opensarlab_docs/OpenSARlab_supplements/Jupyter_Conda_Environments.ipynb</code></p>
+<!-- conda env create -f environment.yml
+
+cond create -n <env_name>  -->
                 
               
               
@@ -762,7 +753,7 @@ feedback.init({showIcon: false});
 
         <!-- Link to previous page -->
         
-          <a href="../installing_software_in_OpenSARlab/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../how_to_run_a_notebook/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -771,7 +762,7 @@ feedback.init({showIcon: false});
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Installing Software in OpenSARlab
+                Running Jupyter Notebook
               </div>
             </div>
           </a>
@@ -779,13 +770,13 @@ feedback.init({showIcon: false});
 
         <!-- Link to next page -->
         
-          <a href="../logging_out_and_server_shutdown/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../installing_software_in_OpenSARlab/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Logging Out and Server Shutdown
+                Installing Software in OpenSARlab
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

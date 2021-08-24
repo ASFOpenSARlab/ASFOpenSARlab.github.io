@@ -407,18 +407,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_intro/" class="md-nav__link">
-        Jupyter Notebook Intro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
@@ -431,8 +419,32 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
-        Best Practices for Writing Notebooks
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+        Installing Software in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
       </a>
     </li>
   
@@ -475,7 +487,7 @@ feedback.init({showIcon: false});
       
         <li class="md-nav__item">
   <a href="#ipython-shell-assignment-with" class="md-nav__link">
-    IPython Shell Assignment with "!"
+    IPython Shell Assignment with !
   </a>
   
 </li>
@@ -554,6 +566,18 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../OpenSARlab_environment/" class="md-nav__link">
         OpenSARlab Account Details
       </a>
@@ -578,30 +602,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
-        OpenSARlab Terminal
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
-        OpenSARlab Servers and Kernels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
@@ -614,20 +614,8 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
-        Installing Software in OpenSARlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
-        Conda Environments
+      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+        Best Practices for Writing Notebooks
       </a>
     </li>
   
@@ -787,7 +775,7 @@ feedback.init({showIcon: false});
       
         <li class="md-nav__item">
   <a href="#ipython-shell-assignment-with" class="md-nav__link">
-    IPython Shell Assignment with "!"
+    IPython Shell Assignment with !
   </a>
   
 </li>
@@ -868,34 +856,56 @@ feedback.init({showIcon: false});
                 
                 <p><a href="../../user/">Return to Table of Contents</a></p>
 <h1 id="jupyter-line-and-cell-magics-and-ipython-syntax">Jupyter Line and Cell Magics, and IPython Syntax</h1>
-<p>Jupyter Notebook magic commands provide shortcuts and functionality to the notebooks, above what can be done with straight Python code. An exhaustive list of magics can be found in the <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython docs</a>. </p>
-<p>While all magics are available to users, in OpenSARlab we tend to use a relatively small selection of them. These fall into two categories: line magics and cell magics. We also frequently use Ipython's shell assignment syntax.</p>
-<h2 id="ipython-shell-assignment-with">IPython Shell Assignment with "!"</h2>
-<p>In IPython syntax the exclamation mark allows users to run shell commands from inside a Jupyter Notebook code cell.
-Simply start a line of code with "!" and it will run the command in the shell. </p>
-<p>Example: <code>!pwd</code> will print the current working directory.</p>
-<h2 id="line-magics">Line Magics</h2>
-<p>Line magics start with a single "%" and effect only the line on which they are used. </p>
-<h3 id="matplotlib-inline">%matplotlib inline</h3>
-<p>Allows <strong>non-interactive</strong> matplotlib plots to be displayed in a notebook.</p>
-<h3 id="matplotlib-notebook">%matplotlib notebook</h3>
-<p>Allows <strong>interactive</strong> matplotlib plots to be displayed and interacted with inside of a notebook.</p>
-<h3 id="df">%df</h3>
-<p>This is a custom magic written for OpenSARlab. It uses the python function shutil.disk_usage() to check the state of storage on user volumes. </p>
+<p>Jupyter Notebook magic commands provide shortcuts and extra functionality to the notebooks in addition to what can be done with pure Python code. An exhaustive list of magic commands can be found in the <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">IPython docs</a>. </p>
+<p>While all magic commands are available to users, we tend to use a relatively small selection of them in OpenSARlab. </p>
+<p>Magic commands that are frequently used are following:</p>
 <ul>
-<li>"%df" returns a human readable string in GB. </li>
-<li>"%df --raw" returns a raw data object</li>
-<li>"%df --on" returns a string in GB after every subsequent code cell is run</li>
-<li>"%df --off" turns "%df --on" back off</li>
-<li>"%df -v" prints additional debugging text </li>
+<li>IPython's Shell Assignment Syntax</li>
+<li>Line Magics</li>
+<li>Cell Magics</li>
 </ul>
+<hr />
+<h2 id="ipython-shell-assignment-with">IPython Shell Assignment with <code>!</code></h2>
+<p>In IPython syntax, the exclamation mark (!) allows users to run shell commands from inside a Jupyter Notebook code cell.
+Simply start a line of code with <code>!</code> and it will run the command in the shell. </p>
+<p><em>Example:</em> <code>!pwd</code> will print the current working directory.</p>
+<hr />
+<h2 id="line-magics">Line Magics</h2>
+<p>Line magics start with a single <code>%</code> and effect only the line on which they are used. </p>
+<p>Following line magics are commonly used:</p>
+<h3 id="matplotlib-inline"><code>%matplotlib inline</code></h3>
+<ul>
+<li>Allows <strong>non-interactive</strong> <code>matplotlib plots</code> to be displayed in a notebook.</li>
+</ul>
+<h3 id="matplotlib-notebook"><code>%matplotlib notebook</code></h3>
+<ul>
+<li>Allows <strong>interactive</strong> <code>matplotlib plots</code> to be displayed and interacted with inside of a Jupyter Notebook. </li>
+</ul>
+<h3 id="df"><code>%df</code></h3>
+<ul>
+<li>
+<p>This is a custom magic written specifically for OpenSARlab. It uses the python function <code>shutil.disk_usage()</code> to check the state of storage on user's volumes. </p>
+<ul>
+<li><code>%df</code> returns a human readable string in GB. </li>
+<li><code>%df --raw</code> returns a raw data object</li>
+<li><code>%df --on</code> returns a string in GB after every subsequent code cell is run</li>
+<li><code>%df --off</code> turns <code>%df --on</code> back off</li>
+<li><code>%df -v</code> prints additional debugging text </li>
+</ul>
+</li>
+</ul>
+<hr />
 <h2 id="cell-magics">Cell Magics</h2>
-<p>Cell magics start with "%%" and effect the contents of an entire cell. </p>
-<h3 id="javascript-or-js">%%javascript or %%js</h3>
-<p>Runs a code cell of javascript code. </p>
-<p>Note: leave a blank line above the magic command at the top of the code cell.</p>
-<h3 id="capture">%%capture</h3>
-<p>Runs the cell but captures all output. We typically use this to suppress the display of a matplotlib plot we do not wish to show.</p>
+<p>Cell magics start with <code>%%</code> and effect the contents of an entire cell. </p>
+<h3 id="javascript-or-js"><code>%%javascript or %%js</code></h3>
+<ul>
+<li>Runs a JavaScript code cell. </li>
+</ul>
+<p><em>Note: leave a blank line above the magic command in the beginning of the code cell.</em></p>
+<h3 id="capture"><code>%%capture</code></h3>
+<ul>
+<li>Runs the cell but captures all output. We typically use this to suppress output of a <code>matplotlib plot</code> that the user does not wish to see. </li>
+</ul>
                 
               
               
@@ -945,7 +955,7 @@ Simply start a line of code with "!" and it will run the command in the shell. <
 
         <!-- Link to previous page -->
         
-          <a href="../class_notebooks_best_practices/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../restarting_server_and_kernel/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -954,7 +964,7 @@ Simply start a line of code with "!" and it will run the command in the shell. <
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Best Practices for Writing Notebooks
+                OpenSARlab Servers and Kernels
               </div>
             </div>
           </a>
@@ -962,13 +972,13 @@ Simply start a line of code with "!" and it will run the command in the shell. <
 
         <!-- Link to next page -->
         
-          <a href="../OpenSARlab_environment/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../OpenSARlab_terminal/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                OpenSARlab Account Details
+                OpenSARlab Terminal
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

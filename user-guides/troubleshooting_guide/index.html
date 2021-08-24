@@ -409,7 +409,7 @@ feedback.init({showIcon: false});
       
         <li class="md-nav__item">
   <a href="#i-am-receiving-a-no-space-left-on-device-error" class="md-nav__link">
-    I am receiving a "No space left on device" error.
+    I am receiving a No space left on device error.
   </a>
   
 </li>
@@ -452,6 +452,13 @@ feedback.init({showIcon: false});
         <li class="md-nav__item">
   <a href="#a-notebook-wont-load-a-new-browser-tab-opens-and-shows-the-jupyterhub-header-but-no-notebook-appears" class="md-nav__link">
     A notebook won't load. A new browser tab opens and shows the JupyterHub header, but no notebook appears.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-tried-to-run-a-notebook-that-downloads-products-from-hyp3-and-i-get-an-error" class="md-nav__link">
+    I tried to run a notebook that downloads products from HyP3 and I get an error
   </a>
   
 </li>
@@ -513,18 +520,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_intro/" class="md-nav__link">
-        Jupyter Notebook Intro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
@@ -537,8 +532,32 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
-        Best Practices for Writing Notebooks
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+        Installing Software in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
       </a>
     </li>
   
@@ -551,6 +570,18 @@ feedback.init({showIcon: false});
     <li class="md-nav__item">
       <a href="../jupyter_magic/" class="md-nav__link">
         Jupyter Magic Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
       </a>
     </li>
   
@@ -585,30 +616,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
-        OpenSARlab Terminal
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
-        OpenSARlab Servers and Kernels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
@@ -621,20 +628,8 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
-        Installing Software in OpenSARlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
-        Conda Environments
+      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+        Best Practices for Writing Notebooks
       </a>
     </li>
   
@@ -815,7 +810,7 @@ feedback.init({showIcon: false});
       
         <li class="md-nav__item">
   <a href="#i-am-receiving-a-no-space-left-on-device-error" class="md-nav__link">
-    I am receiving a "No space left on device" error.
+    I am receiving a No space left on device error.
   </a>
   
 </li>
@@ -863,6 +858,13 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#i-tried-to-run-a-notebook-that-downloads-products-from-hyp3-and-i-get-an-error" class="md-nav__link">
+    I tried to run a notebook that downloads products from HyP3 and I get an error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#my-issue-is-not-on-this-list" class="md-nav__link">
     My issue is not on this list
   </a>
@@ -887,61 +889,176 @@ feedback.init({showIcon: false});
 <h2 id="why-did-the-kernel-die-while-running-a-notebook">Why did the kernel die while running a notebook?</h2>
 <p><img alt="A dead notebok kernel notification." src="../../assets/kernel_death.png" /></p>
 <p><em>The message that appears when a notebook kernel dies</em></p>
+<ul>
+<li>
+<p>The kernel will die if you run out of available memory to complete a running process. This occurs frequently when running a time-series or change detection algorithm on data stack that is either too deep or covers too large of an area-of-interest (AOI) for OpenSARlab to handle.</p>
+</li>
+<li>
+<p>Try running the notebook on some combination of a shallower data stack and/or a smaller AOI. This may take some experimentation because memory is shared among users, <em>i.e.</em> amount of available memory fluctuates. </p>
+</li>
+<li>
+<p>To work with a deep stack covering an extensive AOI, you may need to tile up your data for the analysis and mosaic them later. </p>
+</li>
+</ul>
+<p><em>Summary:</em> If you are running a resource hungry program, your kernel might die. Try subsetting your data, processing it in batches, and mosaicing your results.</p>
 <hr />
-<p>The kernel will die if you run out of available memory to complete a running process. This most frequently occurs when running a time-series or change detection algorithm on a data stack that is either too deep or covers too large an area-of-interest for OpenSARlab to handle. Try running the notebook on some combination of a shallower data stack and/or a smaller area-of-interest. This may take some experimentation because memory is shared among users and the amount available fluctuates. To work with a deep stack covering an extensive AOI, you may need to tile up your data for the analysis and mosaic them later. </p>
 <h2 id="i-successfully-ran-a-notebook-earlier-on-the-same-data-but-now-it-is-killing-the-kernel">I successfully ran a notebook earlier on the same data but now it is killing the kernel.</h2>
-<p>OpenSARlab EC2 instances are shared among 1-3 users. The memory available to each user on an instance varies with overall activity on the EC2. It is likely that there was enough memory available for your process the first time you attempted it, but there wasn't on the subsequent attempt. More details on the OpenSARlab user environment can be found <a href="../OpenSARlab_environment/">here</a>.</p>
+<ul>
+<li>OpenSARlab EC2 instances are shared among 1~3 users. The memory available to each user depends on overall activity on the EC2. It is likely that there was enough memory available for your process before, but not enough memory during later attempt(s). More details on the OpenSARlab user environment can be found <a href="../OpenSARlab_environment/">here</a>.</li>
+</ul>
+<hr />
 <h2 id="when-i-open-a-notebook-i-receive-kernel-not-found-message">When I open a notebook, I receive "Kernel not found" message.</h2>
 <p><img alt="A kernel not found notification." src="../../assets/kernel_not_found.png" /></p>
 <p><em>The message that appears when a notebook kernel cannot be found</em></p>
+<ul>
+<li>You either have:</li>
+<li>Not created the required conda environment yet</li>
+<li>
+<p>A mix-up between the environment name and prefix</p>
+</li>
+<li>
+<p>If you think you already installed the environment, select it from the pull-down menu that appears and click the <code>Set Kernel</code> button. </p>
+</li>
+<li>
+<p>If you have not created the environment yet, use the following notebook: <code>/home/jovyan/conda_environments/Create_OSL_Conda_Environments.ipynb</code></p>
+</li>
+</ul>
 <hr />
-<p>You have either not yet created the required conda environment or there is a mix-up between the environment name and prefix. If you think you did already install the environment, select it from the pull-down menu and click the "Set Kernel" button. If you have not yet created it, use the notebook located here to do so: <code>/home/jovyan/conda_environments/Create_OSL_Conda_Environments.ipynb</code></p>
-<h2 id="i-am-receiving-a-no-space-left-on-device-error">I am receiving a "No space left on device" error.</h2>
-<p>OpenSARlab users have access to a finite amount of storage space (<a href="../OpenSARlab_environment/">details here</a>). It is up to users to manage their storage. If you receive a storage space warning while logged into OpenSARlab, it is highly recommended that you immediately free up space by deleting un-needed files. If your server shuts down while there is no available space, it will not have the space needed to restart again and you will be locked out of your account. </p>
-<p>If you you become locked out of your account, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab administrator</a> for help. They will assign just enough extra storage to allow you to login and delete files.</p>
-<p>If you do not have any extraneous files to delete and feel that you really do need additional space to do your work, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab administrator</a> and request an increased storage limit. Limits will only be increased if there is a demonstrable need.</p>
+<h2 id="i-am-receiving-a-no-space-left-on-device-error">I am receiving a <code>No space left on device</code> error.</h2>
+<p>OpenSARlab users have access to a finite amount of storage space (<a href="../OpenSARlab_environment/">details here</a>). </p>
+<p><strong>It is up to users to manage their storage</strong>. </p>
+<ul>
+<li>
+<p>If you receive a storage space warning while logged into OpenSARlab, it is highly recommended to free up your space immediately by deleting unnecessary files. If your server shuts down without any available space, it will not have enough space on your volume to restart again and you will be locked out of your account.</p>
+</li>
+<li>
+<p>If you do get locked out from your account, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab administrator</a> for help. They will assign enough extra storage to your server so that you can login and delete unnecessary files.</p>
+</li>
+<li>
+<p>If you do not have any files that you can delete and feel that you really do need additional space to do your work, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab administrator</a> and request more storage space. </p>
+</li>
+<li>
+<p><strong>Limits will only be increased if there is a demonstrable need.</strong></p>
+</li>
+</ul>
+<hr />
 <h2 id="my-server-wont-start-and-i-cannot-access-opensarlab">My server won't start and I cannot access OpenSARlab.</h2>
-<p>This issue typically stems from unexpected behavior on the part of the <a href="https://jupyterhub.github.io/nbgitpuller/">smart git puller</a>.</p>
-<p>Click the event log arrow beneath the server startup progress bar to view the details of any git puller conflicts.</p>
+<p>This issue is typically due to an unexpected behavior of the <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a>.</p>
+<ul>
+<li>Click the <code>Event log</code> arrow beneath the server startup progress bar to view the details of any nbgitpuller conflicts.</li>
+</ul>
 <p><img alt="The event log can be viewed on the server startup screen." src="../../assets/event_log.png" /></p>
-<p><em>Click the event log arrow beneath the server startup progress bar.</em></p>
-<hr />
-<p>If the problem is related to the git puller, you will find details regarding which file or files are causing the conflict in the event log. If the problem is not related to the git puller, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab Administrator</a>.</p>
-<p>If the problem is git puller related, note the names and locations of the offending files and logout of OpenSARlab.</p>
+<p><em>Click the <code>Event log</code> arrow beneath the server startup progress bar.</em></p>
+<ul>
+<li>
+<p>If the problem is:</p>
+</li>
+<li>
+<p>Related to <code>nbgitpuller</code>, you will find details regarding to which file(s) are causing the conflict in the event log. 
+In such cases, note the names and locations of the offending file(s) and logout of OpenSARlab.</p>
+</li>
+<li>
+<p>Not related to the <code>nbgitpuller</code>, contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab Administrator</a>.</p>
+</li>
+</ul>
 <p><img alt="The logout button is located at the top right of the screen." src="../../assets/logout_server_screen.png" /></p>
-<p><em>Click the logout button at the top of the screen</em></p>
-<hr />
-<p>After logging out, the startup screen will reload. Select the "General SAR processing (without git puller)" server option and click the start button. </p>
+<p><em>Click the <code>logout</code> button located on top right corner of the screen</em></p>
+<ul>
+<li>After logging out, the startup screen will reload. Select the <code>General SAR processing (without git puller)</code> server option and click the <code>Start</code> button. </li>
+</ul>
 <p><img alt="The &quot;General SAR processing (without git puller)&quot; server option is below the &quot;General SAR processing&quot; option." src="../../assets/server_options_no_git_puller.png" /></p>
-<p><em>Select the "General SAR processing (without git puller)" server option and click the start button</em></p>
-<hr />
-<p>The server should now load and you will have access to your account. Navigate to the locations of the conflicting files. There are three options for dealing with each of the offending files:</p>
-<ol>
-<li>Delete the file if there are no changes from the original that you wish to save. </li>
-<li>Rename the file if there are changes you wish to save.</li>
-<li>From the <a href="../OpenSARlab_terminal/">terminal</a>, run "touch /path/to/your.file" if you wish to try updating the file's timestamp and give the git puller another opportunity to handle the git pull correctly.</li>
-</ol>
-<p>Logout of OpenSARlab.</p>
+<p><em>Select the <code>General SAR processing (without git puller)</code> server option and click the <code>Start</code> button</em></p>
+<ul>
+<li>
+<p>The server should now load and you will have access to your account. Go to where the conflicting file(s) are located. There are three options for dealing with each of the offending file(s):</p>
+</li>
+<li>
+<p>Delete the file(s) if there are no changes from the original ones that you wish to save. </p>
+</li>
+<li>Rename the file(s) if there are changes you wish to save.</li>
+<li>
+<p>If you wish to try again using nbgitpuller, update the file's timestamp. You can do so by opening the <a href="../OpenSARlab_terminal/">terminal</a> and run <code>touch /your_path_1/.../your_path_n/file_name</code>.</p>
+</li>
+<li>
+<p>Once you are done with one of the above operations, logout of OpenSARlab.</p>
+</li>
+</ul>
 <p><img alt="The logout button is located at the top right of the screen." src="../../assets/logout.png" /></p>
-<p><em>Click the logout button at the top right of the screen</em></p>
-<hr />
-<p>Log back in, using the "General SAR processing" server option.</p>
+<p><em>Click the <code>logout</code> button located at the top right corner of the screen</em></p>
+<ul>
+<li>Log back in and select <code>General SAR processing</code> server option.</li>
+</ul>
 <p><img alt="The &quot;General SAR processing&quot; server option is the first option on the server option screen." src="../../assets/server_options.png" /></p>
-<p><em>Select the "General SAR processing" option and click start</em></p>
+<p><em>Select the <code>General SAR processing</code> option and click <code>Start</code></em></p>
+<ul>
+<li>
+<p>Upon completing above tasks, you should notice that:</p>
+</li>
+<li>
+<p>The nbgitpuller runs successfully. </p>
+</li>
+<li>Server starts up properly.</li>
+<li>You are receiving updates from the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</li>
+</ul>
 <hr />
-<p>The git puller should now run successfully, the server should startup, and you should have restored access to OpenSARlab, receiving any updates to the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</p>
 <h2 id="the-edits-i-made-to-an-asf-notebook-have-disappeared-since-the-last-time-i-used-opensarlab">The edits I made to an ASF notebook have disappeared since the last time I used OpenSARlab.</h2>
-<p>When your OpenSARlab server starts up, a git puller runs, bringing in any updates made to the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>. If a change has been made to a notebook by both the user and by ASF, both will be saved. The ASF version will retain its original name. The user edited version will have a timestamp appended to its name. The edited notebook you are missing is likely in the location where you expect it but has a recent timestamp appended to its name.  </p>
+<ul>
+<li>
+<p>When your OpenSARlab server starts up, <code>nbgitpuller</code> will run and pull in any updates made to the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>. If a change has been made to a notebook by both the user and ASF, both changes will be saved. The ASF version will retain its original name while the user's version will have a timestamp appended to its name. </p>
+</li>
+<li>
+<p><em>Example file format:</em>  </p>
+</li>
+</ul>
+<pre><code>ASF Edit: sample_notebook.ipynb
+User Edit: sample_notebook_20210616165846.ipynb
+</code></pre>
+<ul>
+<li>If you feel like your notebook is missing, it is likely in its original location with a recent timestamp appended to its name.</li>
+</ul>
+<hr />
 <h2 id="one-of-my-notebooks-looks-like-it-has-a-mix-of-code-from-various-versions-of-the-notebook">One of my notebooks looks like it has a mix of code from various versions of the notebook.</h2>
-<p>We have seen this happen occasionally and it stems from issues with the <a href="https://jupyterhub.github.io/nbgitpuller/">smart git puller</a>. The best option is to delete the notebook and <a href="../restarting_server_and_kernel/">restart your OpenSARlab server</a>. The notebook will be replaced with a fresh copy from the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</p>
+<ul>
+<li>We have seen this happen occasionally and it is due to a issues with <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a>. The best option is to delete the notebook and <a href="../restarting_server_and_kernel/">restart your OpenSARlab server</a>. The notebook will be replaced with a fresh copy from the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</li>
+</ul>
+<hr />
 <h2 id="i-know-there-was-an-update-made-to-an-asf-notebook-but-i-still-have-the-old-version">I know there was an update made to an ASF notebook but I still have the old version.</h2>
-<p>We have seen this happen occasionally and it stems from issues with the <a href="https://jupyterhub.github.io/nbgitpuller/">smart git puller</a>. The best option is to delete the outdated version of the notebook and <a href="../restarting_server_and_kernel/">restart your OpenSARlab server</a>. The notebook will be replaced with a fresh copy from the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</p>
+<ul>
+<li>We have seen this happen occasionally and it is due to <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a>. The best option is to delete the outdated version of the notebook and <a href="../restarting_server_and_kernel/">restart your OpenSARlab server</a>. The notebook will be replaced with a fresh copy from the <a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF notebook library</a>.</li>
+</ul>
+<hr />
 <h2 id="i-am-having-trouble-setting-up-a-web-server-and-developing-my-web-app-in-opensarlab">I am having trouble setting up a web server and developing my web app in OpenSARlab.</h2>
-<p>This cannot be done in OpenSARlab. You will need to develop your app in an environment where you can run your web server.</p>
+<ul>
+<li>This cannot be done in OpenSARlab. You will need to do this elsewhere.</li>
+</ul>
+<hr />
 <h2 id="a-notebook-wont-load-a-new-browser-tab-opens-and-shows-the-jupyterhub-header-but-no-notebook-appears">A notebook won't load. A new browser tab opens and shows the JupyterHub header, but no notebook appears.</h2>
-<p>This is caused by the slow loading of a large notebook. If you run a notebook and close it without first clearing all code cell output, the file size can increase substantially. A 40KB notebook can grow to 60MB+ file if its output is left in place. The notebook will eventually load. You may need to reload your browser window if it times out. </p>
+<ul>
+<li>
+<p>This is due to slow loading time caused by a large notebook. </p>
+</li>
+<li>
+<p>If you run a notebook and close it without clearing all output from the code cells, the file size will increase. While the notebook may eventually load, you will need to reload your browser window if it times out. </p>
+</li>
+<li>
+<p><em>Example: A 40KB notebook can grow to over 60MB if you don't clear its output.</em> </p>
+</li>
+</ul>
+<hr />
+<h2 id="i-tried-to-run-a-notebook-that-downloads-products-from-hyp3-and-i-get-an-error">I tried to run a notebook that downloads products from HyP3 and I get an error</h2>
+<ul>
+<li>HyP3v1 (HyP3 beta) has been retired and replaced with an updated <a href="https://hyp3-docs.asf.alaska.edu/">HyP3 API and SDK</a>.</li>
+<li>Notebooks using the old version of HyP3 <strong>will be removed from the <a href="https://github.com/ASFOpenSARlab/opensarlab-notebooks">ASF Jupyter Notebook library</a> in GitHub on September 30th 2021.</strong> </li>
+<li>While old notebooks will be removed from GitHub, they will not be deleted from user storage on your OpenSARlab account. If you wish, you may delete them yourself to avoid confusion. </li>
+<li>Once you have switched to using the new version of HyP3, you should start using HyP3 notebooks that include "v2" in their filenames.</li>
+<li><em>Example</em>: Stop using <code>Prepare_Data_Stack_HyP3.ipynb</code> and start using <code>Prepare_Data_Stack_HyP3_v2.ipynb</code> </li>
+</ul>
+<hr />
 <h2 id="my-issue-is-not-on-this-list">My issue is not on this list</h2>
-<p>If you have encountered an issue not covered in this document, please contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab administrator</a> for help.</p>
+<ul>
+<li>Please contact an <a href="mailto:uaf-jupyterhub-asf@alaska.edu">OpenSARlab administrator</a> for help.</li>
+</ul>
+<!-- TODO: add documentation in regards to server timeouts -->
                 
               
               

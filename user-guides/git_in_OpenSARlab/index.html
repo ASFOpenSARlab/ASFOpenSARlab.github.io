@@ -407,18 +407,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_intro/" class="md-nav__link">
-        Jupyter Notebook Intro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
@@ -431,8 +419,32 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
-        Best Practices for Writing Notebooks
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+        Installing Software in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
       </a>
     </li>
   
@@ -445,6 +457,18 @@ feedback.init({showIcon: false});
     <li class="md-nav__item">
       <a href="../jupyter_magic/" class="md-nav__link">
         Jupyter Magic Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
       </a>
     </li>
   
@@ -538,30 +562,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
-        OpenSARlab Terminal
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
-        OpenSARlab Servers and Kernels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
@@ -574,20 +574,8 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
-        Installing Software in OpenSARlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
-        Conda Environments
+      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+        Best Practices for Writing Notebooks
       </a>
     </li>
   
@@ -788,31 +776,39 @@ feedback.init({showIcon: false});
                 
                 <p><a href="../../user/">Return to Table of Contents</a></p>
 <h1 id="git-in-opensarlab">Git in OpenSARlab</h1>
-<h3 id="asfs-jupyter-notebook-library">ASF's Jupyter Notebook Library</h3>
+<h2 id="asfs-jupyter-notebook-library">ASF's Jupyter Notebook Library</h2>
 <p>ASF's OpenSARlab Jupyter Notebook library lives in the 
 <a href="https://github.com/asfadmin/asf-jupyter-notebooks">asf-jupyter-notebooks GitHub repository</a>.</p>
-<h3 id="gitpuller">Gitpuller</h3>
-<p>A <a href="https://jupyterhub.github.io/nbgitpuller/">smart git puller</a> pulls in any changes to the repo each time a user's OpenSARlab server starts up. If a user has made changes to a notebook and the same notebook has been updated by ASF in the asf-jupyter-notebooks repo, the user will end up with two copies of that notebook. The user's version of the notebook will have a timestamp appended to its name. The notebook with the original, unaltered name will contain the new changes made by ASF.</p>
-<p>Please note that the gitpuller will not run if:</p>
+<h2 id="gitpuller">Gitpuller</h2>
+<p>A <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a> pulls any changes to the <a href="https://github.com/ASFOpenSARlab/opensarlab-notebooks">notebook repo</a> each time a user's OpenSARlab server starts up. </p>
+<p>If a user has made changes to a notebook and the same notebook has been updated by ASF in the <code>asf-jupyter-notebooks</code> repo, the following will occur:</p>
+<ul>
+<li>User will end up with two copies of that notebook.</li>
+<li>User's version of the notebook will have a timestamp appended to its name. </li>
+<li>The notebook with the original, unaltered name will contain the new changes made by ASF.</li>
+</ul>
+<p><em>Example:</em>    </p>
+<ul>
+<li>Original version: <code>sample_notebook.ipynb</code></li>
+<li>Updated by user: <code>sample_notebook__20210616165846.ipynb</code></li>
+<li>Updated by ASF: <code>sample_notebook.ipynb</code></li>
+</ul>
+<p><strong>Please note that the <code>nbgitpuller</code> will not run if you are not in the main branch of the asf-jupyter-notebook repo.</strong></p>
+<!--  So is this saying that if one file is missing from remote then none of the files from remote will be pulled? Thus removing one remote file will sabotage the whole thing? -->
+
+<h2 id="what-do-i-do-if-my-git-state-is-broken-beyond-my-ability-to-repair-it">What do I do if my git state is broken beyond my ability to repair it?</h2>
 <ol>
-<li>You are not in the master branch of the asf-jupyter-notebook repo</li>
-<li>A file has been removed from the remote repo but still exists in your local repo</li>
-</ol>
-<h3 id="what-do-i-do-if-my-git-state-is-broken-beyond-my-ability-to-repair-it">What do I do if my git state is broken beyond my ability to repair it?</h3>
-<ol>
-<li>Download or move any files you wish to preserve out of the <code>/home/jovyan/notebooks</code> directory (or its subdirectories)</li>
-<li>Delete the entire /home/jovyan/notebooks directory<ol>
-<li>Open a terminal<ol>
-<li><code>rm -rf /home/jovyan/notebooks</code></li>
+<li>Download or move any files you wish to preserve out of the <code>/home/jovyan/notebooks</code> directory (or its subdirectories).</li>
+<li>Delete the entire <code>/home/jovyan/notebooks</code> directory by:<ol>
+<li>Opening a terminal.</li>
+<li>Use <code>rm -rf /home/jovyan/notebooks</code> to remove everything.</li>
 </ol>
 </li>
+<li>Restart your server.</li>
+<li>A fresh copy of the repo will be cloned into your account.</li>
 </ol>
-</li>
-<li>Restart your server</li>
-<li>A fresh copy of the repo will be cloned into your account</li>
-</ol>
-<h3 id="using-other-git-repositories-in-opensarlab">Using Other Git Repositories in OpenSARlab</h3>
-<p>Users can use any repo they wish in OpenSARlab. It is best to clone any additional repos alongside or above the "notebooks" directory, which is where the asf-jupyter-notebooks repo is stored. This avoids issues that will arise from nesting repositories inside each other. <strong>Clone your repos to /home/jovyan</strong>, which is easily done <a href="../OpenSARlab_terminal/">in the terminal</a></p>
+<h2 id="using-other-git-repositories-in-opensarlab">Using Other Git Repositories in OpenSARlab</h2>
+<p>Users can use any repo they wish in OpenSARlab. It is best to clone any additional repos alongside or above the <code>notebooks</code> directory, where the <code>asf-jupyter-notebooks</code> repo is stored. This prevents issues that may arise from nesting repositories inside each other. <strong>Clone your repos to <code>/home/jovyan</code></strong>, which can be done <a href="../OpenSARlab_terminal/">in the terminal</a>.</p>
                 
               
               
@@ -879,13 +875,13 @@ feedback.init({showIcon: false});
 
         <!-- Link to next page -->
         
-          <a href="../OpenSARlab_terminal/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../jupyter_notebook_extensions/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                OpenSARlab Terminal
+                Jupyter Notebook Extensions
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

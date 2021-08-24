@@ -407,18 +407,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_intro/" class="md-nav__link">
-        Jupyter Notebook Intro
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
@@ -431,8 +419,32 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
-        Best Practices for Writing Notebooks
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environments
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+        Installing Software in OpenSARlab
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+        OpenSARlab Servers and Kernels
       </a>
     </li>
   
@@ -445,6 +457,18 @@ feedback.init({showIcon: false});
     <li class="md-nav__item">
       <a href="../jupyter_magic/" class="md-nav__link">
         Jupyter Magic Commands
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+        OpenSARlab Terminal
       </a>
     </li>
   
@@ -479,30 +503,6 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
-        OpenSARlab Terminal
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
-        OpenSARlab Servers and Kernels
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
@@ -515,20 +515,8 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
-        Installing Software in OpenSARlab
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
-        Conda Environments
+      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+        Best Practices for Writing Notebooks
       </a>
     </li>
   
@@ -580,33 +568,6 @@ feedback.init({showIcon: false});
   <a href="#how-to-shut-down-the-server-and-logout" class="md-nav__link">
     How to Shut Down The Server and Logout
   </a>
-  
-    <nav class="md-nav" aria-label="How to Shut Down The Server and Logout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#click-the-control-panel-button" class="md-nav__link">
-    Click The Control Panel Button
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#click-the-stop-my-server-button" class="md-nav__link">
-    Click The Stop My Server Button
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#click-the-logout-button" class="md-nav__link">
-    Click The Logout Button
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -770,33 +731,6 @@ feedback.init({showIcon: false});
     How to Shut Down The Server and Logout
   </a>
   
-    <nav class="md-nav" aria-label="How to Shut Down The Server and Logout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#click-the-control-panel-button" class="md-nav__link">
-    Click The Control Panel Button
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#click-the-stop-my-server-button" class="md-nav__link">
-    Click The Stop My Server Button
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#click-the-logout-button" class="md-nav__link">
-    Click The Logout Button
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -814,24 +748,44 @@ feedback.init({showIcon: false});
                 
                 <p><a href="../../user/">Return to Table of Contents</a></p>
 <h1 id="logging-out-of-opensarlab-and-shutting-down-the-server">Logging Out of OpenSARlab and Shutting Down the Server</h1>
-<p>When you are ready to stop working in OpenSARlab, it is best practice to shut down your server and also logout.</p>
+<p>When you are ready to stop working in OpenSARlab, it is important to shut down your server and also logout.</p>
+<hr />
 <h2 id="why-shut-down-the-server">Why Shut Down the Server?</h2>
-<p>Logging out will not shut down the server. If the server is inactive for an hour, it will shut down automatically, but users should not rely upon this feature. If there are any running processes in your account, they will keep the server alive, and it is not always apparent that there is a process running. If you login for the first time in a day or two and notice that a Jupyter Notebook is still running, your server ran that whole time. </p>
+<!--  in future, include docs regarding auto shutdown and reference it here -->
+
+<ul>
+<li>
+<p>Logging out will not shut down the server on its own. While the server may shut down automatically after an hour of inactivity, users should not rely on this feature. </p>
+</li>
+<li>
+<p>The server will stay alive while there are any notebooks open in active browser tabs.</p>
+<ul>
+<li><em>Example:</em> Consider a case where you ran some process, logged out, and decided to log back in for the first time in a few days. Upon logging in, you noticed that the Jupyter Notebook from the previous session is still running. This implies that your server was running for the past few days, which used up unnecessary resources.</li>
+</ul>
+</li>
+</ul>
 <p>Do your part to reduce resource use and ease the burden on the environment by shutting down your server when you are finished working for the day. </p>
-<p><strong>In some instances you may need to leave your server running, which is perfectly acceptable. Perhaps you have a notebook performing a very time intensive analysis and wish to let it run overnight.</strong></p>
+<p><strong>In some instances, you may need to leave your server running. For example, you have a notebook performing a very time intensive analysis and wish to let it run overnight. It is acceptable for you to keep your server running in cases like this.</strong></p>
+<p><em>Summary: Unless you intend to run your server for a long period of time, make sure to shut it down before your leave.</em> </p>
+<hr />
 <h2 id="how-to-shut-down-the-server-and-logout">How to Shut Down The Server and Logout</h2>
-<h4 id="click-the-control-panel-button">Click The Control Panel Button</h4>
+<ol>
+<li>
+<p><strong>Click The Control Panel Button</strong></p>
 <p><img alt="Click the Control Panel button" src="../../assets/control_panel.png" /></p>
-<p><em>Click the Control Panel button at the top right of the file manager or in an open notebook</em></p>
-<hr />
-<h4 id="click-the-stop-my-server-button">Click The Stop My Server Button</h4>
+<p><em>Click the </em><em>Control Panel</em><em> button at the top right corner of the file manager or in an open notebook.</em></p>
+</li>
+<li>
+<p><strong>Click The Stop My Server Button</strong></p>
 <p><img alt="Click the Stop My Server button" src="../../assets/stop_my_server.png" /></p>
-<p><em>Click the Stop My Server button that appears</em></p>
-<hr />
-<h4 id="click-the-logout-button">Click The Logout Button</h4>
+<p><em>Click the </em><em>Stop My Server</em><em> button that appears.</em></p>
+</li>
+<li>
+<p><strong>Click The Logout Button</strong></p>
 <p><img alt="Click the Logout button" src="../../assets/logout_2.png" /></p>
-<p><em>Click the Logout button</em></p>
-<hr />
+<p><em>Click the </em><em>Logout</em><em> button.</em></p>
+</li>
+</ol>
                 
               
               
@@ -881,7 +835,7 @@ feedback.init({showIcon: false});
 
         <!-- Link to previous page -->
         
-          <a href="../conda_environments/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../class_notebooks_best_practices/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -890,7 +844,7 @@ feedback.init({showIcon: false});
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Conda Environments
+                Best Practices for Writing Notebooks
               </div>
             </div>
           </a>
