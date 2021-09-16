@@ -818,6 +818,13 @@ feedback.init({showIcon: false});
 </ul>
 </li>
 <li>Upload a file to a bucket<ul>
+<li>Increase your s3.multipart_threshold to allow uploading up to 5000MB as an anonymous user<ul>
+<li>Open a terminal<ul>
+<li><code>aws configure set default.s3.multipart_threshold 5000MB</code></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><code>aws --no-sign-request --region &lt;bucket's region&gt; s3 cp source/path/filename s3://bucket_name/destination/path/filename</code></li>
 </ul>
 </li>
