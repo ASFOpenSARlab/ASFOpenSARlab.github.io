@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/deploy_OpenSARlab/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.8">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.2.8">
     
     
       
@@ -667,13 +667,6 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-s3-bucket-to-hold-the-lambda-handler-script" class="md-nav__link">
-    Create an S3 bucket to hold the lambda handler script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#customize-opensarlab_container-code-for-deployment" class="md-nav__link">
     Customize opensarlab_container code for deployment
   </a>
@@ -683,13 +676,6 @@ feedback.init({showIcon: false});
         <li class="md-nav__item">
   <a href="#customize-opensarlab_cluster-code-for-deployment" class="md-nav__link">
     Customize opensarlab_cluster code for deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-the-cognito-cloudformation-stack" class="md-nav__link">
-    Build the Cognito CloudFormation stack
   </a>
   
 </li>
@@ -882,13 +868,6 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-s3-bucket-to-hold-the-lambda-handler-script" class="md-nav__link">
-    Create an S3 bucket to hold the lambda handler script
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#customize-opensarlab_container-code-for-deployment" class="md-nav__link">
     Customize opensarlab_container code for deployment
   </a>
@@ -898,13 +877,6 @@ feedback.init({showIcon: false});
         <li class="md-nav__item">
   <a href="#customize-opensarlab_cluster-code-for-deployment" class="md-nav__link">
     Customize opensarlab_cluster code for deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-the-cognito-cloudformation-stack" class="md-nav__link">
-    Build the Cognito CloudFormation stack
   </a>
   
 </li>
@@ -1085,56 +1057,14 @@ formatted calendar should work as well</strong></p>
 </li>
 </ol>
 <p><strong>You should now have container and cluster repos in CodeCommit that are duplicates of those found in ASFOpenSARlab</strong> </p>
-<h2 id="create-an-s3-bucket-to-hold-the-lambda-handler-script">Create an S3 bucket to hold the lambda handler script</h2>
-<ol>
-<li>Create an S3 bucket in your AWS account called <code>deployment_name</code>-lambda<ol>
-<li>Alternatively, you could use the same bucket to hold lambdas for multiple deployments</li>
-</ol>
-</li>
-</ol>
 <h2 id="customize-opensarlab_container-code-for-deployment">Customize opensarlab_container code for deployment</h2>
-<p><strong>The opensarlab-container repo contains one example image named "sar", which you can reference when creating new images.
+<p><strong>The opensarlab-container repo contains one example image named <code>helloworld</code>, which you can reference when creating new images.
 Images can be used by multiple profiles</strong></p>
 <p>Note: It is easiest to work in your local repo and push your changes when you're done.</p>
 <ol>
-<li>Duplicate the images/sar directory and rename it, using your chosen image name<ol>
-<li>Create and add any additional custom jupyter magic commands to the jupyter-hooks/custom_magics directory</li>
-<li>Add any additional scripts you may have created for use in your image to the scripts directory</li>
-<li>Add any image test scripts to tests directory</li>
-<li>Edit images/<new_image_name>/jupyter-hooks/sar.sh<ol>
-<li>Rename sar.sh to <new_image_name>.sh</li>
-<li>Copy any additional custom Jupyter magic scripts to $HOME/.ipython/image_default/startup/ (alongside 00-df.py)</li>
-<li>Edit the repos being pulled to suit your deployment and image needs</li>
-</ol>
-</li>
-<li>Edit images/<new_image_name>/build.sh<ol>
-<li>Change 6 $DOCKER_REGISTRY namespaces from "sar" to your image namespace</li>
-</ol>
-</li>
-<li>Repeat the previous step, adding scripts for any additional images</li>
-</ol>
-</li>
-<li>Edit cf-container.yaml<ol>
-<li>SARRepository <ol>
-<li>Change the resource name (SARRepository) so it makes sense given the image that will use it</li>
-<li>Change the "/sar" portion of RepositoryName to use a namespace matching your image name</li>
-</ol>
-</li>
-<li>Pipeline<ol>
-<li>Name: !Sub ${AWS::StackName}-Build-Images<ol>
-<li>Change "- Name: images-sar" to "- Name: images-<image_namespace>"</li>
-<li>EnvironmentVariables<ol>
-<li>Change the IMAGE_NAME value from "sar" to "<image_namespace"></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Add stages for any additional images</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Edit dockerfile<ol>
+<li>Duplicate the <code>images/sar</code> directory and rename it, using your chosen image name</li>
+<li>The image name must be alpha-numeric with no whitespaces or special characters</li>
+<li>Edit the dockerfile<ol>
 <li>Adjust the packages in the 2nd apt install command to suit your image needs</li>
 <li>Add any pip packages you wish installed in the base conda environment</li>
 <li>Add any conda packages you wish installed in the base conda environment</li>
@@ -1145,7 +1075,7 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 </li>
-<li>Run any tests for this image that you added to the tests directory</li>
+<li>Run any tests for this image that you added to the tests directory under <code>FROM release as testing</code></li>
 </ol>
 </li>
 <li>Remove the images/sar directory and sar.sh test script, unless you plan to use the sar image</li>
@@ -1154,227 +1084,27 @@ Images can be used by multiple profiles</strong></p>
 <li>name it <image_namespace>.sh</li>
 </ol>
 </li>
-<li>Edit tests/finale.sh<ol>
-<li>Delete "bash sar.sh" if not using it</li>
-<li>Add  "bash <image_namespace>.sh"</li>
-</ol>
-</li>
 <li>Add, commit, and push changes to the remote CodeCommit repo</li>
 </ol>
 <h2 id="customize-opensarlab_cluster-code-for-deployment">Customize opensarlab_cluster code for deployment</h2>
-<p><strong>The opensarlab-cluster repo contains TODO comments everywhere deployment specific edits should be made</strong></p>
-<p>Note: Most IDEs have functionality to easily locate and organize TODOs. Searching the code for "TODO" will also work.</p>
 <ol>
-<li>hub/dockerfile<ol>
-<li>Add your organization's name as MAINTAINER</li>
-<li>Adjust the images (jpgs, pngs, etc...) and templates being copied to the docker image</li>
+<li>Create and add any additional custom jupyter magic commands to the <code>opensarlab/jupyterhub/singleuser/custom_magics</code> directory Add any additional scripts you may have created for use in your image to the <code>opensarlab/jupyterhub/singleuser/hooks</code> directory</li>
+<li>Duplicate <code>opensarlab/jupyterhub/singleuser/hooks/sar.sh</code>, renaming it after your image name</li>
+<li>Edit <code>opensarlab/jupyterhub/singleuser/hooks/&lt;image_name&gt;.sh</code><ol>
+<li>Copy any additional custom Jupyter magic scripts to <code>$HOME/.ipython/image_default/startup/</code> (alongside 00-df.py)</li>
+<li>Edit the repos being pulled to suit your deployment and image needs</li>
 </ol>
 </li>
-<li>hub/etc/jupyterhub/custom/delete_snapshot.py<ol>
-<li>Edit admin email addresses (2 locations)</li>
-</ol>
-</li>
-<li>hub/usr/local/share/jupyterhub/templates/login.html<ol>
-<li>Edit the images and messages that appear on the login page</li>
-</ol>
-</li>
-<li>hub/usr/local/share/jupyterhub/templates/pending.html<ol>
-<li>Edit the message to users that their account is pending approval</li>
-</ol>
-</li>
-<li>notifications/dock<ol>
-<li>Add the ICAL_URL of your notification calendar</li>
-</ol>
-</li>
-<li>notifications/dockerfile<ol>
-<li>Add your organization's name as MAINTAINER</li>
-</ol>
-</li>
-<li>cf-cluster.yaml<ol>
-<li>Add a NodeInstanceType parameter for every EC2 type<ol>
-<li>must be alphanumeric</li>
-</ol>
-</li>
-<li>Remove the example NodeInstanceTypePROFILE1 resource</li>
-<li>Add a LaunchConfiguration for every NodeInstanceType<ol>
-<li>must be alphanumeric</li>
-<li>InstanceType should match the NodeInstanceType created above</li>
-<li>The server_type in UserData must match profile's server_type that you will use in helm_config.yaml</li>
-</ol>
-</li>
-<li>Add an AutoScalingGroup resource for every NodeInstanceType<ol>
-<li>must be alphanumeric</li>
-<li>LaunchConfigurationName should match new LaunchConfiguration created above</li>
-</ol>
-</li>
-<li>Remove the example AutoScalingGroupPROFILE1 resource</li>
-<li>Remove the example LaunchConfigurationPROFILE1 resource</li>
-</ol>
-</li>
-<li>helm_config.yaml<ol>
-<li>Add new profiles, using the example PROFILE_1 as a template<ol>
-<li>Reference the <a href="https://jupyterhub-kubespawner.readthedocs.io/en/latest/spawner.html">kubespawner docs</a> for more options and details</li>
-<li>Change the name of the profile being search for in group_list</li>
-<li>Change the display_name</li>
-<li>Change the profile description</li>
-<li>Change the extra_labels and node_selector server_types to match the server_type used in the profiles LaunchConfiguration in cf-cluster.yaml</li>
-<li>Adjust the path to the postStart lifecycle hook</li>
-<li>Adjust the kubespawner_override args --NotebookApp.jinja_template_vars PROFILE_NAME to the correct profile name</li>
-<li>Adjust the mem_limit<ol>
-<li>The maximum amount of memory available to each user</li>
-<li>&lt;= memory available for EC2 type</li>
-</ol>
-</li>
-<li>Adjust the mem_guarantee (or cpu_guarantee)<ol>
-<li>The minimum amount of memory guaranteed to each user</li>
-<li>If there is not enough memory on any existing node, the autoscaler will spin up a new node</li>
-<li>Use the mem_guarantee to determine how nodes should be shared among users</li>
-<li>Even if not sharing nodes, do not guarantee all available memory<ol>
-<li>The node requires some memory for setup (varies and may take some trial and error to figure out how much to reserve)</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Adjust the cpu_guarantee (or mem_guarantee)<ol>
-<li>The minimum EC2 cpu units guaranteed to each user (as a float, not a string)</li>
-<li>If there aren't enough cpu units left on a node for the next user, the autoscaler will spin up a new node</li>
-<li>Use the cpu_guarantee to determine how nodes should be shared among users</li>
-<li>Even if not sharing nodes, do not guarantee all available cpus<ol>
-<li>The node requires some memory for setup</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Adjust the storage capacity<ol>
-<li>This should match the storage capacity used for all profiles</li>
-<li>You can increase volume sizes at a later date</li>
-<li>Reducing volume sizes is not advised due to a high likelihood of data loss</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Remove the example PROFILE_1</li>
-</ol>
-</li>
-<li>lambda_handler.py<ol>
-<li>Lambdas are used by Cognito event triggers for logging and emailing notifications to users and administrators</li>
-<li>Create a lambda_handler.py file based on lambda_handler.py.example</li>
-<li>Adjust email messages to suit the needs of the deployment</li>
-<li>zip the file, creating lambda_handler.py.zip<ol>
-<li>be sure to keep the ".py" as part of the filename</li>
-</ol>
-</li>
-<li>Upload the zip to the <code>deployment_name</code>-lambda S3 bucket<ol>
-<li>After setting up Cognito for the first time, anytime you make changes to this file you will need to:<ol>
-<li>Change the name of the zip file<ol>
-<li><strong>Do not change the name of the lambda_handler.py file it contains</strong></li>
-</ol>
-</li>
-<li>Upload it to the lambda S3 bucket</li>
-<li>Update the EmailLambdaKeyName parameter in the cognito CloudFormation template to match the new filename</li>
-<li>After updating the pipeline, set all Cognito triggers to 'None', save them, set them back to the correct lambdas, and save them again</li>
-</ol>
-</li>
-</ol>
-</li>
+<li>Update <code>opensarlab/opensarlab.yaml</code> for your deployment</li>
+<li>Reference <code>opensarlab/opensarlab.example.yaml</code> to define the required and optional fields in <code>opensarlab/opensarlab.yaml</code></li>
+<li>Update <code>opensarlab/jupyterhub/helm_config.yaml</code><ol>
+<li><code>singleuser</code></li>
+<li>Add any needed extraFiles</li>
+<li><code>hub</code></li>
+<li>Add any needed extraFiles</li>
 </ol>
 </li>
 <li>Add, commit, and push changes to the remote CodeCommit repo</li>
-</ol>
-<h2 id="build-the-cognito-cloudformation-stack">Build the Cognito CloudFormation stack</h2>
-<ol>
-<li>Open CloudFormation in the AWS console<ol>
-<li>Click the "Create stack" button and select "With new resources (standard)"<ol>
-<li>Page 1 : <strong>Create stack</strong><ol>
-<li>Under "Specify template", check "Upload a template file"</li>
-<li>Use the file chooser to select <strong>cf-cognito.py</strong> from your local branch of the <code>deployment_name</code>-cluster repo </li>
-<li>Click the "Next" button</li>
-</ol>
-</li>
-<li>Page 2: <strong>Specify stack details</strong><ol>
-<li>Stack name:<ol>
-<li><code>deployment_name</code>-auth<ol>
-<li>dashes (-) are the only allowed special characters</li>
-<li>lowercase only</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>AdminEmailAddress:<ol>
-<li>SES verified email address of the primary administrator<ol>
-<li>This is the sender address users will see on confirmation, verification, and volume lifecycle emails</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>AdminEmailSNSArn:<ol>
-<li>Arn of the above admin email address<ol>
-<li>Must be AWS SES verified (easy to do in the Amazon Simple Email Service console)</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>DeploymentURL<ol>
-<li>Enter the deployment domain, if known (i.e. https://deployment_name.your_domain.tdl)<ol>
-<li>The placeholder domain can be left in place temporarily if the actual domain is not yet known</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>CostTagValue<ol>
-<li><code>deployment_name</code></li>
-</ol>
-</li>
-<li>EmailLambdaBucketName<ol>
-<li><code>deployment_name</code>-lambda</li>
-</ol>
-</li>
-<li>EmailLambdaKeyName<ol>
-<li>lambda_handler.py.zip (or whatever you named it)</li>
-</ol>
-</li>
-<li>Click the "Next" button</li>
-</ol>
-</li>
-<li>Page 3: <strong>Configure stack options</strong><ol>
-<li>Tags:<ol>
-<li>Key: <ol>
-<li>Cost allocation tag</li>
-</ol>
-</li>
-<li>Value:<ol>
-<li><code>deployment_name</code></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Click the "Next" button</li>
-</ol>
-</li>
-<li>Page 4: <strong>Review <code>deployment_name</code>-auth</strong><ol>
-<li>Review and confirm correctness</li>
-<li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
-<li>Click the "Create Stack Button"</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Monitor the stack build for errors and rollbacks<ol>
-<li>The screen does not self-update<ol>
-<li>Use the refresh buttons</li>
-</ol>
-</li>
-<li>If the build fails and rolls back<ol>
-<li>goto the CloudFormation stacks page <ol>
-<li>select and delete the failed stack before correcting any errors and trying again</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 <h2 id="build-the-container-cloudformation-stack">Build the container CloudFormation stack</h2>
 <p><strong>This will create the hub image, images for each profile, and store them in namespaced ECR repos</strong></p>
@@ -1388,19 +1118,19 @@ Images can be used by multiple profiles</strong></p>
 </ol>
 </li>
 <li>Page 2: <strong>Specify stack details</strong><ol>
-<li>Stack name:<ol>
-<li><code>deployment_name</code>-container</li>
+<li><code>Stack Name</code></li>
+<li>Use a recognizable name that makes sense for your deployment</li>
+<li><code>CodeCommitSourceRepo</code><ol>
+<li>The CodeCommit repo holding the container code (<code>deployment_name</code>-container)</li>
 </ol>
 </li>
-<li>CodeCommitSourceBranch:<ol>
+<li><code>CodeCommitSourceBranch</code><ol>
 <li>The name of the production branch of the <code>deployment_name</code>-container CodeCommit repo</li>
 </ol>
 </li>
-<li>CodeCommitSourceRepo:<ol>
-<li><code>deployment_name</code>-container</li>
-</ol>
-</li>
-<li>CostTagValue<ol>
+<li><code>CostTagKey</code></li>
+<li>The cost allocation key you registered for tracking deployment costs</li>
+<li><code>CostTagValue</code><ol>
 <li><code>deployment_name</code></li>
 </ol>
 </li>
@@ -1415,7 +1145,7 @@ Images can be used by multiple profiles</strong></p>
 <li>Click the "Next" button</li>
 </ol>
 </li>
-<li>Page 4: <strong>Review <code>deployment_name</code>-auth</strong><ol>
+<li>Page 4: <strong>Review <code>Stack Name</code></strong><ol>
 <li>Review and confirm correctness</li>
 <li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
 <li>Click the "Create Stack Button"</li>
@@ -1437,91 +1167,35 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 </li>
-<li>When stack creation is complete, open CodePipeline in the AWS console<ol>
-<li>Open the <code>deployment_name</code>-container-Container-Pipeline pipeline and monitor it as it runs<ol>
-<li>Click the "details" link under each stage action for a closer inspection</li>
-<li>If part of the pipeline fails<ol>
-<li>Identify the issue from the "details" output</li>
-<li>Correct the code</li>
-<li>Update the <code>deployment_name</code>-container repo</li>
-<li>Go to the pipeline<ol>
-<li>Click the "Release change" button</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 </li>
 </ol>
 <h2 id="build-the-cluster-cloudformation-stack">Build the cluster CloudFormation stack</h2>
-<p><strong>This CloudFormation stack dynamically creates a second CloudFormation stack. You will end up with a <code>deployment_name</code> stack and
- a <code>deployment_name</code>-cluster stack.</strong></p>
+<p><strong>This CloudFormation stack dynamically creates 3 additional stacks.</strong></p>
 <ol>
 <li>Open CloudFormation in the AWS console<ol>
 <li>Page 1 : <strong>Create stack</strong><ol>
 <li>Click the "Create stack" button and select "With new resources (standard)"</li>
 <li>Under "Specify template", check "Upload a template file"</li>
-<li>Use the file chooser to select <strong>cf-pipeline.py</strong> from your local branch of the <code>deployment_name</code> repo </li>
+<li>Use the file chooser to select <code>opensarlab/pipeline/cf-pipeline.yaml</code> from your local branch of the cluster repo </li>
 <li>Click the "Next" button</li>
-</ol>
-</li>
 <li>Page 2: <strong>Specify stack details</strong><ol>
-<li>Stack name:<ol>
-<li><code>deployment_name</code>-cluster</li>
+<li><code>Stack Name</code></li>
+<li>Use a recognizable name that makes sense for your deployment</li>
+<li><code>CodeCommitRepoName</code><ol>
+<li>The CodeCommit repo holding the container code (<code>deployment_name</code>-cluster)</li>
 </ol>
 </li>
-<li>AdminUserName:<ol>
-<li>JupyterHub Admin username<ol>
-<li>Initial default admin with access to the JupyterHub admin and group pages</li>
+<li><code>CodeCommitBranchName</code><ol>
+<li>The name of the production branch of the <code>deployment_name</code>-cluster CodeCommit repo</li>
 </ol>
 </li>
-</ol>
-</li>
-<li>CertificateArn:<ol>
-<li>Arn associated with the CA certificate you stored in AWS Certificate Manager<ol>
-<li>arn:aws:acm:<region>:<account_#>:certificate/<certificate_id></li>
-</ol>
-</li>
-</ol>
-</li>
-<li>CodeCommitRepoName:<ol>
-<li>Name of the CodeCommit repo holding your <code>deployment_name</code>-cluster code</li>
-</ol>
-</li>
-<li>CodeCommitBranchName:<ol>
-<li>Name of the branch holding this deployment's cluster code</li>
-</ol>
-</li>
-<li>ContainerNamespace:<ol>
-<li><code>deployment_name</code>-container</li>
-</ol>
-</li>
-<li>CostTagKey:<ol>
-<li>Cost allocation tag</li>
-</ol>
-</li>
-<li>CostTagValue:<ol>
+<li><code>CostTagKey</code></li>
+<li>The cost allocation key you registered for tracking deployment costs</li>
+<li><code>CostTagValue</code><ol>
 <li><code>deployment_name</code></li>
 </ol>
 </li>
-<li>ICALUrl:<ol>
-<li>The iCal formatted URL of the calendar used for notifications</li>
-</ol>
-</li>
-<li>DeploymentURL:<ol>
-<li>Your custom URL (should match DeploymentURL parameter in <code>deployment_name</code>-auth stack)<ol>
-<li>If left blank, the default load balancer will be used</li>
-<li>Can be updated later           </li>
-</ol>
-</li>
-</ol>
-</li>
-<li>OAuthPoolName:<ol>
-<li><code>deployment_name</code>-auth </li>
 </ol>
 </li>
 </ol>
@@ -1535,7 +1209,7 @@ Images can be used by multiple profiles</strong></p>
 <li>Click the "Next" button</li>
 </ol>
 </li>
-<li>Page 4: <strong>Review <code>deployment_name</code>-auth</strong><ol>
+<li>Page 4: <strong>Review <code>Stack Name</code></strong><ol>
 <li>Review and confirm correctness</li>
 <li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
 <li>Click the "Create Stack" button</li>
@@ -1543,57 +1217,17 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 </li>
-<li>Open CodePipeline in the AWS console<ol>
-<li>Open the <code>deployment_name</code>-Pipeline pipeline and monitor it as it runs<ol>
-<li>Click the "details" link under each stage action for a closer inspection</li>
-</ol>
-</li>
-</ol>
-</li>
 </ol>
 <h2 id="take-care-of-odds-and-ends">Take care of odds and ends</h2>
 <ol>
-<li>Update the DeploymentURL parameters in 2 CloudFormation stacks with load balancer URL or your custom URL<ol>
-<li>If you already entered a custom URL when building the stacks, skip this step</li>
-<li>If using the load balancer URL<ol>
-<li>Find it in the 'Outputs' tab of the CloudFormation console for the <code>deployment_name</code>-cluster CloudFormation stack</li>
-<li>Note: you will have to prepend "https://" to it</li>
-</ol>
-</li>
-<li>Update the <code>deployment_name</code> stack<ol>
-<li>Navigate to the <code>deployment_name</code> stack CloudFormation console</li>
-<li>Click the 'Update' button<ol>
-<li>Page 1:<ol>
-<li>Leave 'Use current template' selected</li>
-<li>Click the 'Next' button</li>
-</ol>
-</li>
-<li>Page 2:<ol>
-<li>Update the DeploymentURL parameter</li>
-<li>Click the 'Next' button</li>
-</ol>
-</li>
-<li>Page 3:<ol>
-<li>Click the 'Next' button</li>
-</ol>
-</li>
-<li>Page 4:<ol>
-<li>Review and confirm correctness</li>
-<li>Check the box next to "I acknowledge that AWS CloudFormation might create IAM resources"</li>
-<li>Click the "Update Stack" button </li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Repeat the above process for the <code>deployment_name</code>-auth stack</li>
-</ol>
-</li>
+<li>Update <code>deployment_url</code> in the cluster repo <code>opensarlab/opensarlab.yaml</code> if you started off using <code>load balancer</code><ol>
+<li>Don't forget to update your DNS record</li>
 </ol>
 </li>
 <li>Add the cost allocation tag to the EKS cluster<ol>
 <li>Navigate to the AWS EKS console</li>
 <li>click the "Clusters" link in the sidebar menu<ol>
-<li>Click on <code>deployment_name</code>-cluster<ol>
+<li>Click on cluster stack<ol>
 <li>Click the "Tags" tab<ol>
 <li>Click the "Manage tags" button<ol>
 <li>Click the "Add tag" button<ol>
@@ -1611,103 +1245,10 @@ Images can be used by multiple profiles</strong></p>
 </li>
 </ol>
 </li>
-<li>Wrap things up in Cognito<ol>
-<li>Navigate to the AWS Cognito console</li>
-<li>Click the "Manage User Pools" button<ol>
-<li>Click the "<code>deployment_name</code>-auth" user pool button</li>
-<li>Add the cost allocation tag to the Cognito user pool<ol>
-<li>Click the "Tags" sidebar menu link<ol>
-<li>Click the "Add tag" link</li>
-<li>Tag Key:<ol>
-<li>Cost allocation tag</li>
-</ol>
-</li>
-<li>Tag Value:<ol>
-<li><code>deployment_name</code></li>
-</ol>
-</li>
-<li>Click the "Save changes" button</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Reset triggers<ol>
-<li>Cognito triggers can fall out of sync with email and logging lambdas so it is safest to reset them</li>
-<li>Click the "Triggers" sidebar menu link<ol>
-<li>Set all lambda functions to "none"</li>
-<li>Click the "Save changes" button</li>
-<li>Click the "Triggers" sidebar menu link<ol>
-<li>Pre sign-up:<ol>
-<li>select the <code>deployment_name</code>-auth-LogFunction-<random hash> lambda</li>
-</ol>
-</li>
-<li>Pre authentication:<ol>
-<li>select the <code>deployment_name</code>-auth-PreAuthFunction-<random hash> lambda</li>
-</ol>
-</li>
-<li>Post authentication:<ol>
-<li>select the <code>deployment_name</code>-auth-LogFunction-<random hash> lambda</li>
-</ol>
-</li>
-<li>Post confirmation:<ol>
-<li>select the <code>deployment_name</code>-auth-PostEmailVerificationFun-<random hash> lambda</li>
-</ol>
-</li>
-<li>Pre Token Generator:<ol>
-<li>select the <code>deployment_name</code>-auth-LogFunction-<random hash> lambda</li>
-</ol>
-</li>
-<li>Leave the remaining triggers set to "none"</li>
-<li>Click the "Save changes" button</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Update image tags for every profile in helm_config.yml (<code>deployment_name</code>-cluster repository)<ol>
-<li>hub:image:tag<ol>
-<li>'latest' will only work for the hub:image:tag on the first build<ol>
-<li>It is safest to never use the "latest" tag</li>
-</ol>
-</li>
-<li>Use the image's ECR timestamp<ol>
-<li>Found in the AWS Elastic Container Service console</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>profile image_url tag<ol>
-<li>update the tag at the end of the ECR image_url</li>
-<li>Use the image's 7 character long ECR tag<ol>
-<li>Found in the AWS Elastic Container Service console</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Repeat previous step for each profile</li>
-<li>Add, commit, and push changes to CodeCommit</li>
-<li>Navigate to the AWS CodePipeline console<ol>
-<li>Click the <code>deployment_name</code>-Pipeline pipeline<ol>
-<li>Click the "Release change" button<ol>
-<li>Click the "Release" button</li>
-<li>Monitor the pipeline as it builds</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Prime the Auto Scaling Group for each profile<ol>
+<li>Prime the Auto Scaling Group for each profile unless there are active users<ol>
 <li>Navigate to the AWS EC2 console<ol>
 <li>Select the "Auto Scaling Groups" sidebar link<ol>
-<li>Select <code>deployment_name</code>-cluster-AutoScalingGroup<profile_name>-<random_hash><ol>
+<li>Select an autoscaling group<ol>
 <li>Group details:<ol>
 <li>Click the "Edit" button<ol>
 <li>Desired capacity:<ol>
@@ -1755,12 +1296,12 @@ Images can be used by multiple profiles</strong></p>
     1. red notification
             1. \&lt;message>
                 1. Your notification message
-1. Sign up with your admin account, sign in,  and add groups for each profile and sudo
-    1. Open the DeploymentURL in a web browser
+8. Sign up with your <code>admin_user_name</code> account, sign in, and add groups for each profile and sudo
+    1. Open the <code>deployment_url</code> in a web browser
         1. Click the "Sign in" button
             1. Click the "Sign up" link
             1. Username:
-                1. The name used for the AdminUserName parameter of the <code>deployment_name</code> CloudFormation stack
+                1. The name used for the <code>admin_user_name</code> parameter of the <code>opensarlab.yaml</code>
             1. Name:
                 1. Your name
             1. Email:
@@ -1801,7 +1342,7 @@ Images can be used by multiple profiles</strong></p>
             1. Test notebooks as needed
             1. Confirm that notifications appear
         1. Repeat for each profile
-1. Configure your local K8s config so you can manage your EKS cluster with kubectl
+9. Configure your local K8s config so you can manage your EKS cluster with kubectl
     1. Add your AWS user to the trust relationship of the <code>deployment_name</code>-cluster-access IAM role
         1. Navigate to the AWS IAM console
             1. Click the "Roles" link from the sidebar menu
@@ -1826,13 +1367,14 @@ Images can be used by multiple profiles</strong></p>
              ]
             }</code>    <br />
     1. Click the "Update Trust Policy" button        <br />
-    1. Add an AWS <code>deployment_name</code>-cluster-access profile on your local machine
+    1. Add an AWS profile on your local machine
         1. Example profile:
             1. <code>yaml
-                [profile `deployment_name`-cluster-access]
+                [profile profile_name]
                 source_profile = your_source_profile
                 region = your_region
-                role_arn = arn:aws:iam::&lt;AWS_account_id&gt;:role/`deployment_name`-cluster-access</code>
+                role_arn = arn:aws:iam::&lt;account_id&gt;:role/&lt;region_name&gt;-&lt;deployment_name&gt;-cluster-user-access
+                cluster_name = &lt;deployment_name&gt;-cluster</code>
     1. Run the helps/get_eks_kubeconfig.sh script in the opensarlab-cluster repo
         1. Note: you will use this a lot and it may be helpful to create an alias in ~/.bash_aliases
     1. Use kubectl</p>
