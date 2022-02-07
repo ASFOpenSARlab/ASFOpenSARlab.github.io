@@ -13,14 +13,14 @@
         <meta name="author" content="ASF OpenSARlab Team">
       
       
-        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/whitelist/">
+        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/release-notes/release_02-2022/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-6.2.8">
     
     
       
-        <title>Setup a Google Sheet whitelist and a service account - OpenSARlab-Docs</title>
+        <title>February 2022 - OpenSARlab-Docs</title>
       
     
     
@@ -139,7 +139,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#setup-a-google-sheet-whitelist-and-a-service-account" class="md-skip">
+        <a href="#welcome-to-the-february-2022-opensarlab-update" class="md-skip">
           Skip to content
         </a>
       
@@ -237,7 +237,7 @@ feedback.init({showIcon: false});
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Setup a Google Sheet whitelist and a service account
+              February 2022
             
           </span>
         </div>
@@ -592,7 +592,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../deploy_OpenSARlab/" class="md-nav__link">
+      <a href="../../dev-guides/deploy_OpenSARlab/" class="md-nav__link">
         Deploy OpenSARlab to AWS
       </a>
     </li>
@@ -604,7 +604,19 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../notifications/" class="md-nav__link">
+      <a href="../../dev-guides/conda_environments/" class="md-nav__link">
+        Conda Environment Options
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-guides/notifications/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -616,7 +628,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../dev-guides/troubleshooting/" class="md-nav__link">
         Troubelshooting Guide
       </a>
     </li>
@@ -635,12 +647,14 @@ feedback.init({showIcon: false});
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
       
       <label class="md-nav__link" for="nav-5">
         Release Notes
@@ -659,7 +673,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_06-2021/" class="md-nav__link">
+      <a href="../release_06-2021/" class="md-nav__link">
         June 2021
       </a>
     </li>
@@ -671,9 +685,59 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_10-2021/" class="md-nav__link">
+      <a href="../release_10-2021/" class="md-nav__link">
         October 2021
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          February 2022
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        February 2022
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    Changes:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -702,6 +766,21 @@ feedback.init({showIcon: false});
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    Changes:
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -713,52 +792,27 @@ feedback.init({showIcon: false});
               
                 
                 
-                <h1 id="setup-a-google-sheet-whitelist-and-a-service-account">Setup a Google Sheet whitelist and a service account</h1>
-<p>1) goto console.cloud.google.com
-1) If you don't have a project yet, click on the project button at the top left of the screen
-    1) Click the "New Project" button in th pop-up
-    1) create your project
-1) Select API &amp; Services from the left menu
-    1) Select "Dashboard"
-        1) Click the "+ ENABLE APIS AND SERVICES" button at the top of the screen
-        1) Search for "Google Sheets API"
-            1) Enable it
-        1) Search for "Google Drive API"
-            1) Enable it
-1) From the top left main menu (3 horizontal bars), select "IAM &amp; Admin"
-    1) "Service Accounts"
-        1) Click the "+ CREATE SERVICE ACCOUNT" button at the top of the screen
-            1) Service account name
-                1) choose a name
-                1) Click "Continue"
-            1) Grant this service account access to project
-                1) Set the role to basic -&gt; "viewer"
-                1) Continue
-            1) Grant users access to this service account
-                1) skip this
-            1) Click the "Done" button
-    1) Click on the service account you just created
-        1) Select the "KEYS" tab
-            1) Select "Create new key" from the "ADD KEY" dropdown
-                1) Select json
-                1) Click the "CREATE" button
-                1) A json credentials file will be automatically downloaded
-                    1) This is sensitive information and should be kept confidential
-                    1) Move it somewhere
-    1) Navigate back to the service account details page
-        1) copy the service account email to your clipboard
-1) Navigate to Google Sheets
-    1) Create a spreadsheet to hold your whitelist
-    1) Don't make it public as it will contain sensitive information (names, usernames, email addresses)
-    1) Share the sheet with the service account email address as you would share a sheet with a typical human user
-        1) Hit the share button and paste in the address</p>
-<h1 id="extra-notes">Extra Notes</h1>
+                <h1 id="welcome-to-the-february-2022-opensarlab-update">Welcome to the February 2022 OpenSARlab Update!</h1>
+<h3 id="changes">Changes:</h3>
 <ul>
-<li>The Google Sheet should follow the naming convention <code>&lt;deployment_name&gt;-whitelist</code></li>
-<li>The first sheet must contain the whitelist</li>
-<li>The first column must contain user emails</li>
-<li>There are no restrictions on the use of additional columns and/or sheets<ul>
-<li>ASF will have access to the sheet so it is recommended that you not include sensitive information </li>
+<li>Ubuntu 20.04.3 LTS</li>
+<li>Jupyter Lab <ul>
+<li>new menus</li>
+<li>workspaces</li>
+<li>matplotlib notebook -&gt; matplotlib widget</li>
+<li>url-widget<ul>
+<li>Kernel check code cell changes in notebooks</li>
+</ul>
+</li>
+<li>new resource manager location</li>
+<li>notebook debugger</li>
+</ul>
+</li>
+<li>mamba</li>
+<li>mamba-gator</li>
+<li>spellchecker</li>
+<li>Custom extensions in topbar<ul>
+<li>Shutdown and logout button</li>
 </ul>
 </li>
 </ul>
@@ -802,6 +856,71 @@ feedback.init({showIcon: false});
 <footer class="md-footer">
 
   <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="Footer"
+      >
+
+        <!-- Link to previous page -->
+        
+          <a href="../release_10-2021/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                October 2021
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+      </nav>
+
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="../../assets/images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   
 
   <!-- Further information -->

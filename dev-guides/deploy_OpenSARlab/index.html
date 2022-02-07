@@ -721,6 +721,18 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environment Options
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../notifications/" class="md-nav__link">
         Notifications
       </a>
@@ -790,6 +802,18 @@ feedback.init({showIcon: false});
     <li class="md-nav__item">
       <a href="../../release-notes/release_10-2021/" class="md-nav__link">
         October 2021
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/release_02-2022/" class="md-nav__link">
+        February 2022
       </a>
     </li>
   
@@ -1095,8 +1119,8 @@ Images can be used by multiple profiles</strong></p>
 <li>Edit the repos being pulled to suit your deployment and image needs</li>
 </ol>
 </li>
-<li>Update <code>opensarlab/opensarlab.yaml</code> for your deployment</li>
-<li>Reference <code>opensarlab/opensarlab.example.yaml</code> to define the required and optional fields in <code>opensarlab/opensarlab.yaml</code></li>
+<li>Rename <code>opensarlab/opensarlab.example.yaml</code> to  <code>opensarlab/opensarlab.yaml</code></li>
+<li>Use the example notes in <code>opensarlab/opensarlab.yaml</code> to define the required and optional fields</li>
 <li>Update <code>opensarlab/jupyterhub/helm_config.yaml</code><ol>
 <li><code>singleuser</code></li>
 <li>Add any needed extraFiles</li>
@@ -1296,7 +1320,7 @@ Images can be used by multiple profiles</strong></p>
     1. red notification
             1. \&lt;message>
                 1. Your notification message
-8. Sign up with your <code>admin_user_name</code> account, sign in, and add groups for each profile and sudo
+1. Sign up with your <code>admin_user_name</code> account, sign in, and add groups for each profile and sudo
     1. Open the <code>deployment_url</code> in a web browser
         1. Click the "Sign in" button
             1. Click the "Sign up" link
@@ -1342,7 +1366,7 @@ Images can be used by multiple profiles</strong></p>
             1. Test notebooks as needed
             1. Confirm that notifications appear
         1. Repeat for each profile
-9. Configure your local K8s config so you can manage your EKS cluster with kubectl
+1. Configure your local K8s config so you can manage your EKS cluster with kubectl
     1. Add your AWS user to the trust relationship of the <code>deployment_name</code>-cluster-access IAM role
         1. Navigate to the AWS IAM console
             1. Click the "Roles" link from the sidebar menu
@@ -1660,13 +1684,13 @@ to proceed. Empty them and let CloudFormation delete them for you.</p>
 
         <!-- Link to next page -->
         
-          <a href="../notifications/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../conda_environments/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Notifications
+                Conda Environment Options
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

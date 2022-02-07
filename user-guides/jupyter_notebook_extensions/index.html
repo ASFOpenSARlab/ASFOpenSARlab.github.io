@@ -139,7 +139,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#managing-jupyter-notebook-extensions" class="md-skip">
+        <a href="#managing-jupyter-lab-extensions" class="md-skip">
           Skip to content
         </a>
       
@@ -523,38 +523,9 @@ feedback.init({showIcon: false});
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Jupyter Notebook Extensions
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         Jupyter Notebook Extensions
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enabling-and-disabling-extensions" class="md-nav__link">
-    Enabling and Disabling Extensions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -644,6 +615,18 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../../dev-guides/conda_environments/" class="md-nav__link">
+        Conda Environment Options
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../dev-guides/notifications/" class="md-nav__link">
         Notifications
       </a>
@@ -718,6 +701,18 @@ feedback.init({showIcon: false});
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/release_02-2022/" class="md-nav__link">
+        February 2022
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -742,21 +737,6 @@ feedback.init({showIcon: false});
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enabling-and-disabling-extensions" class="md-nav__link">
-    Enabling and Disabling Extensions
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -769,9 +749,16 @@ feedback.init({showIcon: false});
                 
                 
                 <p><a href="../../user/">Return to Table of Contents</a></p>
-<h1 id="managing-jupyter-notebook-extensions">Managing Jupyter Notebook Extensions</h1>
-<p>As an OpenSARlab user, you have access to all of the notebook extensions available in the <code>nbextensions</code> package. A detailed list of extensions is available <a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions.html">here</a>.</p>
+<h1 id="managing-jupyter-lab-extensions">Managing Jupyter Lab Extensions</h1>
+<p>As an OpenSARlab Jupyter Lab user, you have limited access to third-party extensions.</p>
+<ul>
+<li>Server extensions must be installed in the OpenSARlab Docker container and cannot be installed by users.</li>
+<li>Lab extensions can be installed, enabled, and disabled from the terminal but they will not persist across server restarts and will need to be reinstalled. </li>
+<li>If you feel that OpenSARlab is lacking an important Jupyter Lab extension, please contact us to request it at <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#117;&#97;&#102;&#45;&#106;&#117;&#112;&#121;&#116;&#101;&#114;&#104;&#117;&#98;&#45;&#97;&#115;&#102;&#64;&#97;&#108;&#97;&#115;&#107;&#97;&#46;&#101;&#100;&#117;">&#117;&#97;&#102;&#45;&#106;&#117;&#112;&#121;&#116;&#101;&#114;&#104;&#117;&#98;&#45;&#97;&#115;&#102;&#64;&#97;&#108;&#97;&#115;&#107;&#97;&#46;&#101;&#100;&#117;</a></li>
+</ul>
 <hr />
+<h1 id="managing-jupyter-notebook-extensions">Managing Jupyter Notebook Extensions</h1>
+<p>As an OpenSARlab Jupyter Notebook user, you have access to all of the notebook extensions available in the <code>nbextensions</code> package. A detailed list of extensions is available <a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions.html">here</a>.</p>
 <h2 id="enabling-and-disabling-extensions">Enabling and Disabling Extensions</h2>
 <ul>
 <li>The easiest way to manage notebook extensions is via the <code>nbextensions</code> tab.</li>

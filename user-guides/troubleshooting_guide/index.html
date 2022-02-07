@@ -408,6 +408,13 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#i-see-one-or-many-python-3-or-python-kernels-instead-of-kernels-named-after-conda-environments-that-i-expect-to-see" class="md-nav__link">
+    I see one or many Python 3 or Python kernels instead of kernels named after conda environments that I expect to see.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#i-tried-to-create-a-new-notebook-and-recieved-the-error-forbidden" class="md-nav__link">
     I tried to create a new notebook and recieved the error Forbidden
   </a>
@@ -726,6 +733,18 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
+      <a href="../../dev-guides/conda_environments/" class="md-nav__link">
+        Conda Environment Options
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../dev-guides/notifications/" class="md-nav__link">
         Notifications
       </a>
@@ -800,6 +819,18 @@ feedback.init({showIcon: false});
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/release_02-2022/" class="md-nav__link">
+        February 2022
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -847,6 +878,13 @@ feedback.init({showIcon: false});
         <li class="md-nav__item">
   <a href="#when-i-open-a-notebook-i-receive-kernel-not-found-message" class="md-nav__link">
     When I open a notebook, I receive "Kernel not found" message.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-see-one-or-many-python-3-or-python-kernels-instead-of-kernels-named-after-conda-environments-that-i-expect-to-see" class="md-nav__link">
+    I see one or many Python 3 or Python kernels instead of kernels named after conda environments that I expect to see.
   </a>
   
 </li>
@@ -971,6 +1009,22 @@ feedback.init({showIcon: false});
 </li>
 <li>
 <p>If you have not created the environment yet, use the following notebook: <code>/home/jovyan/conda_environments/Create_OSL_Conda_Environments.ipynb</code></p>
+</li>
+</ul>
+<hr />
+<h2 id="i-see-one-or-many-python-3-or-python-kernels-instead-of-kernels-named-after-conda-environments-that-i-expect-to-see">I see one or many <code>Python 3</code> or <code>Python</code> kernels instead of kernels named after conda environments that I expect to see.</h2>
+<p><img alt="An image showing multiple Python3 kernels" src="../../assets/python3_kernels.png" /></p>
+<ul>
+<li>The default display names for conda environment kernels are <code>Python 3</code> or <code>Python</code> (depending on when and how they were created).</li>
+<li>We use the kernda package to change a kernel's display name to that of the environment name.<ul>
+<li>There is code in the Create_OSL_Conda_Environments.ipynb notebook that does this.</li>
+<li>If you have created an environment without using the Create_OSL_Conda_Environments.ipynb notebook, run the following command in a terminal to change its display name: <code>mamba run -n &lt;environment name&gt; kernda --display-name &lt;environment name&gt; -o &lt;environment directory&gt;/share/jupyter/kernels/python3/kernel.json</code></li>
+<li>Note: it is important to only run the above kernda command once.<ul>
+<li>Running it more than once will create a malformed <code>kernel.json</code>.</li>
+<li>If you accidentally run it more than once, recreate the environment and try again.</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <hr />
