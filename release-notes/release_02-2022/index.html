@@ -734,6 +734,76 @@ feedback.init({showIcon: false});
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubuntu-20043-lts" class="md-nav__link">
+    Ubuntu 20.04.3 LTS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyterlab" class="md-nav__link">
+    JupyterLab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlib-widget" class="md-nav__link">
+    Matplotlib widget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-widget" class="md-nav__link">
+    Url-widget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-memory-monitor-location" class="md-nav__link">
+    New Memory Monitor Location
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook-debugger" class="md-nav__link">
+    Notebook Debugger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mamba" class="md-nav__link">
+    Mamba
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mamba-gator-is-installed" class="md-nav__link">
+    Mamba Gator is installed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spellchecker" class="md-nav__link">
+    Spellchecker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-extensions" class="md-nav__link">
+    Custom Extensions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -779,6 +849,76 @@ feedback.init({showIcon: false});
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ubuntu-20043-lts" class="md-nav__link">
+    Ubuntu 20.04.3 LTS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jupyterlab" class="md-nav__link">
+    JupyterLab
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlib-widget" class="md-nav__link">
+    Matplotlib widget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#url-widget" class="md-nav__link">
+    Url-widget
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-memory-monitor-location" class="md-nav__link">
+    New Memory Monitor Location
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notebook-debugger" class="md-nav__link">
+    Notebook Debugger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mamba" class="md-nav__link">
+    Mamba
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mamba-gator-is-installed" class="md-nav__link">
+    Mamba Gator is installed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spellchecker" class="md-nav__link">
+    Spellchecker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-extensions" class="md-nav__link">
+    Custom Extensions
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -796,23 +936,87 @@ feedback.init({showIcon: false});
 <h3 id="changes">Changes:</h3>
 <ul>
 <li>Ubuntu 20.04.3 LTS</li>
-<li>Jupyter Lab <ul>
-<li>new menus</li>
-<li>workspaces</li>
-<li>matplotlib notebook -&gt; matplotlib widget</li>
-<li>url-widget<ul>
-<li>Kernel check code cell changes in notebooks</li>
+<li>JupyterLab</li>
+<li>Matplotlib widget</li>
+<li>Url-widget</li>
+<li>New memory monitor location</li>
+<li>Notebook Debugger</li>
+<li>Mamba</li>
+<li>Mamba Gator</li>
+<li>Spellchecker</li>
+<li>Custom extensions</li>
+</ul>
+<h2 id="ubuntu-20043-lts">Ubuntu 20.04.3 LTS</h2>
+<ul>
+<li>JupyterHub is now running on Ubuntu 20.04.3 LTS, updated from Ubuntu 18.04</li>
+</ul>
+<h2 id="jupyterlab">JupyterLab</h2>
+<ul>
+<li>There are now JupyterLab profiles available alongside the Classic Jupyter Notebook profiles. JupyterLab comes with many more features than Classic Jupyter Notebook (see the <a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">JupyterLab Docs</a>) for more information.</li>
+<li>Classic Jupyter Notebook profiles will remain active for 1 month before being deprecated on March 7th.</li>
+</ul>
+<h2 id="matplotlib-widget">Matplotlib widget</h2>
+<ul>
+<li><code>matplotlib notebook</code> has been replaced with <code>matplotlib widget</code> for interactive matplotlib plots.<ul>
+<li><code>matplotlib notebook</code> will not work in JupyterLab, whereas <code>matplotlib widget</code> works in both JupyterLab and Classic Jupyter Notebook.</li>
 </ul>
 </li>
-<li>new resource manager location</li>
-<li>notebook debugger</li>
+</ul>
+<h2 id="url-widget">Url-widget</h2>
+<ul>
+<li>The <code>url-widget</code> package is now installed, allowing notebook Python kernels access to the current notebook's URL.<ul>
+<li>This is useful for dynamically creating links to files and notebooks in OpenSARlab, and it is used in the kernel checking code at the beginning of ASF provided notebooks.</li>
 </ul>
 </li>
-<li>mamba</li>
-<li>mamba-gator</li>
-<li>spellchecker</li>
-<li>Custom extensions in topbar<ul>
-<li>Shutdown and logout button</li>
+</ul>
+<h2 id="new-memory-monitor-location">New Memory Monitor Location</h2>
+<ul>
+<li>JupyterLab comes with a built-in memory monitor, replacing the jupyter-resource-usage extension.<ul>
+<li>The new memory monitor can be found in the status bar at the bottom of the JupyterLab screen.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="memory monitor" src="../../assets/memory_monitor.png" /></p>
+<h2 id="notebook-debugger">Notebook Debugger</h2>
+<ul>
+<li>JupyterLab comes with a built-in notebook debugger.<ul>
+<li><a href="https://jupyterlab.readthedocs.io/en/stable/user/debugger.html">JupyterLab Debugger Docs</a></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Screenshot of JupyterLab Debugger" src="../../assets/debugger.png" /></p>
+<h2 id="mamba">Mamba</h2>
+<ul>
+<li>The <a href="https://github.com/mamba-org/mamba">mamba package manager</a> is now available in OpenSARlab.<ul>
+<li>Mamba is a multi-threaded "reimplementation of the conda package manager in C++."</li>
+<li>It creates environments much more quickly than conda.</li>
+</ul>
+</li>
+<li>The <a href="https://github.com/ASFOpenSARlab/opensarlab-envs">opensarlab-envs repo</a> has been updated to use mamba.</li>
+</ul>
+<h2 id="mamba-gator-is-installed">Mamba Gator is installed</h2>
+<ul>
+<li><a href="https://github.com/mamba-org/gator">mamba gator</a> provides a GUI for managing conda/mamba environments that is accessible in JupyterLab.<ul>
+<li>Access mamba gator by selecting the  <code>Conda Packages Manager</code> from the <code>Settings</code> menu.</li>
+</ul>
+</li>
+</ul>
+<h2 id="spellchecker">Spellchecker</h2>
+<ul>
+<li>The <a href="https://github.com/jupyterlab-contrib/spellchecker">spellchecker extension</a> is installed.<ul>
+<li>It checks spelling in markdown cells.</li>
+<li>The language may be changed in the status bar at the bottom of the screen.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="The language may be changed in the status bar at the bottom of the screen" src="../../assets/language.png" /></p>
+<h2 id="custom-extensions">Custom Extensions</h2>
+<ul>
+<li>We have added some custom JupyterLab extensions to duplicate custom features previously added in OpenSARlab for Jupyter Notebooks.<ul>
+<li><a href="https://pypi.org/project/opensarlab-profile-label/">opensarlab-profile-label</a> provides the name of the current OpenSARlab profile in the topbar.</li>
+<li><a href="https://pypi.org/project/opensarlab-doc-link/">opensarlab-doc-link</a> provides a link to the <a href="https://opensarlab-docs.asf.alaska.edu/">OpenSARlab documentation</a> in the topbar.</li>
+<li><a href="https://pypi.org/project/opensarlab-controlbtn/">opensarlab-controlbtn</a> provides a <code>Shutdown and Logout Page</code> button in the topbar.</li>
+<li><a href="https://pypi.org/project/opensarlab-notifications/">opensarlab-notifications</a> provides similar functionality to the popup notifications used in the OpenSARlab Classic Jupyter Notebook profiles.</li>
 </ul>
 </li>
 </ul>
