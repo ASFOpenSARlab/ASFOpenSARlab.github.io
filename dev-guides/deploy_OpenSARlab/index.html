@@ -1306,7 +1306,7 @@ Images can be used by multiple profiles</strong></p>
       type: info</p>
 <p><message>
   This is a notification
-            1. \&lt;meta>
+                   <code>1. \&lt;meta\&gt;
                 1. profile:
 1. Holds the name or names (comma separated) of the profiles where the notification will be displayed
                 1. type:
@@ -1318,18 +1318,18 @@ Images can be used by multiple profiles</strong></p>
     1. yellow notification
 1. error
     1. red notification
-            1. \&lt;message>
+            1. \&lt;message\&gt;
                 1. Your notification message
-1. Sign up with your <code>admin_user_name</code> account, sign in, and add groups for each profile and sudo
-    1. Open the <code>deployment_url</code> in a web browser
+1. Sign up with your `admin_user_name` account, sign in, and add groups for each profile and sudo
+    1. Open the `deployment_url` in a web browser
         1. Click the "Sign in" button
             1. Click the "Sign up" link
             1. Username:
-                1. The name used for the <code>admin_user_name</code> parameter of the <code>opensarlab.yaml</code>
+                1. The name used for the `admin_user_name` parameter of the `opensarlab.yaml`
             1. Name:
                 1. Your name
             1. Email:
-                1. Enter the email address used for the AdminEmailAddress parameter in the <code>deployment_name</code>-auth CloudFormation stack
+                1. Enter the email address used for the AdminEmailAddress parameter in the `deployment_name`-auth CloudFormation stack
             1. Password:
                 1. A password
             1. Click the "Sign up" button
@@ -1367,15 +1367,15 @@ Images can be used by multiple profiles</strong></p>
             1. Confirm that notifications appear
         1. Repeat for each profile
 1. Configure your local K8s config so you can manage your EKS cluster with kubectl
-    1. Add your AWS user to the trust relationship of the <code>deployment_name</code>-cluster-access IAM role
+    1. Add your AWS user to the trust relationship of the `deployment_name`-cluster-access IAM role
         1. Navigate to the AWS IAM console
             1. Click the "Roles" link from the sidebar menu
-                1. Select the <code>deployment_name</code>-cluster-access IAM role
+                1. Select the `deployment_name`-cluster-access IAM role
 1. Click the "Trust relationships" tab
 1. Click the "Edit trust relationship" button
     1. Add your AWS user ARN
     1. Example json:
-        1. <code>json
+        1.</code>json
             {
              "Version": "2008-10-17",
              "Statement": [
@@ -1383,22 +1383,23 @@ Images can be used by multiple profiles</strong></p>
                  "Effect": "Allow",
                  "Principal": {
                    "AWS": [
-                     "arn:aws:iam::&lt;account_#&gt;:user/&lt;username&gt;"
+                     "arn:aws:iam::<account_#>:user/<username>"
                    ]
                  },
                  "Action": "sts:AssumeRole"
                }
              ]
-            }</code>    <br />
-    1. Click the "Update Trust Policy" button        <br />
+            }
+           <code>1. Click the "Update Trust Policy" button          
     1. Add an AWS profile on your local machine
         1. Example profile:
-            1. <code>yaml
+            1.</code>yaml
                 [profile profile_name]
                 source_profile = your_source_profile
                 region = your_region
-                role_arn = arn:aws:iam::&lt;account_id&gt;:role/&lt;region_name&gt;-&lt;deployment_name&gt;-cluster-user-access
-                cluster_name = &lt;deployment_name&gt;-cluster</code>
+                role_arn = arn:aws:iam::<account_id>:role/<region_name>-<deployment_name>-cluster-user-access
+                cluster_name = <deployment_name>-cluster            <br />
+                ```
     1. Run the helps/get_eks_kubeconfig.sh script in the opensarlab-cluster repo
         1. Note: you will use this a lot and it may be helpful to create an alias in ~/.bash_aliases
     1. Use kubectl</p>

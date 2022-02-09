@@ -415,6 +415,13 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-notebook-wont-open-opens-slowly-or-wont-save" class="md-nav__link">
+    My notebook won't open, opens slowly, or won't save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#i-tried-to-create-a-new-notebook-and-recieved-the-error-forbidden" class="md-nav__link">
     I tried to create a new notebook and recieved the error Forbidden
   </a>
@@ -890,6 +897,13 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
+  <a href="#my-notebook-wont-open-opens-slowly-or-wont-save" class="md-nav__link">
+    My notebook won't open, opens slowly, or won't save
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#i-tried-to-create-a-new-notebook-and-recieved-the-error-forbidden" class="md-nav__link">
     I tried to create a new notebook and recieved the error Forbidden
   </a>
@@ -1025,6 +1039,21 @@ feedback.init({showIcon: false});
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<hr />
+<h2 id="my-notebook-wont-open-opens-slowly-or-wont-save">My notebook won't open, opens slowly, or won't save</h2>
+<ul>
+<li>
+<p>These are all signs that the notebook contains a lot of output and is too large to easily open or save over the internet in OpenSARlab.</p>
+<ul>
+<li>If the notebook won't open or opens very slowly, remove its output by running the following command from a terminal:<ul>
+<li><code>jupyter nbconvert --clear-output --inplace my_notebook.ipynb</code></li>
+</ul>
+</li>
+<li>If the notebook is open and you can't save it, select <code>Restart Kernel and Clear All Outputs</code> from the <code>Kernel</code> menu and try saving it again.</li>
+</ul>
+<p><img alt="If the notebook is open, select Restart Kernel and Clear All Outputs from the Kernel menu." src="../../assets/restart_clear_all_jlab.png" /></p>
 </li>
 </ul>
 <hr />
