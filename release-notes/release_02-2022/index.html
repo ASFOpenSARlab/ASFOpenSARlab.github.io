@@ -804,6 +804,13 @@ feedback.init({showIcon: false});
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#recommended-jupyter-notebook-changes" class="md-nav__link">
+    Recommended Jupyter Notebook Changes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -919,6 +926,13 @@ feedback.init({showIcon: false});
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#recommended-jupyter-notebook-changes" class="md-nav__link">
+    Recommended Jupyter Notebook Changes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -945,6 +959,7 @@ feedback.init({showIcon: false});
 <li>Mamba Gator</li>
 <li>Spellchecker</li>
 <li>Custom extensions</li>
+<li>Recommended Jupyter Notebook changes related to update</li>
 </ul>
 <h2 id="ubuntu-20043-lts">Ubuntu 20.04.3 LTS</h2>
 <ul>
@@ -1017,6 +1032,47 @@ feedback.init({showIcon: false});
 <li><a href="https://pypi.org/project/opensarlab-doc-link/">opensarlab-doc-link</a> provides a link to the <a href="https://opensarlab-docs.asf.alaska.edu/">OpenSARlab documentation</a> in the topbar.</li>
 <li><a href="https://pypi.org/project/opensarlab-controlbtn/">opensarlab-controlbtn</a> provides a <code>Shutdown and Logout Page</code> button in the topbar.</li>
 <li><a href="https://pypi.org/project/opensarlab-notifications/">opensarlab-notifications</a> provides similar functionality to the popup notifications used in the OpenSARlab Classic Jupyter Notebook profiles.</li>
+</ul>
+</li>
+</ul>
+<h2 id="recommended-jupyter-notebook-changes">Recommended Jupyter Notebook Changes</h2>
+<p>The following bullet points cover code changes you may need to make to your notebooks for them to work in JupyterLab</p>
+<p><em>note: These changes are backwards compatible and updated notebooks will still run in Jupyter Notebook.</em></p>
+<p><em>note: All <a href="https://github.com/ASFOpenSARlab/opensarlab-notebooks">ASF notebooks</a> have already been updated.</em></p>
+<ul>
+<li>The javascript variable <code>Jupyter.notebook.kernel</code> does not exist in JupyterLab.<ul>
+<li>If you need a Python variable containing a notebook's current Python kernel, run:<ul>
+<li><code>env = !echo $CONDA_PREFIX</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The javascript variable <code>window.location</code> does not exist in JupyterLab<ul>
+<li>If you need the current url of your Jupyter workspace, install the <code>url-widget</code> package in your conda environment and use it to retrieve the url:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python"># In one cell
+import url_widget as url_w
+notebook_url = url_w.URLWidget()
+display(notebook_url)
+</code></pre>
+<pre><code class="language-python"># In a following cell
+notebook_url = notebook_url.value
+</code></pre>
+<ul>
+<li><code>%matplotlib notebook</code> does not work for interactive plotting in JupyterLab<ul>
+<li>Instead, use: <code>%matplotlib widget</code></li>
+</ul>
+</li>
+<li><code>asf_notebook.py</code> is deprecated and has been replaced with <code>opensarlab-lib</code>: <a href="https://github.com/ASFOpenSARlab/opensarlab-lib">https://github.com/ASFOpenSARlab/opensarlab-lib</a><ul>
+<li><code>asf_notebook.py</code> still works (with deprecation warnings) but it is not being maintained. </li>
+<li>Install <code>opensarlab-lib</code> with one of the following commands:<ul>
+<li><code>python -m pip install opensarlab-lib</code></li>
+<li><code>conda install -n &lt;environment_name&gt; -c conda-forge opensarlab-lib</code></li>
+</ul>
+</li>
+<li>Alternatively, you may add <code>environment.yml</code> as a dependency and use it instead.</li>
 </ul>
 </li>
 </ul>
