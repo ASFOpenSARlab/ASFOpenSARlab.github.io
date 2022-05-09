@@ -13,14 +13,14 @@
         <meta name="author" content="ASF OpenSARlab Team">
       
       
-        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/user-guides/logging_out_and_server_shutdown/">
+        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/mintpy_conda/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-6.2.8">
     
     
       
-        <title>Logging Out and Server Shutdown - OpenSARlab-Docs</title>
+        <title>Custom Mintpy Conda Build Instructions - OpenSARlab-Docs</title>
       
     
     
@@ -139,7 +139,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#logging-out-of-opensarlab-and-shutting-down-the-server" class="md-skip">
+        <a href="#build-latest-mintpy-and-push-to-custom-opensarlab-conda-channel" class="md-skip">
           Skip to content
         </a>
       
@@ -237,7 +237,7 @@ feedback.init({showIcon: false});
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Logging Out and Server Shutdown
+              Custom Mintpy Conda Build Instructions
             
           </span>
         </div>
@@ -356,7 +356,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting_guide/" class="md-nav__link">
+      <a href="../../user-guides/troubleshooting_guide/" class="md-nav__link">
         Troubleshooting Guide
       </a>
     </li>
@@ -369,14 +369,12 @@ feedback.init({showIcon: false});
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
       
       <label class="md-nav__link" for="nav-3">
         User Guide
@@ -407,7 +405,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../how_to_run_a_notebook/" class="md-nav__link">
+      <a href="../../user-guides/how_to_run_a_notebook/" class="md-nav__link">
         Running Jupyter Notebook
       </a>
     </li>
@@ -419,7 +417,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
+      <a href="../../user-guides/conda_environments/" class="md-nav__link">
         Conda Environments
       </a>
     </li>
@@ -431,7 +429,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+      <a href="../../user-guides/installing_software_in_OpenSARlab/" class="md-nav__link">
         Installing Software in OpenSARlab
       </a>
     </li>
@@ -443,7 +441,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../restarting_server_and_kernel/" class="md-nav__link">
+      <a href="../../user-guides/restarting_server_and_kernel/" class="md-nav__link">
         OpenSARlab Servers and Kernels
       </a>
     </li>
@@ -455,7 +453,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_magic/" class="md-nav__link">
+      <a href="../../user-guides/jupyter_magic/" class="md-nav__link">
         Jupyter Magic Commands
       </a>
     </li>
@@ -467,7 +465,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_terminal/" class="md-nav__link">
+      <a href="../../user-guides/OpenSARlab_terminal/" class="md-nav__link">
         OpenSARlab Terminal
       </a>
     </li>
@@ -479,7 +477,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_environment/" class="md-nav__link">
+      <a href="../../user-guides/OpenSARlab_environment/" class="md-nav__link">
         OpenSARlab Account Details
       </a>
     </li>
@@ -491,7 +489,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../git_in_OpenSARlab/" class="md-nav__link">
+      <a href="../../user-guides/git_in_OpenSARlab/" class="md-nav__link">
         Git in OpenSARlab
       </a>
     </li>
@@ -503,7 +501,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../s3_buckets/" class="md-nav__link">
+      <a href="../../user-guides/s3_buckets/" class="md-nav__link">
         S3 Bucket Access in OpenSARlab
       </a>
     </li>
@@ -515,7 +513,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../jupyter_notebook_extensions/" class="md-nav__link">
+      <a href="../../user-guides/jupyter_notebook_extensions/" class="md-nav__link">
         Jupyter Notebook Extensions
       </a>
     </li>
@@ -527,7 +525,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../class_notebooks_best_practices/" class="md-nav__link">
+      <a href="../../user-guides/class_notebooks_best_practices/" class="md-nav__link">
         Best Practices for Writing Notebooks
       </a>
     </li>
@@ -537,63 +535,11 @@ feedback.init({showIcon: false});
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Logging Out and Server Shutdown
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../user-guides/logging_out_and_server_shutdown/" class="md-nav__link">
         Logging Out and Server Shutdown
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-shut-down-the-server" class="md-nav__link">
-    Why Shut Down the Server?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-shut-down-the-server-and-logout-in-jupyter-lab" class="md-nav__link">
-    How to Shut Down The Server and Logout in Jupyter Lab
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-shut-down-the-server-and-logout-in-jupyter-notebook" class="md-nav__link">
-    How to Shut Down The Server and Logout in Jupyter Notebook
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -610,12 +556,14 @@ feedback.init({showIcon: false});
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
       
       <label class="md-nav__link" for="nav-4">
         Developer Guide
@@ -646,7 +594,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../dev-guides/deploy_OpenSARlab/" class="md-nav__link">
+      <a href="../deploy_OpenSARlab/" class="md-nav__link">
         Deploy OpenSARlab to AWS
       </a>
     </li>
@@ -658,7 +606,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../dev-guides/conda_environments/" class="md-nav__link">
+      <a href="../conda_environments/" class="md-nav__link">
         Conda Environment Options
       </a>
     </li>
@@ -670,7 +618,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../dev-guides/notifications/" class="md-nav__link">
+      <a href="../notifications/" class="md-nav__link">
         Notifications
       </a>
     </li>
@@ -682,7 +630,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../dev-guides/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         Troubelshooting Guide
       </a>
     </li>
@@ -692,11 +640,20 @@ feedback.init({showIcon: false});
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../dev-guides/mintpy_conda/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Custom Mintpy Conda Build Instructions
       </a>
+      
     </li>
   
 
@@ -792,35 +749,6 @@ feedback.init({showIcon: false});
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-shut-down-the-server" class="md-nav__link">
-    Why Shut Down the Server?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-shut-down-the-server-and-logout-in-jupyter-lab" class="md-nav__link">
-    How to Shut Down The Server and Logout in Jupyter Lab
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-shut-down-the-server-and-logout-in-jupyter-notebook" class="md-nav__link">
-    How to Shut Down The Server and Logout in Jupyter Notebook
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -832,67 +760,68 @@ feedback.init({showIcon: false});
               
                 
                 
-                <p><a href="../../user/">Return to Table of Contents</a></p>
-<h1 id="logging-out-of-opensarlab-and-shutting-down-the-server">Logging Out of OpenSARlab and Shutting Down the Server</h1>
-<p>When you are ready to stop working in OpenSARlab, it is important to shut down your server and also logout.</p>
-<hr />
-<h2 id="why-shut-down-the-server">Why Shut Down the Server?</h2>
-<!--  in future, include docs regarding auto shutdown and reference it here -->
+                <h1 id="build-latest-mintpy-and-push-to-custom-opensarlab-conda-channel">Build latest mintpy and push to custom OpenSARlab conda channel</h1>
+<p>Sometimes the latest version of MintPy is desired within a notebook but the official release is not current. These instructions will show how to build MintPy and push to a custom conda channel.</p>
+<p><em>This assumes that the user has an Anaconda.org account and that this account is attached to a <code>opensarlab</code> conda channel. Instructions on how to do this are not provided here.</em></p>
+<p>A. Create working directory</p>
+<pre><code class="language-bash">mkdir conda-mintpy
+cd conda-mintpy
+</code></pre>
+<p>B. Create conda environment</p>
+<pre><code class="language-bash">conda create -n conda-build python=3.10 anaconda-client
+conda activate conda-build
+</code></pre>
+<p>C. Clone conda feedstock of mintpy. https://github.com/conda-forge/mintpy-feedstock</p>
+<pre><code class="language-bash">git clone git@github.com:conda-forge/mintpy-feedstock.git
+</code></pre>
+<p>D. Clone mintpy code repo. https://github.com/insarlab/mintpy. Only the latest commit is included to speed up download. Drop the <code>--depth 1</code> to get the whole history.</p>
+<pre><code class="language-bash">git clone --depth 1 git@github.com:insarlab/MintPy.git
+</code></pre>
+<p>E. Assuming mintpy main is used and is also the latest, we won't make any changes to mintpy</p>
+<p>The feedstock is a framework for building. It does not have the source code to build within it. Copy Mintpy source to feedstock recipes.</p>
+<pre><code class="language-bash">cp -r MintPy mintpy-feedstock/recipe/MintPy
+</code></pre>
+<p>F. Make versioning clear and build MintPy from local. The VERSION here is a working example. The actual version is subject to change.</p>
+<pre><code class="language-text">VERSION=1.3.3.dev.COMMIT_SHORT_HASH
+</code></pre>
+<p>G. Edit <code>mintpy-feedstock/recipe/meta.yaml</code> </p>
+<pre><code class="language-diff">
+-{% set version = &quot;1.3.2&quot; %}
++{% set version = 1.3.3.dev.COMMIT_SHORT_HASH %}
 
-<ul>
-<li>
-<p>Logging out will <strong>not</strong> shut down the server on its own. While the server may shut down automatically after an hour of inactivity, users should not rely on this feature. </p>
-</li>
-<li>
-<p>The server will stay alive while there are any notebooks open in active browser tabs.</p>
-<ul>
-<li><em>Example:</em> Consider a case where you ran some process, logged out, and decided to log back in for the first time in a few days. Upon logging in, you noticed that the Jupyter Notebook from the previous session is still running. This implies that your server was running for the past few days, which used up unnecessary resources.</li>
-</ul>
-</li>
-</ul>
-<p>Do your part to reduce resource use and ease the burden on the environment by shutting down your server when you are finished working for the day. </p>
-<p><strong>In some instances, you may need to leave your server running. For example, you have a notebook performing a very time intensive analysis and wish to let it run overnight. It is acceptable for you to keep your server running in cases like this.</strong></p>
-<p><em>Summary: Unless you intend to run your server for a long period of time, make sure to shut it down before your leave.</em> </p>
-<hr />
-<h2 id="how-to-shut-down-the-server-and-logout-in-jupyter-lab">How to Shut Down The Server and Logout in Jupyter Lab</h2>
-<ol>
-<li>
-<p><strong>Select <code>Hub Control Panel</code> from the <code>File</code> menu</strong></p>
-<p><img alt="Select Hub Control Panel from the File menu" src="../../assets/jlab_hub_control.png" /></p>
-<p><strong>or</strong></p>
-<p><strong>Click the <code>Shutdown and Logout Page</code> button in the upper right corner of the screen</strong> </p>
-<p><img alt="Click the Shutdown and Logout Page button in the upper right corner of the screen" src="../../assets/shutdown_logout.png" /></p>
-</li>
-<li>
-<p><strong>Click The Stop My Server Button</strong></p>
-<p><img alt="Click the Stop My Server button" src="../../assets/stop_my_server.png" /></p>
-<p><em>Click the </em><em>Stop My Server</em><em> button that appears.</em></p>
-</li>
-<li>
-<p><strong>Click The Logout Button</strong></p>
-<p><img alt="Click the Logout button" src="../../assets/logout_2.png" /></p>
-<p><em>Click the </em><em>Logout</em><em> button.</em></p>
-</li>
-</ol>
-<hr />
-<h2 id="how-to-shut-down-the-server-and-logout-in-jupyter-notebook">How to Shut Down The Server and Logout in Jupyter Notebook</h2>
-<ol>
-<li>
-<p><strong>Click The Control Panel Button</strong></p>
-<p><img alt="Click the Control Panel button" src="../../assets/control_panel.png" /></p>
-<p><em>Click the </em><em>Control Panel</em><em> button at the top right corner of the file manager or in an open notebook.</em></p>
-</li>
-<li>
-<p><strong>Click The Stop My Server Button</strong></p>
-<p><img alt="Click the Stop My Server button" src="../../assets/stop_my_server.png" /></p>
-<p><em>Click the </em><em>Stop My Server</em><em> button that appears.</em></p>
-</li>
-<li>
-<p><strong>Click The Logout Button</strong></p>
-<p><img alt="Click the Logout button" src="../../assets/logout_2.png" /></p>
-<p><em>Click the </em><em>Logout</em><em> button.</em></p>
-</li>
-</ol>
+source:
+-    url: https://github.com/insarlab/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+-    sha256: 6c1242dee74f13b96aa4b1f8d50c45ec486397796e4bd4bf3f67849f921bfe7f
++    path: MintPy
+</code></pre>
+<p>H. Build
+    This may take a while.</p>
+<pre><code class="language-bash">cd mintpy-feedstock
+python3.10 build-locally.py
+cd ..
+</code></pre>
+<p>I. After a successful build, check for artifacts in <code>mintpy-feedstock/build_artifacts/</code></p>
+<p>J. Push changes to OpenSARlab conda channel.</p>
+<pre><code class="language-bash"># Login to individual account where you are an owner of OpenSARlab org
+anaconda login
+
+# Upload artifacts
+anaconda upload --user opensarlab mintpy-feedstock/build_artifacts/noarch/mintpy-*.tar.bz2
+</code></pre>
+<p>K. Download and check version</p>
+<pre><code class="language-bash">mamba install -c opensarlab -c conda-forge mintpy=VERSION
+conda list | grep -i mintpy
+</code></pre>
+<p>L. Cleanup as desired</p>
+<pre><code class="language-bash">cd ../
+ls
+
+rm -rf conda-mintpy
+
+conda deactivate
+conda env remove -n conda-build
+conda env list
+</code></pre>
                 
               
               
@@ -942,7 +871,7 @@ feedback.init({showIcon: false});
 
         <!-- Link to previous page -->
         
-          <a href="../class_notebooks_best_practices/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../troubleshooting/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -951,7 +880,7 @@ feedback.init({showIcon: false});
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Best Practices for Writing Notebooks
+                Troubelshooting Guide
               </div>
             </div>
           </a>
@@ -959,13 +888,13 @@ feedback.init({showIcon: false});
 
         <!-- Link to next page -->
         
-          <a href="../../assets/system_diagrams/OpenSARlab_system_diagram_June_2021.png" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../release-notes/release_06-2021/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                System Diagram
+                June 2021
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
