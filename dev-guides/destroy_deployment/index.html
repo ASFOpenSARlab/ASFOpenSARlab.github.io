@@ -13,14 +13,14 @@
         <meta name="author" content="ASF OpenSARlab Team">
       
       
-        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/conda_environments/">
+        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/destroy_deployment/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-6.2.8">
     
     
       
-        <title>Conda Environment Options - OpenSARlab-Docs</title>
+        <title>Destroy Deployments - OpenSARlab-Docs</title>
       
     
     
@@ -139,7 +139,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#there-are-a-few-options-for-creating-conda-environments-in-opensarlab" class="md-skip">
+        <a href="#destroy-deployments" class="md-skip">
           Skip to content
         </a>
       
@@ -237,7 +237,7 @@ feedback.init({showIcon: false});
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Conda Environment Options
+              Destroy Deployments
             
           </span>
         </div>
@@ -604,18 +604,6 @@ feedback.init({showIcon: false});
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../destroy_deployment/" class="md-nav__link">
-        Destroy Deployments
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -627,12 +615,12 @@ feedback.init({showIcon: false});
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Conda Environment Options
+          Destroy Deployments
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Conda Environment Options
+        Destroy Deployments
       </a>
       
         
@@ -649,23 +637,44 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-conda-environments-register-their-kernels-and-run-any-setup-scripts-in-the-docker-images" class="md-nav__link">
-    Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s
+  <a href="#warning-before-deleting-the-deployments-developers-will-need-to-account-for-the-following" class="md-nav__link">
+    WARNING: Before deleting the deployments, developers will need to account for the following:
   </a>
   
-    <nav class="md-nav" aria-label="Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-cloudformation-stacks" class="md-nav__link">
+    Removing CloudFormation Stacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-delete-cloudformation-stacks" class="md-nav__link">
+    Steps to Delete CloudFormation Stacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to Delete CloudFormation Stacks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#benefits" class="md-nav__link">
-    Benefits
+  <a href="#1-prepare-to-delete-the-deployment_name-container-cloudformation-stack" class="md-nav__link">
+    1. Prepare to delete the &lt;deployment_name&gt;-container CloudFormation stack
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#drawbacks" class="md-nav__link">
-    Drawbacks
+  <a href="#2-delete-ecr-repos" class="md-nav__link">
+    2. Delete ECR repos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-delete-the-deployment_name-container-cloudformation-stack" class="md-nav__link">
+    3. Delete the &lt;deployment_name&gt;-container CloudFormation stack
   </a>
   
 </li>
@@ -676,23 +685,30 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-conda-environments-in-the-docker-images-then-in-the-hook-script-sync-them-to-homelocal-register-their-kernels-and-run-any-setup-scripts" class="md-nav__link">
-    Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts
+  <a href="#deleting-the-rest-of-the-cloudformation-stacks" class="md-nav__link">
+    Deleting the rest of the CloudFormation Stacks
   </a>
   
-    <nav class="md-nav" aria-label="Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-ebs-snapshots-and-volumes" class="md-nav__link">
+    Delete EBS Snapshots and Volumes
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete EBS Snapshots and Volumes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#benefits_1" class="md-nav__link">
-    Benefits
+  <a href="#delete-ebs-snapshots" class="md-nav__link">
+    Delete EBS snapshots
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#drawbacks_1" class="md-nav__link">
-    Drawbacks
+  <a href="#delete-ebs-volumes" class="md-nav__link">
+    Delete EBS volumes
   </a>
   
 </li>
@@ -703,29 +719,23 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#leave-conda-environment-creation-up-to-the-users" class="md-nav__link">
-    Leave Conda Environment Creation up to the Users
-  </a>
-  
-    <nav class="md-nav" aria-label="Leave Conda Environment Creation up to the Users">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits_2" class="md-nav__link">
-    Benefits
+  <a href="#optional-delete-the-codecommit-repositories" class="md-nav__link">
+    (Optional) Delete the CodeCommit repositories
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks_2" class="md-nav__link">
-    Drawbacks
+      
+        <li class="md-nav__item">
+  <a href="#optional-confirm-that-all-resources-have-been-deleted" class="md-nav__link">
+    (Optional) Confirm that all resources have been deleted
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#delete-calendar" class="md-nav__link">
+    Delete Calendar
+  </a>
   
 </li>
       
@@ -733,6 +743,18 @@ feedback.init({showIcon: false});
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda_environments/" class="md-nav__link">
+        Conda Environment Options
+      </a>
     </li>
   
 
@@ -871,23 +893,44 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-conda-environments-register-their-kernels-and-run-any-setup-scripts-in-the-docker-images" class="md-nav__link">
-    Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s
+  <a href="#warning-before-deleting-the-deployments-developers-will-need-to-account-for-the-following" class="md-nav__link">
+    WARNING: Before deleting the deployments, developers will need to account for the following:
   </a>
   
-    <nav class="md-nav" aria-label="Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-cloudformation-stacks" class="md-nav__link">
+    Removing CloudFormation Stacks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-delete-cloudformation-stacks" class="md-nav__link">
+    Steps to Delete CloudFormation Stacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to Delete CloudFormation Stacks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#benefits" class="md-nav__link">
-    Benefits
+  <a href="#1-prepare-to-delete-the-deployment_name-container-cloudformation-stack" class="md-nav__link">
+    1. Prepare to delete the &lt;deployment_name&gt;-container CloudFormation stack
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#drawbacks" class="md-nav__link">
-    Drawbacks
+  <a href="#2-delete-ecr-repos" class="md-nav__link">
+    2. Delete ECR repos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-delete-the-deployment_name-container-cloudformation-stack" class="md-nav__link">
+    3. Delete the &lt;deployment_name&gt;-container CloudFormation stack
   </a>
   
 </li>
@@ -898,23 +941,30 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-conda-environments-in-the-docker-images-then-in-the-hook-script-sync-them-to-homelocal-register-their-kernels-and-run-any-setup-scripts" class="md-nav__link">
-    Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts
+  <a href="#deleting-the-rest-of-the-cloudformation-stacks" class="md-nav__link">
+    Deleting the rest of the CloudFormation Stacks
   </a>
   
-    <nav class="md-nav" aria-label="Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-ebs-snapshots-and-volumes" class="md-nav__link">
+    Delete EBS Snapshots and Volumes
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete EBS Snapshots and Volumes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#benefits_1" class="md-nav__link">
-    Benefits
+  <a href="#delete-ebs-snapshots" class="md-nav__link">
+    Delete EBS snapshots
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#drawbacks_1" class="md-nav__link">
-    Drawbacks
+  <a href="#delete-ebs-volumes" class="md-nav__link">
+    Delete EBS volumes
   </a>
   
 </li>
@@ -925,29 +975,23 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#leave-conda-environment-creation-up-to-the-users" class="md-nav__link">
-    Leave Conda Environment Creation up to the Users
-  </a>
-  
-    <nav class="md-nav" aria-label="Leave Conda Environment Creation up to the Users">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits_2" class="md-nav__link">
-    Benefits
+  <a href="#optional-delete-the-codecommit-repositories" class="md-nav__link">
+    (Optional) Delete the CodeCommit repositories
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks_2" class="md-nav__link">
-    Drawbacks
+      
+        <li class="md-nav__item">
+  <a href="#optional-confirm-that-all-resources-have-been-deleted" class="md-nav__link">
+    (Optional) Confirm that all resources have been deleted
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#delete-calendar" class="md-nav__link">
+    Delete Calendar
+  </a>
   
 </li>
       
@@ -965,57 +1009,241 @@ feedback.init({showIcon: false});
                 
                 
                 <p><a href="../../dev/">Return to Developer Guide</a></p>
-<h1 id="there-are-a-few-options-for-creating-conda-environments-in-opensarlab">There are a few options for creating conda environments in OpenSARlab.</h1>
-<p>Each option come with benefits and drawbacks.</p>
+<h1 id="destroy-deployments"><strong>Destroy Deployments</strong></h1>
+<p>It is essential to destroy a deployment at the end of its life cycle so that no resources are left in place. With a proper destruction procedure, one can mitigate the accrued cost of AWS. </p>
 <hr />
-<h2 id="create-conda-environments-register-their-kernels-and-run-any-setup-scripts-in-the-docker-images">Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s</h2>
-<h3 id="benefits">Benefits</h3>
+<h2 id="warning-before-deleting-the-deployments-developers-will-need-to-account-for-the-following"><strong>WARNING:</strong> Before deleting the deployments, developers will need to account for the following:</h2>
 <ul>
-<li>Users don't have to create conda environments, which saves them time</li>
-<li>Users don't need to know much about conda; they can just start running notebooks</li>
-</ul>
-<h3 id="drawbacks">Drawbacks</h3>
-<ul>
-<li>Users cannot install additional packages into their conda environments</li>
-<li>Changes to environments on the docker image involve rebuilding the container and CodePipelines</li>
-<li>Large environments may overrun the 20GB root volume mounted on each EC2 instance, requiring that larger, more expensive root volumes be used.</li>
+<li>When deleting the <code>CloudFormation</code> stack, the deletion order matters.</li>
+<li>Delete some of the <code>CloudFormation</code> stacks before deleting ECR.</li>
+<li>The name of the items you're deleting may differ depending on the deployment you are taking down. For example, your deployment's <code>CloudFormation</code> stack may not have a <code>region</code> name.</li>
+<li>Do <strong>NOT</strong> take down the <code>Cognito</code> and <code>CloudWatch</code> logs. These are used for statistical analysis later on.</li>
 </ul>
 <hr />
-<h2 id="create-conda-environments-in-the-docker-images-then-in-the-hook-script-sync-them-to-homelocal-register-their-kernels-and-run-any-setup-scripts">Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to <code>$Home/.local</code>, Register Their Kernels, and Run Any Setup Scripts</h2>
-<h3 id="benefits_1">Benefits</h3>
+<h2 id="removing-cloudformation-stacks"><strong>Removing CloudFormation Stacks</strong></h2>
+<hr />
+<p>When you first go to CloudFormation, it should look something like the following:</p>
+<p><img alt="CloudForamtion Stacks" src="../../assets/docs-cloudFormation-stacks.PNG" /></p>
+<p>Because the order of removing deployment is essential, you will need to take down the <code>CloudFormation</code> stacks first. Deleting the following CloudFormation stacks will kill the deployment and remove its resources:</p>
 <ul>
-<li>Users don't have to create conda environments, which saves them time</li>
-<li>Users don't need to know much about conda at all; they can just start running notebooks</li>
-<li>The environments are stored in <code>$HOME/.local</code>, so users have permissions to install, update, remove, and debug packages<ul>
-<li>Environments are synced, not copied, so changes made by users will persist across server restarts</li>
-</ul>
-</li>
-</ul>
-<h3 id="drawbacks_1">Drawbacks</h3>
-<ul>
-<li>Increases the time it takes to start an OpenSARlab server<ul>
-<li>Syncing environments from the docker image to <code>$HOME/.local</code>, registering their kernels, and running any needed setup scripts all happens at server startup</li>
-</ul>
-</li>
-<li>Large environments may overrun the 20GB root volume mounted on each EC2 instance, requiring that larger, more expensive root volumes be used.</li>
-<li>By storing the environment on both user volumes and EC2 node volumes, you effectively double pay for that storage.</li>
+<li><code>&lt;deployment_name&gt;-container</code></li>
+<li><code>&lt;deployment_name&gt;-cluster</code></li>
+<li><code>deployment_name</code></li>
 </ul>
 <hr />
-<h2 id="leave-conda-environment-creation-up-to-the-users">Leave Conda Environment Creation up to the Users</h2>
-<h3 id="benefits_2">Benefits</h3>
-<ul>
-<li>Docker images remain small, avoiding potential storage overruns on the EC2 nodes' 20GB volumes.</li>
-<li>Server start ups do not require copying or syncing environments, and so require less time. </li>
-<li>Users have full control over their conda environments and their changes will persist across server restarts.</li>
-</ul>
-<h3 id="drawbacks_2">Drawbacks</h3>
-<ul>
-<li>Users have to create their own conda environments<ul>
-<li>This requires some knowledge of conda and takes time.</li>
-<li>Note: There is an <a href="https://github.com/ASFOpenSARlab/opensarlab-envs">ASF notebook repo</a> to aid users in building their own environments.</li>
-</ul>
+<p><em><strong>NB</strong></em>: <strong>Do not manually delete any S3 buckets after emptying them</strong> in the steps below.</p>
+<p>If you delete the buckets after emptying them, the <code>CloudFormation</code> stack deletions associated with those buckets will fail. To fix the issues regarding deleted buckets, you will have to recreate the empty buckets to proceed. </p>
+<p>Therefore, let <code>CloudFormation</code> delete the S3 buckets for you once you empty them.</p>
+<hr />
+<p>Follow the below instructions to properly delete these stacks.</p>
+<hr />
+<h2 id="steps-to-delete-cloudformation-stacks"><strong>Steps to Delete <code>CloudFormation</code> Stacks</strong></h2>
+<hr />
+<h3 id="1-prepare-to-delete-the-deployment_name-container-cloudformation-stack"><strong>1. Prepare to delete the <code>&lt;deployment_name&gt;-container</code> CloudFormation stack</strong></h3>
+<p><em>NB: The <code>&lt;deployment_name&gt;-container</code> is independent of other stacks, i.e., the deletion order does not matter.</em></p>
+<ol>
+<li>Empty the <code>codepipeline-&lt;region&gt;-&lt;deployment_name&gt;-container</code> S3 bucket</li>
+</ol>
+<p><img alt="empty container in s3" src="../../assets/docs-s3-empty.PNG" /></p>
+<ol>
+<li>Navigate to the AWS S3 console<ol>
+<li>Click the <code>codepipeline-&lt;region&gt;-&lt;deployment_name&gt;-container</code> S3 bucket option.</li>
+<li>Click the <code>Empty</code> button<ol>
+<li>Confirm the deletion of bucket contents by typing <code>permanently delete</code> in the provided field</li>
+<li>Click the <code>Empty</code> button</li>
+</ol>
 </li>
-</ul>
+</ol>
+</li>
+</ol>
+<h3 id="2-delete-ecr-repos"><strong>2. Delete ECR repos</strong></h3>
+<ol>
+<li>Navigate to the AWS Elastic Container Registry</li>
+</ol>
+<p><img alt="empty ECR" src="../../assets/docs-empty-ecr.PNG" /></p>
+<ol>
+<li>Before deleting the ECR, you will need to empty them first.<ol>
+<li>Click the repository name first and go to the individual ECR repository.</li>
+<li>Select all items by clicking the first box.</li>
+<li>Select <code>delete</code> and confirm the deletion.</li>
+</ol>
+</li>
+</ol>
+<p><img alt="delete ECR" src="../../assets/docs-ecr-delete.PNG" /></p>
+<ol>
+<li>Go back to the ECR Registry and click the option next to the empty <code>&lt;deployment_name&gt;/&lt;profile_namespace&gt;</code> repository</li>
+<li>Click the <code>Delete</code> button<ol>
+<li>Confirm the deletion by typing <code>delete</code> in the provided field</li>
+<li>Click the <code>Delete</code> button</li>
+</ol>
+</li>
+<li>Repeat for each profiles</li>
+</ol>
+<h3 id="3-delete-the-deployment_name-container-cloudformation-stack"><strong>3. Delete the <code>&lt;deployment_name&gt;-container</code> CloudFormation stack</strong></h3>
+<ol>
+<li>Navigate to the AWS CloudFormation console</li>
+</ol>
+<p><img alt="delete cluster stack" src="../../assets/docs-cloudFormation-cluster-delete.PNG" /></p>
+<ol>
+<li>Click the <code>&lt;deployment_name&gt;-container</code> stack option</li>
+<li>Click the <code>Delete</code> button<ol>
+<li>Click the <code>Delete Stack</code> button</li>
+</ol>
+</li>
+<li>Click the <code>&lt;deployment_name&gt;-container</code> stack name<ol>
+<li>Click the <code>Events</code> tab</li>
+<li>Monitor the stack deletion progress<ol>
+<li>Click the refresh button periodically since the console doesn't update events automatically</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><em>NB: Stack deletion process will be similar to above instructions for other stacks.</em></p>
+<hr />
+<h2 id="deleting-the-rest-of-the-cloudformation-stacks"><strong>Deleting the rest of the <code>CloudFormation</code> Stacks</strong></h2>
+<hr />
+<p>Unlike the <code>container</code> stack, the deletion order matters for the rest. On the bright side, the deletion process should be similar to the <code>container</code> stacks.</p>
+<p>Specifically, you will need to delete your stacks in the following order:</p>
+<ol>
+<li><code>&lt;deployment_name&gt;-jupyterhub</code> stack</li>
+<li><code>&lt;deployment_name&gt;-cluster</code> stack</li>
+<li>*<code>&lt;deployment_name&gt;-cluster-pipeline</code> stack</li>
+</ol>
+<p><em>NB:*These stacks have additional steps.</em></p>
+<p><strong>WARNING: As mentioned earlier, do NOT delete the <code>&lt;deployment_name&gt;-cognito</code> stack.</strong></p>
+<p>In above order, follow these steps (except for stack 3):</p>
+<ol>
+<li>Delete the <code>&lt;deployment_name&gt;-&lt;stack_name&gt;</code> CloudFormation stack<ol>
+<li>Navigate to the AWS CloudFormation console<ol>
+<li>Click the box next to the <code>&lt;deployment_name&gt;-&lt;stack_name&gt;</code> stack</li>
+<li>Click the <code>Delete</code> button
+        1. Click the <code>Delete stack</code> button</li>
+<li>Click the <code>&lt;deployment_name&gt;-&lt;stack_name&gt;</code> stack name<ol>
+<li>Click the <code>Events</code> tab</li>
+<li>Monitor the stack deletion progress<ol>
+<li>Click the refresh button periodically since the console doesn't update events automatically</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>If you are deleting stack 3 (<code>&lt;deployment_name&gt;-cluster-pipeline</code>), you will need to follow these steps first before deleting the stack:</p>
+<ol>
+<li>
+<p>Delete <code>hub</code> and <code>notifications</code> ECR repos</p>
+<ol>
+<li>Navigate to the AWS Elastic Container Registry</li>
+<li>Delete <code>&lt;deployment_name&gt;/hub</code> and <code>&lt;deployment_name&gt;/notifications</code> repository.</li>
+</ol>
+<p><em>NB: Refer to the <strong>Delete ECR Repos</strong> section for how to delete ECR repos.</em></p>
+</li>
+<li>
+<p>Empty the <code>codepipeline</code> and <code>lambda</code> S3 bucket</p>
+<ol>
+<li>Navigate to the AWS S3 console<ol>
+<li>Check the box next to the <code>codepipeline-&lt;region&gt;-&lt;deployment_name&gt;</code> S3 bucket</li>
+<li>Click the <code>Empty</code> button<ol>
+<li>Confirm the deletion of bucket contents by typing <code>permanently delete</code> in the provided field</li>
+<li>Click the <code>Empty</code> button</li>
+</ol>
+</li>
+<li>Repeat the same process for the <code>&lt;region&gt;-&lt;deployment_name&gt;-lambda</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="delete-ebs-snapshots-and-volumes"><strong>Delete EBS Snapshots and Volumes</strong></h2>
+<p>To mitigate the cost associated with storage space, it is crucial to deallocate unused resources. The below steps will guide you on how to do so.</p>
+<hr />
+<p>First, navigate to the AWS EC2 console - this step should be identical for both EBS snapshots and EBS volumes.</p>
+<p><img alt="ec2 home screen" src="../../assets/docs-ec2-snap-vol.PNG" /></p>
+<h3 id="delete-ebs-snapshots"><strong>Delete EBS snapshots</strong></h3>
+<ol>
+<li>Click the <em>Snapshots</em> link in the sidebar menu<ol>
+<li>Filter by <code>&lt;cost allocation tag&gt;</code>: <code>&lt;deployment_name&gt;</code><ol>
+<li><strong>Double check that you filtered for the correct deployment!</strong></li>
+</ol>
+</li>
+<li>Select all snapshots</li>
+<li>Select <code>Delete</code> from the <code>Actions</code> menu</li>
+<li>Confirm by clicking the <code>Yes, delete</code> button</li>
+</ol>
+</li>
+</ol>
+<h3 id="delete-ebs-volumes"><strong>Delete EBS volumes</strong></h3>
+<ol>
+<li>Navigate to the AWS EC2 console</li>
+<li>Click the <em>Volumes</em> link in the sidebar menu<ol>
+<li>Filter by osl-stackname: <code>&lt;deployment_name&gt;</code><ol>
+<li><strong>Double check that you filtered for the correct deployment!</strong></li>
+</ol>
+</li>
+<li>Select all volumes</li>
+<li>Select <code>Delete volumes</code> from the <code>Actions</code> menu</li>
+<li>Confirm by clicking the <code>Yes, delete</code> button             </li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="optional-delete-the-codecommit-repositories"><strong>(Optional) Delete the CodeCommit repositories</strong></h2>
+<p>This section will guide you on how to remove the  <code>&lt;deployment_name&gt;-container</code> and <code>&lt;deployment_name&gt;-cluster</code> repositories located in the CodeCommit.</p>
+<p><em><strong>Important Note:</strong></em> Often, it would be in your best interest to preserve the CodeCommit repositories since the cost of maintaining them are minuscule. </p>
+<p>If you believe that you may re-deploy the same deployment, you may want to ease future work in one of the following manners:</p>
+<ol>
+<li>Leaving these repositories in place, i.e., don't delete them.</li>
+<li>Download the zip of your repositories, store them in S3, and then delete them. </li>
+</ol>
+<p>In another word, delete the CodeCommit repositories if and only if you are sure that you don't need them.</p>
+<hr />
+<p>First, navigate to the AWS CodeCommit console:</p>
+<p><img alt="CodeCommit Repos" src="../../assets/docs-codecommit.PNG" /></p>
+<p>Then delete the <code>&lt;deployment_name&gt;-container</code> and <code>&lt;deployment_name&gt;-cluster</code> in any order. The deletion process for these two repositories is following:</p>
+<ol>
+<li>Check the option next to the repository</li>
+<li>Click the <code>Delete repository</code> button</li>
+<li>Confirm the deletion by typing <code>delete</code> in the provided field     </li>
+<li>Click the <code>Delete</code> button</li>
+</ol>
+<hr />
+<h2 id="optional-confirm-that-all-resources-have-been-deleted"><strong>(Optional) Confirm that all resources have been deleted</strong></h2>
+<p>Once you've taken down the deployment, you may want to verify the resource usage. </p>
+<hr />
+<p><img alt="cost allocation" src="../../assets/docs-cost-allocation.PNG" /></p>
+<ol>
+<li>Wait a day for deleted resources to update in the tag editor</li>
+<li>Navigate to the AWS Resource Groups and Tag Editor console<ol>
+<li>Select the <em>Tag Editor</em> link in the sidebar menu and fill in the following:<ol>
+<li>Regions: <code>&lt;current-region&gt;</code></li>
+<li>Tags:<ol>
+<li><code>Key</code>: Cost allocation tag</li>
+<li><code>Value</code>: <code>&lt;deployment_name&gt;</code></li>
+</ol>
+</li>
+<li>Click the <code>Search resources</code> button</li>
+<li>Identify and delete any remaining resources</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="delete-calendar"><strong>Delete Calendar</strong></h2>
+<p>Now that you are done with taking down the deployment, you will need to delete the calendar notifications.</p>
+<hr />
+<p><img alt="delete calendar" src="../../assets/docs-calendar.PNG" /></p>
+<ol>
+<li>Go to your Google Calendar</li>
+<li>Choose a deployment you wish to remove</li>
+<li>Open <code>Settings and Sharing</code></li>
+<li>Click <code>Delete</code> under <strong>Remove calendar</strong></li>
+</ol>
                 
               
               
@@ -1065,7 +1293,7 @@ feedback.init({showIcon: false});
 
         <!-- Link to previous page -->
         
-          <a href="../destroy_deployment/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../deploy_OpenSARlab/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -1074,7 +1302,7 @@ feedback.init({showIcon: false});
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Destroy Deployments
+                Deploy OpenSARlab to AWS
               </div>
             </div>
           </a>
@@ -1082,13 +1310,13 @@ feedback.init({showIcon: false});
 
         <!-- Link to next page -->
         
-          <a href="../notifications/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../conda_environments/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Notifications
+                Conda Environment Options
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
