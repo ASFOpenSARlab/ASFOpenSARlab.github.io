@@ -7,19 +7,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Alaska Satellite Facility's OpenSARlab">
+        <meta name="description" content="The Alaska Satellite Facility's OpenSARLab">
       
       
-        <meta name="author" content="ASF OpenSARlab Team">
+        <meta name="author" content="ASF OpenSARLab Team">
       
       
-        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/user-guides/OpenSARlab_terminal/">
+        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/user-guides/git_in_OpenSARLab/">
       
       
-        <link rel="prev" href="../jupyter_magic/">
+        <link rel="prev" href="../OpenSARLab_environment/">
       
       
-        <link rel="next" href="../OpenSARlab_environment/">
+        <link rel="next" href="../s3_buckets/">
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -27,7 +27,7 @@
     
     
       
-        <title>OpenSARlab Terminal - OpenSARlab-Docs</title>
+        <title>Git in OpenSARLab - opensarlab-docs</title>
       
     
     
@@ -90,7 +90,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#using-the-terminal-in-opensarlab" class="md-skip">
+        <a href="#git-in-opensciencelab" class="md-skip">
           Skip to content
         </a>
       
@@ -153,9 +153,9 @@ feedback.init({showIcon: false});
     <!-- Link to home -->
     <a
       href="../.."
-      title="OpenSARlab-Docs"
+      title="opensarlab-docs"
       class="md-header__button md-logo"
-      aria-label="OpenSARlab-Docs"
+      aria-label="opensarlab-docs"
       data-md-component="logo"
     >
       
@@ -175,13 +175,13 @@ feedback.init({showIcon: false});
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OpenSARlab-Docs
+            opensarlab-docs
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OpenSARlab Terminal
+              Git in OpenSARLab
             
           </span>
         </div>
@@ -248,13 +248,13 @@ feedback.init({showIcon: false});
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="OpenSARlab-Docs" class="md-nav__button md-logo" aria-label="OpenSARlab-Docs" data-md-component="logo">
+    <a href="../.." title="opensarlab-docs" class="md-nav__button md-logo" aria-label="opensarlab-docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    OpenSARlab-Docs
+    opensarlab-docs
   </label>
   
     <div class="md-nav__source">
@@ -357,7 +357,7 @@ feedback.init({showIcon: false});
         
   
   <span class="md-ellipsis">
-    Welcome to the OpenSARlab User Guide
+    Welcome to the OpenSARLab User Guide
   </span>
   
 
@@ -433,11 +433,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../installing_software_in_OpenSARlab/" class="md-nav__link">
+      <a href="../installing_software_in_OpenSARLab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Installing Software in OpenSARlab
+    Installing Software in OpenSARLab
   </span>
   
 
@@ -457,7 +457,7 @@ feedback.init({showIcon: false});
         
   
   <span class="md-ellipsis">
-    OpenSARlab Servers and Kernels
+    OpenSARLab Servers and Kernels
   </span>
   
 
@@ -491,6 +491,46 @@ feedback.init({showIcon: false});
                 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARLab_terminal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenSARLab Terminal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OpenSARLab_environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenSARLab Account Details
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -506,7 +546,7 @@ feedback.init({showIcon: false});
           
   
   <span class="md-ellipsis">
-    OpenSARlab Terminal
+    Git in OpenSARLab
   </span>
   
 
@@ -517,7 +557,7 @@ feedback.init({showIcon: false});
         
   
   <span class="md-ellipsis">
-    OpenSARlab Terminal
+    Git in OpenSARLab
   </span>
   
 
@@ -539,29 +579,29 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-open-a-terminal" class="md-nav__link">
-    How to Open a Terminal
+  <a href="#gitpuller" class="md-nav__link">
+    Gitpuller
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-the-terminal" class="md-nav__link">
-    How to Use the Terminal
+  <a href="#in-the-case-of-a-broken-git-state" class="md-nav__link">
+    In the case of a broken Git state
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-root-privileges" class="md-nav__link">
-    No Root Privileges
+  <a href="#using-other-git-repos-in-opensciencelab" class="md-nav__link">
+    Using Other Git Repos in OpenScienceLab
   </a>
   
 </li>
@@ -581,51 +621,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../OpenSARlab_environment/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    OpenSARlab Account Details
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../git_in_OpenSARlab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Git in OpenSARlab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../s3_buckets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    S3 Bucket Access in OpenSARlab
+    S3 Bucket Access in OpenSARLab
   </span>
   
 
@@ -744,7 +744,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../assets/system_diagrams/OpenSARlab_system_diagram_June_2021.png" class="md-nav__link">
+      <a href="../../assets/system_diagrams/OpenSARLab_system_diagram_June_2021.png" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -764,11 +764,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../dev-guides/deploy_OpenSARlab/" class="md-nav__link">
+      <a href="../../dev-guides/deploy_OpenSARLab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Deploy OpenSARlab to AWS
+    Deploy OpenSARLab to AWS
   </span>
   
 
@@ -1055,29 +1055,29 @@ feedback.init({showIcon: false});
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-open-a-terminal" class="md-nav__link">
-    How to Open a Terminal
+  <a href="#gitpuller" class="md-nav__link">
+    Gitpuller
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-the-terminal" class="md-nav__link">
-    How to Use the Terminal
+  <a href="#in-the-case-of-a-broken-git-state" class="md-nav__link">
+    In the case of a broken Git state
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-root-privileges" class="md-nav__link">
-    No Root Privileges
+  <a href="#using-other-git-repos-in-opensciencelab" class="md-nav__link">
+    Using Other Git Repos in OpenScienceLab
   </a>
   
 </li>
@@ -1098,30 +1098,62 @@ feedback.init({showIcon: false});
 
 
 <p><a href="../../user/">Return to Table of Contents</a></p>
-<h1 id="using-the-terminal-in-opensarlab"><strong>Using the Terminal in OpenSARlab</strong></h1>
-<h2 id="overview">Overview</h2>
+<h1 id="git-in-opensciencelab"><strong>Git in OpenScienceLab</strong></h1>
+<h2 id="prerequisite"><strong>Prerequisite</strong></h2>
 <hr />
-<p>Users sometimes need to use an interactive shell to organize their accounts. With OpenSceinceLab’s built-in terminal, users can use an interactive shell to accomplish their tasks.</p>
-<h2 id="how-to-open-a-terminal"><strong>How to Open a Terminal</strong></h2>
+<ul>
+<li><a href="https://git-scm.com/about">Git</a> - Version control systems that allow you to track changes to your files.</li>
+<li><a href="https://github.com/asfadmin/asf-jupyter-notebooks">ASF's Jupyter Notebook</a> - A collection of Jupyter Notebooks used in OpenSARLab.</li>
+<li><a href="../OpenSARLab_terminal/">Terminal</a> - A built-in terminal within OpenScienceLab. The user should also have a basic understanding of Bash commands.</li>
+</ul>
 <hr />
+<h2 id="gitpuller"><strong>Gitpuller</strong></h2>
+<hr />
+<p>A <a href="https://jupyterhub.github.io/nbgitpuller/">nbgitpuller</a> pulls any changes to the <a href="https://github.com/ASFOpenSARlab/opensarlab-notebooks">notebook repo</a> each time an OpenSARLab deployment server starts up. </p>
+<p>In short words, <code>nbgitpuller</code> will automatically update the notebooks to the latest version. </p>
+<p>If a user has made changes to a notebook and the same notebook has been updated by ASF in the <code>asf-jupyter-notebooks</code> repo, the following will occur:</p>
+<p>Users will retain two copies of the same notebook.
+- The user-edited notebook will have a timestamp appended to its name. 
+- The notebook with the original name will contain the new changes made by ASF.</p>
+<p><em>Example:</em>    </p>
+<p><em>Before Edit</em>
+- Original version: <code>sample_notebook.ipynb</code></p>
+<p><em>After Edit</em>
+- Updated by user: <code>sample_notebook__20210616165846.ipynb</code>
+- Updated by ASF: <code>sample_notebook.ipynb</code></p>
+<p><strong>NB: The <code>nbgitpuller</code> will only run if you are in the <code>main</code> branch of the <code>asf-jupyter-notebook</code> repo.</strong></p>
+<!--  So is this saying that if one file is missing from remote then none of the files from remote will be pulled? Thus removing one remote file will sabotage the whole thing? -->
+
+<hr />
+<h2 id="in-the-case-of-a-broken-git-state"><strong>In the case of a broken Git state</strong></h2>
+<hr />
+<p>Due to its complexity, it is common for users to break Git workflow. A broken Git state can lead to unexpected results, such as notebooks not being updated.</p>
+<p>Below are the steps users can take if the Git workflow is in a state beyond their ability to repair.</p>
+<p><em>Repair Process:</em></p>
 <ol>
-<li>If there is no <code>Launcher</code> tab in your workspace, open one by clicking the blue <code>+</code> button at the upper left of the screen.</li>
+<li>Preserve any files/directories you wish to keep under the <code>/home/jovyan/notebooks</code> directory.<ul>
+<li>Either *<em>download</em> or <em>move out</em> items you wish to keep.</li>
+</ul>
+</li>
+<li>Delete the entire <code>/home/jovyan/notebooks</code> directory.<ul>
+<li>Use <code>rm -rf /home/jovyan/notebooks</code> on the terminal to delete all.</li>
+</ul>
+</li>
+<li>Restart your server.</li>
+<li>Gitpuller will automatically clone a clean repository into your account.</li>
 </ol>
-<p><img alt="If there is no Launcher tab in you workspace, open one by clicking the blue + button at the upper left of the screen" src="../../assets/launcher.png" /></p>
-<ol>
-<li>Click the <code>Terminal</code> button in the <code>Launcher</code> tab.</li>
-</ol>
-<p><img alt="Click the Terminal button in a Launcher tab." src="../../assets/jlab_terminal.png" /></p>
-<p><em>Live Example</em>:</p>
-<p><img alt="open terminal live" src="../../assets/open_terminal.gif" /></p>
+<p>*<strong>NB</strong>: When downloading a directory, users may compress them first to optimize downloading. The below commands will allow users to (de)compress files/directories:</p>
+<ul>
+<li>Compress: <code>zip -r &lt;name&gt;.zip &lt;directory&gt;</code></li>
+<li>Decompress: <code>unzip &lt;name&gt;.zip</code></li>
+</ul>
+<p>Where <code>&lt;name&gt;</code> can be anything you wish.</p>
 <hr />
-<h2 id="how-to-use-the-terminal"><strong>How to Use the Terminal</strong></h2>
-<p>Use the command line as you would in any other <code>Unix-like</code> terminal.</p>
-<p><img alt="An open terminal window." src="../../assets/terminal.png" /></p>
+<h2 id="using-other-git-repos-in-opensciencelab"><strong>Using Other Git Repos in OpenScienceLab</strong></h2>
 <hr />
-<h2 id="no-root-privileges"><strong>No Root Privileges</strong></h2>
-<p>Because the <code>jovyan</code> does not have a password, OpenScienceLab users cannot use the <code>sudo</code> command.</p>
-<p><img alt="An open terminal window with unsuccessful attempt to use sudo." src="../../assets/no_sudo.png" /></p>
+<p>If you wish to utilize repositories other than those hosted by ASF, you can clone them into your OpenScienceLab account. However, users will need to manage the repos that they clone to prevent any issues.</p>
+<p>When cloning a repository from elsewhere, users must ensure not to nest git repositories, i.e., do not clone a repository within another repository.</p>
+<p>To avoid complications, <strong>clone your repos to <code>/home/jovyan</code></strong>. </p>
 
 
 
