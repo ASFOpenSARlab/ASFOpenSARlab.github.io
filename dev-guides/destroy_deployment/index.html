@@ -16,10 +16,6 @@
         <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/destroy_deployment/">
       
       
-        <link rel="prev" href="../deploy_OpenSARLab/">
-      
-      
-        <link rel="next" href="../conda_environments/">
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -27,7 +23,7 @@
     
     
       
-        <title>Destroy Deployments - opensarlab-docs</title>
+        <title>Destroy deployment - opensarlab-docs</title>
       
     
     
@@ -181,7 +177,7 @@ feedback.init({showIcon: false});
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Destroy Deployments
+              Destroy deployment
             
           </span>
         </div>
@@ -636,20 +632,18 @@ feedback.init({showIcon: false});
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -663,12 +657,92 @@ feedback.init({showIcon: false});
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Developer Guide
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_opensciencelab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenScienceLab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portal/build_and_deploy_portal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build and Deploy the Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../container/build_and_deploy_opensarlab_image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build and Deploy OpenSARLab Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster/build_and_deploy_opensarlab_cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build and Deploy OpenSARLab Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -696,190 +770,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../deploy_OpenSARLab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Deploy OpenSARLab to AWS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Destroy Deployments
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Destroy Deployments
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#warning-before-deleting-the-deployments-developers-will-need-to-account-for-the-following" class="md-nav__link">
-    WARNING: Before deleting the deployments, developers will need to account for the following:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removing-cloudformation-stacks" class="md-nav__link">
-    Removing CloudFormation Stacks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#steps-to-delete-cloudformation-stacks" class="md-nav__link">
-    Steps to Delete CloudFormation Stacks
-  </a>
-  
-    <nav class="md-nav" aria-label="Steps to Delete CloudFormation Stacks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-prepare-to-delete-the-deployment_name-container-cloudformation-stack" class="md-nav__link">
-    1. Prepare to delete the &lt;deployment_name&gt;-container CloudFormation stack
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-delete-ecr-repos" class="md-nav__link">
-    2. Delete ECR repos
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-delete-the-deployment_name-container-cloudformation-stack" class="md-nav__link">
-    3. Delete the &lt;deployment_name&gt;-container CloudFormation stack
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deleting-the-rest-of-the-cloudformation-stacks" class="md-nav__link">
-    Deleting the rest of the CloudFormation Stacks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-ebs-snapshots-and-volumes" class="md-nav__link">
-    Delete EBS Snapshots and Volumes
-  </a>
-  
-    <nav class="md-nav" aria-label="Delete EBS Snapshots and Volumes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#delete-ebs-snapshots" class="md-nav__link">
-    Delete EBS snapshots
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-ebs-volumes" class="md-nav__link">
-    Delete EBS volumes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-delete-the-codecommit-repositories" class="md-nav__link">
-    (Optional) Delete the CodeCommit repositories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-confirm-that-all-resources-have-been-deleted" class="md-nav__link">
-    (Optional) Confirm that all resources have been deleted
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delete-calendar" class="md-nav__link">
-    Delete Calendar
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../conda_environments/" class="md-nav__link">
+      <a href="../container/conda_environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,11 +790,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../notifications/" class="md-nav__link">
+      <a href="../portal/notifications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Notifications
+    OpenSARLab Notifications
   </span>
   
 
@@ -923,7 +814,7 @@ feedback.init({showIcon: false});
         
   
   <span class="md-ellipsis">
-    Troubelshooting Guide
+    Troubleshooting
   </span>
   
 
@@ -939,7 +830,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../mintpy_conda/" class="md-nav__link">
+      <a href="../container/mintpy_conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1096,6 +987,26 @@ feedback.init({showIcon: false});
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/release_12_2024.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    December 2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1212,13 +1123,6 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-delete-the-codecommit-repositories" class="md-nav__link">
-    (Optional) Delete the CodeCommit repositories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#optional-confirm-that-all-resources-have-been-deleted" class="md-nav__link">
     (Optional) Confirm that all resources have been deleted
   </a>
@@ -1226,8 +1130,8 @@ feedback.init({showIcon: false});
 </li>
       
         <li class="md-nav__item">
-  <a href="#delete-calendar" class="md-nav__link">
-    Delete Calendar
+  <a href="#optional-delete-calendar" class="md-nav__link">
+    (Optional) Delete Calendar
   </a>
   
 </li>
@@ -1256,7 +1160,7 @@ feedback.init({showIcon: false});
 <li>When deleting the <code>CloudFormation</code> stack, the deletion order matters.</li>
 <li>Delete some of the <code>CloudFormation</code> stacks before deleting ECR.</li>
 <li>The name of the items you're deleting may differ depending on the deployment you are taking down. For example, your deployment's <code>CloudFormation</code> stack may not have a <code>region</code> name.</li>
-<li>Do <strong>NOT</strong> take down the <code>Cognito</code> and <code>CloudWatch</code> logs. These are used for statistical analysis later on.</li>
+<li>Do <strong>NOT</strong> take down the <code>CloudWatch</code> logs. These are used for statistical analysis later on.</li>
 </ul>
 <hr />
 <h2 id="removing-cloudformation-stacks"><strong>Removing CloudFormation Stacks</strong></h2>
@@ -1350,7 +1254,6 @@ feedback.init({showIcon: false});
 <li>*<code>&lt;deployment_name&gt;-cluster-pipeline</code> stack</li>
 </ol>
 <p><em>NB:*These stacks have additional steps.</em></p>
-<p><strong>WARNING: As mentioned earlier, do NOT delete the <code>&lt;deployment_name&gt;-cognito</code> stack.</strong></p>
 <p>In above order, follow these steps (except for stack 3):</p>
 <ol>
 <li>Delete the <code>&lt;deployment_name&gt;-&lt;stack_name&gt;</code> CloudFormation stack<ol>
@@ -1380,21 +1283,6 @@ feedback.init({showIcon: false});
 <li>Delete <code>&lt;deployment_name&gt;/hub</code> and <code>&lt;deployment_name&gt;/notifications</code> repository.</li>
 </ol>
 <p><em>NB: Refer to the <strong>Delete ECR Repos</strong> section for how to delete ECR repos.</em></p>
-</li>
-<li>
-<p>Empty the <code>codepipeline</code> and <code>lambda</code> S3 bucket</p>
-<ol>
-<li>Navigate to the AWS S3 console<ol>
-<li>Check the box next to the <code>codepipeline-&lt;region&gt;-&lt;deployment_name&gt;</code> S3 bucket</li>
-<li>Click the <code>Empty</code> button<ol>
-<li>Confirm the deletion of bucket contents by typing <code>permanently delete</code> in the provided field</li>
-<li>Click the <code>Empty</code> button</li>
-</ol>
-</li>
-<li>Repeat the same process for the <code>&lt;region&gt;-&lt;deployment_name&gt;-lambda</code></li>
-</ol>
-</li>
-</ol>
 </li>
 </ol>
 <hr />
@@ -1431,26 +1319,6 @@ feedback.init({showIcon: false});
 </li>
 </ol>
 <hr />
-<h2 id="optional-delete-the-codecommit-repositories"><strong>(Optional) Delete the CodeCommit repositories</strong></h2>
-<p>This section will guide you on how to remove the  <code>&lt;deployment_name&gt;-container</code> and <code>&lt;deployment_name&gt;-cluster</code> repositories located in the CodeCommit.</p>
-<p><em><strong>Important Note:</strong></em> Often, it would be in your best interest to preserve the CodeCommit repositories since the cost of maintaining them are minuscule. </p>
-<p>If you believe that you may re-deploy the same deployment, you may want to ease future work in one of the following manners:</p>
-<ol>
-<li>Leaving these repositories in place, i.e., don't delete them.</li>
-<li>Download the zip of your repositories, store them in S3, and then delete them. </li>
-</ol>
-<p>In another word, delete the CodeCommit repositories if and only if you are sure that you don't need them.</p>
-<hr />
-<p>First, navigate to the AWS CodeCommit console:</p>
-<p><img alt="CodeCommit Repos" src="../../assets/docs-codecommit.PNG" /></p>
-<p>Then delete the <code>&lt;deployment_name&gt;-container</code> and <code>&lt;deployment_name&gt;-cluster</code> in any order. The deletion process for these two repositories is following:</p>
-<ol>
-<li>Check the option next to the repository</li>
-<li>Click the <code>Delete repository</code> button</li>
-<li>Confirm the deletion by typing <code>delete</code> in the provided field     </li>
-<li>Click the <code>Delete</code> button</li>
-</ol>
-<hr />
 <h2 id="optional-confirm-that-all-resources-have-been-deleted"><strong>(Optional) Confirm that all resources have been deleted</strong></h2>
 <p>Once you've taken down the deployment, you may want to verify the resource usage. </p>
 <hr />
@@ -1473,7 +1341,7 @@ feedback.init({showIcon: false});
 </li>
 </ol>
 <hr />
-<h2 id="delete-calendar"><strong>Delete Calendar</strong></h2>
+<h2 id="optional-delete-calendar"><strong>(Optional) Delete Calendar</strong></h2>
 <p>Now that you are done with taking down the deployment, you will need to delete the calendar notifications.</p>
 <hr />
 <p><img alt="delete calendar" src="../../assets/docs-calendar.PNG" /></p>

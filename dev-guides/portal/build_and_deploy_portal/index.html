@@ -13,32 +13,32 @@
         <meta name="author" content="ASF OpenSARLab Team">
       
       
-        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/conda_environments/">
+        <link rel="canonical" href="https://opensarlab-docs.asf.alaska.edu/dev-guides/portal/build_and_deploy_portal/">
       
       
-        <link rel="prev" href="../destroy_deployment/">
+        <link rel="prev" href="../../about_opensciencelab/">
       
       
-        <link rel="next" href="../notifications/">
+        <link rel="next" href="../../container/build_and_deploy_opensarlab_image/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.ico">
+      <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
       
-        <title>Conda Environment Options - opensarlab-docs</title>
+        <title>Build and Deploy the Portal - opensarlab-docs</title>
       
     
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d451bc0e.min.css">
       
       
 
 
     
-    <link rel="stylesheet" href="../../assets/stylesheets/asf.css">
+    <link rel="stylesheet" href="../../../assets/stylesheets/asf.css">
 
     
 
@@ -68,7 +68,7 @@ feedback.init({showIcon: false});
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -90,7 +90,7 @@ feedback.init({showIcon: false});
     <div data-md-component="skip">
       
         
-        <a href="#there-are-a-few-options-for-creating-conda-environments-in-opensarlab" class="md-skip">
+        <a href="#build-and-deploy-the-portal" class="md-skip">
           Skip to content
         </a>
       
@@ -146,13 +146,13 @@ feedback.init({showIcon: false});
       aria-label="ASF"
       data-md-component="logo"
     >
-      <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+      <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
     </a>
     
 
     <!-- Link to home -->
     <a
-      href="../.."
+      href="../../.."
       title="opensarlab-docs"
       class="md-header__button md-logo"
       aria-label="opensarlab-docs"
@@ -181,7 +181,7 @@ feedback.init({showIcon: false});
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Conda Environment Options
+              Build and Deploy the Portal
             
           </span>
         </div>
@@ -248,7 +248,7 @@ feedback.init({showIcon: false});
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="opensarlab-docs" class="md-nav__button md-logo" aria-label="opensarlab-docs" data-md-component="logo">
+    <a href="../../.." title="opensarlab-docs" class="md-nav__button md-logo" aria-label="opensarlab-docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -277,7 +277,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -296,7 +296,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/troubleshooting_guide/" class="md-nav__link">
+      <a href="../../../user-guides/troubleshooting_guide/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -351,7 +351,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user/" class="md-nav__link">
+      <a href="../../../user/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -371,7 +371,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/mfa/" class="md-nav__link">
+      <a href="../../../user-guides/mfa/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -391,7 +391,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/how_to_run_a_notebook/" class="md-nav__link">
+      <a href="../../../user-guides/how_to_run_a_notebook/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -411,7 +411,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/conda_environments/" class="md-nav__link">
+      <a href="../../../user-guides/conda_environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -431,7 +431,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/installing_software_in_OpenSARLab/" class="md-nav__link">
+      <a href="../../../user-guides/installing_software_in_OpenSARLab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,7 +451,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/restarting_server_and_kernel/" class="md-nav__link">
+      <a href="../../../user-guides/restarting_server_and_kernel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -471,7 +471,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/jupyter_magic/" class="md-nav__link">
+      <a href="../../../user-guides/jupyter_magic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,7 +491,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/OpenSARLab_terminal/" class="md-nav__link">
+      <a href="../../../user-guides/OpenSARLab_terminal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +511,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/OpenSARLab_environment/" class="md-nav__link">
+      <a href="../../../user-guides/OpenSARLab_environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -531,7 +531,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/git_in_OpenSARLab/" class="md-nav__link">
+      <a href="../../../user-guides/git_in_OpenSARLab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,7 +551,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/s3_buckets/" class="md-nav__link">
+      <a href="../../../user-guides/s3_buckets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +571,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/jupyter_notebook_extensions/" class="md-nav__link">
+      <a href="../../../user-guides/jupyter_notebook_extensions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -591,7 +591,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/class_notebooks_best_practices/" class="md-nav__link">
+      <a href="../../../user-guides/class_notebooks_best_practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +611,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/logging_out_and_server_shutdown/" class="md-nav__link">
+      <a href="../../../user-guides/logging_out_and_server_shutdown/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -676,51 +676,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../assets/system_diagrams/OpenSARLab_system_diagram_June_2021.png" class="md-nav__link">
+      <a href="../../about_opensciencelab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    System Diagram
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deploy_OpenSARLab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Deploy OpenSARLab to AWS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../destroy_deployment/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Destroy Deployments
+    OpenScienceLab
   </span>
   
 
@@ -745,18 +705,88 @@ feedback.init({showIcon: false});
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
   
   <span class="md-ellipsis">
-    Conda Environment Options
+    Build and Deploy the Portal
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+      </a>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/build_and_deploy_opensarlab_image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build and Deploy OpenSARLab Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster/build_and_deploy_opensarlab_cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build and Deploy OpenSARLab Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets/system_diagrams/OpenSARLab_system_diagram_June_2021.png" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Diagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../container/conda_environments/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -765,107 +795,6 @@ feedback.init({showIcon: false});
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-conda-environments-register-their-kernels-and-run-any-setup-scripts-in-the-docker-images" class="md-nav__link">
-    Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits" class="md-nav__link">
-    Benefits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks" class="md-nav__link">
-    Drawbacks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-conda-environments-in-the-docker-images-then-in-the-hook-script-sync-them-to-homelocal-register-their-kernels-and-run-any-setup-scripts" class="md-nav__link">
-    Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits_1" class="md-nav__link">
-    Benefits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks_1" class="md-nav__link">
-    Drawbacks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#leave-conda-environment-creation-up-to-the-users" class="md-nav__link">
-    Leave Conda Environment Creation up to the Users
-  </a>
-  
-    <nav class="md-nav" aria-label="Leave Conda Environment Creation up to the Users">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits_2" class="md-nav__link">
-    Benefits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks_2" class="md-nav__link">
-    Drawbacks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -881,7 +810,7 @@ feedback.init({showIcon: false});
         
   
   <span class="md-ellipsis">
-    Notifications
+    OpenSARLab Notifications
   </span>
   
 
@@ -897,11 +826,11 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../troubleshooting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Troubelshooting Guide
+    Troubleshooting
   </span>
   
 
@@ -917,7 +846,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../mintpy_conda/" class="md-nav__link">
+      <a href="../../container/mintpy_conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +909,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_06-2021/" class="md-nav__link">
+      <a href="../../../release-notes/release_06-2021/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1000,7 +929,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_10-2021/" class="md-nav__link">
+      <a href="../../../release-notes/release_10-2021/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1020,7 +949,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_02-2022/" class="md-nav__link">
+      <a href="../../../release-notes/release_02-2022/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1040,7 +969,7 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_02-2023/" class="md-nav__link">
+      <a href="../../../release-notes/release_02-2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1060,11 +989,31 @@ feedback.init({showIcon: false});
   
   
     <li class="md-nav__item">
-      <a href="../../release-notes/release_02-2024/" class="md-nav__link">
+      <a href="../../../release-notes/release_02-2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     February 2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release-notes/release_12_2024.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    December 2024
   </span>
   
 
@@ -1101,95 +1050,6 @@ feedback.init({showIcon: false});
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-conda-environments-register-their-kernels-and-run-any-setup-scripts-in-the-docker-images" class="md-nav__link">
-    Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits" class="md-nav__link">
-    Benefits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks" class="md-nav__link">
-    Drawbacks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-conda-environments-in-the-docker-images-then-in-the-hook-script-sync-them-to-homelocal-register-their-kernels-and-run-any-setup-scripts" class="md-nav__link">
-    Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts
-  </a>
-  
-    <nav class="md-nav" aria-label="Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to $Home/.local, Register Their Kernels, and Run Any Setup Scripts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits_1" class="md-nav__link">
-    Benefits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks_1" class="md-nav__link">
-    Drawbacks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#leave-conda-environment-creation-up-to-the-users" class="md-nav__link">
-    Leave Conda Environment Creation up to the Users
-  </a>
-  
-    <nav class="md-nav" aria-label="Leave Conda Environment Creation up to the Users">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#benefits_2" class="md-nav__link">
-    Benefits
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#drawbacks_2" class="md-nav__link">
-    Drawbacks
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1203,58 +1063,226 @@ feedback.init({showIcon: false});
                   
 
 
-<p><a href="../../dev/">Return to Developer Guide</a></p>
-<h1 id="there-are-a-few-options-for-creating-conda-environments-in-opensarlab">There are a few options for creating conda environments in OpenSARLab.</h1>
-<p>Each option come with benefits and drawbacks.</p>
-<hr />
-<h2 id="create-conda-environments-register-their-kernels-and-run-any-setup-scripts-in-the-docker-images">Create Conda Environments, Register Their Kernels, and Run Any Setup Scripts in the Docker Image/s</h2>
-<h3 id="benefits">Benefits</h3>
+<h1 id="build-and-deploy-the-portal">Build and Deploy the Portal</h1>
+<h1 id="enable-under-construction-page">Enable Under Construction page</h1>
+<p>Sometimes the Portal must be taken down for updates. For instance, the EC2 the Portal runs on needs to be respawned for updates. </p>
+<p>To help facilitate communication with users, an Under Construction page can be enabled. All traffic to the Portal will be redirected to this page. </p>
+<ol>
+<li>
+<p>To enable the page, log into the AWS account and go to EC2 console.</p>
+</li>
+<li>
+<p>Go to the Portal load balancer, select the <code>HTTPS:443</code> listener, and <em>check</em> the Default rule. </p>
+</li>
+<li>
+<p>In the dropdown Actions menu, select Edit Rule.</p>
+</li>
+<li>
+<p>Set the instance target group weight to <strong>0</strong>. Set the lambda target group weight to <strong>1</strong>. </p>
+</li>
+<li>
+<p>At the bottom of the page Save Changes. </p>
+</li>
+<li>
+<p>Changes should take affect almost immediately.</p>
+</li>
+</ol>
+<p>To revert changes after updating, repeat the above steps except change the target group weights so that the instance gets <strong>1</strong> and the lambda gets <strong>0</strong>. </p>
+<h1 id="-">----------</h1>
+<p>The following documentation is older and must be used with caution.</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<h2 id="aws-ses-store-ses-secrets">AWS SES: Store SES secrets</h2>
+<p>These secrets will be used to communicate with SES to send emails. "SMTP credentials consist of a username and a password. When you click the Create button below, SMTP credentials will be generated for you." The credentials are AWS access keys, like as used in local aws configs. They are valid for the whole region. https://us-west-2.console.aws.amazon.com/ses/home</p>
 <ul>
-<li>Users don't have to create conda environments, which saves them time</li>
-<li>Users don't need to know much about conda; they can just start running notebooks</li>
-</ul>
-<h3 id="drawbacks">Drawbacks</h3>
-<ul>
-<li>Users cannot install additional packages into their conda environments</li>
-<li>Changes to environments on the docker image involve rebuilding the container and CodePipelines</li>
-<li>Large environments may overrun the 20GB root volume mounted on each EC2 instance, requiring that larger, more expensive root volumes be used.</li>
-</ul>
-<hr />
-<h2 id="create-conda-environments-in-the-docker-images-then-in-the-hook-script-sync-them-to-homelocal-register-their-kernels-and-run-any-setup-scripts">Create Conda Environments in the Docker Image/s. Then, in the Hook Script, Sync Them to <code>$Home/.local</code>, Register Their Kernels, and Run Any Setup Scripts</h2>
-<h3 id="benefits_1">Benefits</h3>
-<ul>
-<li>Users don't have to create conda environments, which saves them time</li>
-<li>Users don't need to know much about conda at all; they can just start running notebooks</li>
-<li>The environments are stored in <code>$HOME/.local</code>, so users have permissions to install, update, remove, and debug packages<ul>
-<li>Environments are synced, not copied, so changes made by users will persist across server restarts</li>
-</ul>
+<li>
+<p>Create a verified email and take out of sandbox.</p>
+</li>
+<li>
+<p>Create SES serets</p>
+<p>Go to <code>Account Dashboard</code> &gt; <code>Create SMTP credentials</code>. The IAM User Name should be unique and easy to find within IAM. On user creation, SMTP credentials will be created.</p>
+</li>
+<li>
+<p>Store SES secrets</p>
+<ol>
+<li>
+<p>Go to https://us-west-2.console.aws.amazon.com/secretsmanager/home</p>
+</li>
+<li>
+<p>Click on <code>Store New Secret</code> &gt; <code>Other type of secret</code> &gt; <code>Plaintext</code></p>
+</li>
+<li>
+<p>Delete all empty json content.</p>
+</li>
+<li>
+<p>Add username and password as given previously in the following format: <code>USERNAME PASSWORD</code>.</p>
+</li>
+<li>
+<p>Click <code>Next</code></p>
+</li>
+<li>
+<p>Secret Name: <code>portal/ses-creds</code>, Tags: <code>osl-billing: osl-portal</code></p>
+</li>
+<li>
+<p>Click <code>Next</code></p>
+</li>
+<li>
+<p>Click <code>Next</code></p>
+</li>
+<li>
+<p>Click <code>Store</code></p>
+</li>
+</ol>
 </li>
 </ul>
-<h3 id="drawbacks_1">Drawbacks</h3>
+<h2 id="aws-secrets-manager-create-sso-token">AWS Secrets Manager: Create SSO token</h2>
+<p>This token will be used by the labs to communicate and authenticate with the portal. All labs and the portal share this token. It is imperative that this remains secret. The form of the token is very specific. Use the following process to create the token.</p>
 <ul>
-<li>Increases the time it takes to start an OpenSARLab server<ul>
-<li>Syncing environments from the docker image to <code>$HOME/.local</code>, registering their kernels, and running any needed setup scripts all happens at server startup</li>
-</ul>
+<li>
+<p>Create secret</p>
+<p><code>bash
+pip install cryptography</code></p>
+<p>```python3
+from cryptography.fernet import Fernet</p>
+<p>api_token = Fernet.generate_key()
+api_token
+```</p>
 </li>
-<li>Large environments may overrun the 20GB root volume mounted on each EC2 instance, requiring that larger, more expensive root volumes be used.</li>
-<li>By storing the environment on both user volumes and EC2 node volumes, you effectively double pay for that storage.</li>
-</ul>
-<hr />
-<h2 id="leave-conda-environment-creation-up-to-the-users">Leave Conda Environment Creation up to the Users</h2>
-<h3 id="benefits_2">Benefits</h3>
-<ul>
-<li>Docker images remain small, avoiding potential storage overruns on the EC2 nodes' 20GB volumes.</li>
-<li>Server start ups do not require copying or syncing environments, and so require less time. </li>
-<li>Users have full control over their conda environments and their changes will persist across server restarts.</li>
-</ul>
-<h3 id="drawbacks_2">Drawbacks</h3>
-<ul>
-<li>Users have to create their own conda environments<ul>
-<li>This requires some knowledge of conda and takes time.</li>
-<li>Note: There is an <a href="https://github.com/ASFOpenSARlab/opensarlab-envs">ASF notebook repo</a> to aid users in building their own environments.</li>
-</ul>
+<li>
+<p>Add to AWS Secret Manager</p>
+<ol>
+<li>
+<p>Go to https://us-west-2.console.aws.amazon.com/secretsmanager/home</p>
+</li>
+<li>
+<p>Click on <code>Store New Secret</code> &gt; <code>Other type of secret</code> &gt; <code>Plaintext</code></p>
+</li>
+<li>
+<p>Delete all empty json content.</p>
+</li>
+<li>
+<p>Add <em>api_token</em>.</p>
+</li>
+<li>
+<p>Click <code>Next</code></p>
+</li>
+<li>
+<p>Secret Name: <code>$CONTAINER_NAMESPACE/sso-token</code>, Tags: <code>osl-billing: osl-portal</code></p>
+</li>
+<li>
+<p>Click <code>Next</code></p>
+</li>
+<li>
+<p>Click <code>Next</code></p>
+</li>
+<li>
+<p>Click <code>Store</code></p>
+</li>
+</ol>
 </li>
 </ul>
+<h2 id="docker-registry">Docker registry</h2>
+<p>For local dev development, one can use a local docker registry.
+<code>docker run -d -p 5000:5000 --restart=always --name registry registry:2</code></p>
+<p>Otherwise, the remote docker images will be stored in AWS ECR, as setup by CloudFormation</p>
+<h2 id="docker-repo">Docker repo</h2>
+<p>Clone the portal code: <code>git clone git@github.com:ASFOpenSARlab/deployment-opensciencelab-prod-portal.git</code></p>
+<h1 id="setup">Setup</h1>
+<p>If production, upload the Cloudformation template <code>cf-portal-setup.yaml</code> and build.</p>
+<p>Once the cloudformation is done, go to EC2 Connect of the portal EC2, log onto the server and <code>cd /home/ec2-user/code</code>. 
+Then setup prerequisites via <code>make setup-ec2</code>. 
+Note that you will be warned about reformatting the DB volume. If this is the first time running (as it should be), do so.</p>
+<p>If locally, go to the root of the docker repo.
+Then setup prerequisites via <code>make setup-ubuntu</code>.</p>
+<h1 id="build">Build</h1>
+<p><code>cp labs.example.yaml labs.{maturity}.yaml</code>. The name of the config doesn't matter (except it cannot be labs.run.yaml)
+Update labs.{maturity}.yaml as needed</p>
+<p><code>make config=labs.{maturity}.yaml</code></p>
+<h1 id="destroy">Destroy</h1>
+<p>If production, clear out the registry images, delete the CloudFormation setup, delete db ebs snapshots, and delete logs. </p>
+<p>If locally, <code>make clean</code> and then stop the localhost registry (if being used).</p>
+<h1 id="other-less-used-procedures">Other less used procedures</h1>
+<h2 id="logs">Logs</h2>
+<p>In production, normally the logs will show up in CloudWatch.</p>
+<p>For both, <code>docker compose logs -f</code>.</p>
+<h2 id="replace-portal-db-from-snapshot">Replace Portal DB from snapshot</h2>
+<p>If the Portal DB needs to be replaced by a snapshot backup, do the following. </p>
+<p><em>Unless otherwise sated, all of these steps take place within EC2 Connect.</em></p>
+<p>Elevated permissions will be needed via <code>sudo</code> or <code>sudo su -</code>.</p>
+<ol>
+<li>
+<p>Restore backup snapshot to volume</p>
+<p>This procedure assumes that the usual DB volume is present and being used. We only want to update the DB file.</p>
+<p>Within <code>cf-portal-setup.yaml</code>, it is assumed that the AZ of the EC2's subnet is set as us-west-2a. </p>
+<p>a. From the EC2 console, select the snapshot that will be restored. Get the SNAPSHOT_ID, e.g. snap-0c0dbee2e7c9f0c12</p>
+<p>b. From the EC2 console, select the portal EC2. Get the EC2_INSTANCE_ID, e.g. i-0ca96843e97d9bd29</p>
+<p>c. First run a dry run to make sure permissions are available for EBS volume creation.
+    <code>aws ec2 create-volume \
+        --dry-run \
+        --availability-zone us-west-2a \
+        --snapshot-id $SNAPSHOT_ID \
+        --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=portal-db-backup}]'</code></p>
+<pre><code>Then actually create an EBS volume from the backup snapshot.
+```
+aws ec2 create-volume \
+    --availability-zone us-west-2a \
+    --snapshot-id $SNAPSHOT_ID \
+    --tag-specifications 'ResourceType=volume,Tags=[{Key=Name,Value=portal-db-backup}]'
+```
+
+From response output, get VOLUME_ID, e.g. vol-0a0869b5ab9f77090
+</code></pre>
+</li>
+<li>
+<p>Attach backup volume to EC2</p>
+<p>First run a dry run to make sure permissions are available.
+<code>aws ec2 attach-volume \
+    --dry-run \
+    --device /dev/sdm \
+    --instance-id $EC2_INSTANCE_ID \
+    --volume-id $VOLUME_ID</code></p>
+<p>Then actually run it.
+<code>aws ec2 attach-volume \
+    --device /dev/sdm \
+    --instance-id $EC2_INSTANCE_ID \
+    --volume-id $VOLUME_ID</code></p>
+</li>
+<li>
+<p>Mount device to filesystem</p>
+<p><code>sudo mkdir -p /tmp/portal-db-from-snapshot/</code>
+<code>sudo mount /dev/sdm /tmp/portal-db-from-snapshot/</code></p>
+<p>If you get an error message something like</p>
+<blockquote>
+<p>/wrong fs type, bad option, bad superblock</p>
+</blockquote>
+<p>then you cannot mount the filesystem. AWS's way of handling volumes makes things difficult. https://serverfault.com/questions/948408/mount-wrong-fs-type-bad-option-bad-superblock-on-dev-xvdf1-missing-codepage</p>
+<p>Since we are working with a temporay mount, run the following instead:</p>
+<p><code>sudo mount -t xfs -o nouuid /dev/sdm /tmp/portal-db-from-snapshot/</code>.</p>
+</li>
+<li>
+<p>Check for mounted directories</p>
+<p><code>df</code> </p>
+<p>Look for something like (not /dev/xvdj)</p>
+<p><code>/dev/xvdj        1038336   34224   1004112   4% /srv/jupyterhub
+/dev/xvdm        1038336   34224   1004112   4% /tmp/portal-db-from-snapshot</code></p>
+</li>
+<li>
+<p>Create a backup of the old DB file within the filesystem for just in case</p>
+<p><code>sudo cp ./srv/portal/jupyterhub/jupyterhub.sqlite ./srv/portal/jupyterhub/jupyterhub.sqlite.$(date +"%F-%H-%M-%S")</code></p>
+</li>
+<li>
+<p>Copy over backup DB file</p>
+<p><code>sudo cp /tmp/portal-db-from-snapshot/jupyterhub.sqlite ./srv/portal/jupyterhub/jupyterhub.sqlite</code></p>
+</li>
+<li>
+<p>Unmount and detach backup volume from EC2</p>
+<p><code>sudo umount /tmp/portal-db-from-snapshot/</code>
+<code>sudo aws ec2 detach-volume --volume-id VOLUME_ID</code></p>
+</li>
+<li>
+<p>Delete backup volume</p>
+<p><code>sudo aws ec2 delete-volume --volume-id VOLUME_ID</code></p>
+</li>
+</ol>
 
 
 
@@ -1466,16 +1494,16 @@ feedback.init({showIcon: false});
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
     
-      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
-        <script src="../../search/main.js"></script>
+        <script src="../../../search/main.js"></script>
       
     
-    <script src="../../assets/javascripts/expert-rec-search.js"></script>
+    <script src="../../../assets/javascripts/expert-rec-search.js"></script>
 
   </body>
 </html>
