@@ -2,182 +2,182 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release_notes/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/about_opensciencelab/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/destroy_deployment/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/system_diagram/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/troubleshooting/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/cluster/build_and_deploy_opensarlab_cluster/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/cluster/egress_config/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/cluster/opensciencelab_yaml/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/container/build_and_deploy_opensarlab_image/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/container/conda_environments/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/container/mintpy_conda/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/portal/build_and_deploy_portal/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/dev-guides/portal/notifications/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_02-2022/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_02-2023/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_02-2024/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_06-2021/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_10-2021/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/release-notes/release_12-2024/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/OpenSARLab_environment/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/OpenSARLab_terminal/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/class_notebooks_best_practices/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/conda_environments/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/git_in_OpenSARLab/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/how_to_run_a_notebook/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/installing_software_in_OpenSARLab/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/jupyter_magic/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/jupyter_notebook_extensions/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/logging_out_and_server_shutdown/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/mfa/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/restarting_server_and_kernel/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/s3_buckets/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://opensarlab-docs.asf.alaska.edu/user-guides/troubleshooting_guide/</loc>
-         <lastmod>2025-01-23</lastmod>
+         <lastmod>2025-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
